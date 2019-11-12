@@ -1,0 +1,50 @@
+.product-line {
+  $self: &;
+  display: flex;
+  border: 1px solid $gray--medium;
+
+  &__header {
+    flex-basis: 25%;
+    max-width: 25%;
+    position: relative;
+    padding: 1.5rem;
+
+    &:hover {
+      .product__view-btn {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__body {
+    flex: none;
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: 1.5rem;
+  }
+
+  &__footer {
+    flex-basis: 25%;
+    max-width: 25%;
+    border-left: 1px solid $gray--medium;
+    padding: 1.5rem;
+  }
+
+  /* Line Mods */
+  .product__title {
+    height: auto;
+    margin-top: 0;
+    font-weight: 600;
+  }
+
+  .product__title-link:hover {
+    color: $color-primary;
+  }
+
+  .counter {
+    height: 4rem;
+    margin-bottom: 2rem;
+  }
+  /* Line Mods */
+}

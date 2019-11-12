@@ -1,0 +1,68 @@
+.soc {
+
+  $self: &;
+
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    display: inline-block;
+    margin-left: .5rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  
+  &__link {
+    border: 1px solid $gray;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    transition: all .3s;
+    text-align: center;
+
+    &:hover {
+      border-color: transparent;
+    }
+
+    &--fb:hover {
+      background: #3b5998;
+    }
+
+    &--tw:hover {
+      background: #00aced;
+    }
+
+    &--vk:hover {
+      background: #5d84ae;
+    }
+
+    &--gg:hover {
+      background: #DD4B39;
+    }
+
+    &--yt:hover {
+      background: #c4302b;
+    }
+
+    &--ok:hover {
+      background: #ff9933;
+    }
+
+    &:hover #{$self}__icon {
+      fill: $white;
+    }
+  }
+
+  &__icon {
+    fill: $gray;
+    width: 1.6rem;
+    height: 1.6rem;
+    transition: all .3s;
+    position: relative;
+    top: 1px;
+  }
+
+}

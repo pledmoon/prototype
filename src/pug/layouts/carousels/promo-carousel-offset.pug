@@ -1,0 +1,47 @@
+.promo-carousel.promo-carousel--offset.mb-medium
+  
+  .swiper-container.promo-carousel__container.js-promo-carousel
+
+    .swiper-wrapper
+
+      .swiper-slide
+        figure.promo-carousel__slide(style="background-image: url('assets/images/content/slide-1.jpg')")
+          figcaption.promo-carousel__desc
+            div.promo-carousel__title Заголовок #[strong.promo-carousel__title-emphasis о чем-то]
+            p.promo-carousel__desc-small lorem ipsum dolor sit amet
+            a.promo-carousel__more.btn.btn--main(href="#") Подробнее
+
+      .swiper-slide
+        figure.promo-carousel__slide(style="background-image: url('assets/images/content/slide-2.jpg')")
+          figcaption.promo-carousel__desc
+            div.promo-carousel__title Какое-то #[strong.promo-carousel__title-emphasis предложение]
+            p.promo-carousel__desc-small Lorem ipsum dolor sit amet.
+            a.promo-carousel__more.btn.btn--main(href="#") Подробнее
+
+      .swiper-slide
+        figure.promo-carousel__slide(style="background-image: url('assets/images/content/slide-3.jpg')")
+          figcaption.promo-carousel__desc
+            div.promo-carousel__title Заголовок #[strong.promo-carousel__title-emphasis важный]
+            p.promo-carousel__desc-small Lorem ipsum dolor sit amet, consectetur adipisicing.
+            a.promo-carousel__more.btn.btn--main(href="#") Подробнее
+
+      .swiper-slide
+        figure.promo-carousel__slide(style="background-image: url('assets/images/content/slide-4.jpg')")
+          figcaption.promo-carousel__desc
+            div.promo-carousel__title Заголовок #[strong.promo-carousel__title-emphasis о чем-то важном]
+            p.promo-carousel__desc-small Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            a.promo-carousel__more.btn.btn--main(href="#") Подробнее
+
+      .swiper-slide
+        figure.promo-carousel__slide(style="background-image: url('assets/images/content/slide-5.png')")
+          figcaption.promo-carousel__desc
+            div.promo-carousel__title Заголовок #[strong.promo-carousel__title-emphasis о чем-то важном]
+            p.promo-carousel__desc-small Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            a.promo-carousel__more.btn.btn--main(href="#") Подробнее
+
+    .promo-carousel__pagination
+
+    .promo-carousel__prev
+      +icon('arrow-left', 'promo-carousel__move-icon')
+    .promo-carousel__next
+      +icon('arrow-right', 'promo-carousel__move-icon')

@@ -1,0 +1,636 @@
+.main-nav-section {
+  background: $gray--medium;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+}
+
+.main-nav {
+  $self: &;
+
+  @media (min-width: $md) {
+    /* --- First-Level --- */
+    &__container {
+      display: flex;
+      position: relative;
+    }
+
+    &__item {
+      font-size: $first-level-size;
+      position: relative;
+      flex: auto;
+      text-align: center;
+
+      &:hover #{$self}__link {
+        background: $dark--medium;
+        color: $white;
+      }
+
+      &:hover #{$self}__item-icon {
+        fill: $white;
+      }
+    }
+
+    &__item-icon {
+      width: 1rem;
+      height: 1rem;
+      fill: $first-level-color;
+      transition: all .3s;
+    }
+
+    &__link {
+      color: $first-level-color;
+      padding: 1.5rem 1.5rem;
+      display: block;
+      transition: all .3s;
+      position: relative;
+
+      #{$self}__item:not(:first-child) &::before {
+        width: 1px;
+        height: 60%;
+        background: $dark--medium;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        content: "";
+      }
+    }
+    /* --- First-Level --- */
+
+    /* --- Second-Level --- */
+    &__secondary-container {
+      position: absolute;
+      left: -9999px;
+      top: 100%;
+      background: $second-level-bg-color;
+      opacity: 0;
+      visibility: hidden;
+      border: 1px solid $gray;
+      width: 100%;
+      z-index: 5;
+    }
+
+    &__secondary-item {
+      font-size: $second-level-size;
+      text-align: left;
+      position: relative;
+
+      &:hover #{$self}__secondary-link {
+        background: $gray--light;
+      }
+    }
+
+    &__secondary-item-icon {
+      width: 1rem;
+      height: 1rem;
+      fill: $second-level-color;
+      transition: all .3s;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &__secondary-link {
+      color: $second-level-color;
+      display: block;
+      padding: 1rem 1.5rem;
+    }
+    /* --- Second-Level --- */
+
+    /* --- Tertiary-Level --- */
+    &__tertiary-container {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: $tertiary-level-bg-color;
+      opacity: 0;
+      visibility: hidden;
+      border: 1px solid $gray;
+      min-width: 20rem;
+    }
+
+    &__tertiary-item {
+      font-size: $second-level-size;
+
+      &:hover #{$self}__tertiary-link {
+        background: $gray;
+      }
+    }
+
+    &__tertiary-link {
+      color: $tertiary-level-color;
+      display: block;
+      padding: 1rem 1.5rem;
+    }
+    /* --- Tertiary-Level --- */
+
+    /* Interactive */
+    &__item:hover #{$self}__secondary-container {
+      left: 0;
+      visibility: visible;
+      animation: .3s fadeInUp;
+      opacity: 1;
+    }
+
+    &__secondary-item:hover #{$self}__tertiary-container {
+      left: 100%;
+      visibility: visible;
+      animation: .3s fadeInLeft;
+      opacity: 1;
+    }
+    /* Interactive */
+
+    /* --- Catalog Nav --- */
+    /* First-Level */
+    &__item--catalog {
+      max-width: 21rem;
+      flex-basis: 21rem;
+    }
+
+    &__catalog-list {
+      height: 60rem;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      background: $white;
+      border: 1px solid $gray;
+      text-align: left;
+      z-index: 3;
+      opacity: 0;
+      visibility: hidden;
+      left: -9999px;
+    }
+
+    &__catalog-item {
+      flex: auto;
+
+      &:not(:first-child) {
+        border-top: 1px solid $gray--light;
+      }
+
+      &:hover #{$self}__catalog-link {
+        background: $gray--light;
+      }
+    }
+
+    &__catalog-link {
+      padding: 0 1rem;
+      color: $black;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      position: relative;
+    }
+
+    &__catalog-item-icon {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      fill: $black;
+      width: 1rem;
+      height: 1rem;
+    }
+    /* First-Level */
+
+    /* Second-Level */
+    &__subcatalog-list {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      opacity: 0;
+      visibility: hidden;
+      height: 100%;
+      transition: opacity .5s;
+      background: $white;
+      width: 21rem;
+      border: 1px solid $gray--light;
+    }
+
+    &__subcatalog-item {
+      &:hover #{$self}__subcatalog-link {
+        background: $gray--light;
+      }
+    }
+
+    &__subcatalog-link {
+      padding: 1rem 1rem;
+      color: $black;
+      position: relative;
+      transition: all .3s;
+      display: block;
+    }
+
+    &__subcatalog-item-icon {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      fill: $black;
+      width: 1rem;
+      height: 1rem;
+    }
+    /* Second-Level */
+
+    /* Third-Level */
+    &__tertcatalog-list {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      opacity: 0;
+      visibility: hidden;
+      height: 100%;
+      transition: opacity .5s;
+      background: $white;
+      width: 21rem;
+      border: 1px solid $gray--light;
+    }
+
+    &__tertcatalog-item {}
+
+    &__tertcatalog-link {
+      padding: 1rem 1rem;
+      color: $black;
+      transition: all .3s;
+      display: block;
+
+      &:hover {
+        background: $gray--light;
+      }
+    }
+    /* Third-Level */
+
+    /* Interactive */
+    &__item--catalog.is-catalog-opened #{$self}__catalog-list,
+    &__item--catalog:hover #{$self}__catalog-list {
+      opacity: 1;
+      visibility: visible;
+      left: 0;
+    }
+    &__catalog-item:hover &__subcatalog-list {
+      opacity: 1;
+      visibility: visible;
+      left: 100%;
+    }
+    &__subcatalog-item:hover &__tertcatalog-list {
+      opacity: 1;
+      visibility: visible;
+      left: 100%;
+    }
+    /* Interactive */
+
+    /* Dropdown */
+    &__dropdown-banner {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      width: 21rem;
+      display: none;
+      height: 100%;
+      border: 1px solid $gray--light;
+
+      @media (min-width: $md) {
+        display: block;
+      }
+
+      #{$self}__catalog-item:hover & {
+        left: 200%;
+      }
+    }
+
+    &__dropdown-banner-link {
+      display: block;
+      height: 100%;
+    }
+
+    &__dropdown-banner-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    /* Dropdown */
+    /* --- Catalog Nav --- */
+
+    /* --- Rows Navbar --- */
+    &__item--rows {
+      position: static;
+    }
+    &__rows-list {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: left;
+      background: $white;
+      top: 100%;
+      z-index: 3;
+      padding: 2rem;
+      line-height: 1.7;
+      border: 1px solid $gray;
+      columns: 2rem 6;
+      opacity: 0;
+      visibility: hidden;
+      left: -9999px;
+    }
+
+    &__rows-item {
+      font-size: 1.4rem;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      margin: 0 0 1rem;
+    }
+
+    &__rows-link {
+      font-weight: 700;
+      color: $black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__rows-sublist {}
+
+    &__rows-subitem {}
+
+    &__rows-sublink {
+      color: $black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    /* interactive */
+    &__item--rows:hover &__rows-list {
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+      animation: .3s fadeInUp;
+    }
+    /* interactive */
+    /* --- Rows Navbar --- */
+
+    /* --- Columns Navbar --- */
+    &__item--cols {
+      position: static;
+    }
+
+    &__cols-list {
+      position: absolute;
+      left: -9999px;
+      right: 0;
+      background: $white;
+      top: 100%;
+      z-index: 3;
+      text-align: left;
+      border: 1px solid $gray;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s;
+    }
+
+    &__cols-item {
+      width: 21rem;
+      border-right: 1px solid $gray;
+
+      &:not(:first-child) {
+        border-top: 1px solid $gray--light;
+      }
+
+      &:hover #{$self}__cols-link {
+        background: $gray--light;
+      }
+    }
+
+    &__cols-link {
+      display: block;
+      padding: 1.5rem 1rem;
+      color: $black;
+      position: relative;
+    }
+
+    &__item-cols-icon {
+      width: 1rem;
+      height: 1rem;
+      fill: $first-level-color;
+      transition: all .3s;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &__cols-sublist {
+      position: absolute;
+      left: -9999px;
+      right: 0;
+      top: 0;
+      padding: 1rem 1rem 1rem 22rem;
+      width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      columns: 20rem 4;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease-in-out;
+      background: $white;
+
+      #{$self}__item--cols:hover #{$self}__cols-item:first-child & {
+        visibility: visible;
+        opacity: 1;
+        left: 0;
+      }
+    }
+
+    &__cols-subitem {}
+    
+    &__cols-sublink {
+      display: inline-block;
+      vertical-align: top;
+      padding: 1rem;
+      color: $black;
+      transition: all .3s;
+      border-radius: 5px;
+
+      &:hover {
+        background: $gray--light;
+      }
+    }
+    /* interactive */
+    &__item--cols:hover &__cols-list {
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &__cols-item:hover &__cols-sublist {
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+    /* interactive */
+    /* --- Columns Navbar --- */
+  }
+
+  /* --- Mobile Navbar --- */
+  @media (max-width: $md--mw) {
+    display: none;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    transition: left .3s ease-in-out;
+    z-index: 11;
+    background: $white;
+    width: 30rem;
+
+    .is-navbar-opened & {
+      display: block;
+      left: 0;
+    }
+    
+    /* First-Level */
+    &__container {
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    &__item {
+      &:not(:first-child) {
+        border-top: 1px solid $gray--light;
+      }
+    }
+
+    &__link {
+      font-size: 1.5rem;
+      display: block;
+      padding: 1rem 1.5rem;
+      color: $black;
+      position: relative;
+    }
+
+    &__item-icon {
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    /* First-Level */
+
+    /* Second-Level */
+    &__secondary-container,
+    &__catalog-list,
+    &__rows-list,
+    &__cols-list {
+      display: none;
+    }
+
+    &__secondary-item,
+    &__catalog-item,
+    &__rows-item,
+    &__cols-item {}
+
+    &__secondary-link,
+    &__catalog-link,
+    &__rows-link,
+    &__cols-link {
+      background: $gray--light;
+      display: block;
+      padding: 1rem 1rem 1rem 3rem;
+      color: $black;
+      position: relative;
+    }
+
+    &__secondary-item-icon,
+    &__catalog-item-icon,
+    &__item-rows-icon,
+    &__item-cols-icon {
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    /* Second-Level */
+
+    /* Third-Level */
+    &__tertiary-container,
+    &__subcatalog-list,
+    &__rows-sublist,
+    &__cols-sublist {
+      display: none;
+    }
+    &__tertiary-item,
+    &__subcatalog-item,
+    &__rows-subitem,
+    &__cols-subitem {}
+
+    &__tertiary-link,
+    &__subcatalog-link,
+    &__rows-sublink,
+    &__cols-sublink {
+      background: $gray--medium;
+      display: block;
+      padding: 1rem 1rem 1rem 4rem;
+      color: $black;
+      position: relative;
+    }
+
+    &__subcatalog-item-icon {
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    /* Third-Level */
+    
+    /* Fourth Level */
+    &__tertcatalog-list {
+      display: none;
+    }
+
+    &__tertcatalog-item {}
+
+    &__tertcatalog-link {
+      background: $gray;
+      display: block;
+      padding: 1rem 1rem 1rem 6rem;
+      color: $black;
+      position: relative;
+    }
+    /* Fourth Level */
+
+    /* Interactive */
+    .is-opened > ul {
+      display: block;
+    }
+    /* Interactive */
+
+    &__dropdown-banner {
+      display: none;
+    }
+  }
+
+  @media (min-width: $md) {
+    &-trigger,
+    &__close-nav-wrap,
+    &__item-rows-icon {
+      display: none;
+    }
+  }
+  /* --- Mobile Navbar --- */
+}
+
+.is-navbar-opened {
+  overflow: hidden;
+}

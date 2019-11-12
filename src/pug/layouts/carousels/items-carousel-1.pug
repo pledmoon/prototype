@@ -1,0 +1,30 @@
+.items-carousel-wrap
+
+  .swiper-container.items-carousel.js-instance-1
+
+    .swiper-wrapper
+          
+      .swiper-slide
+        include ../../components/items/item-1
+
+      .swiper-slide
+        include ../../components/items/item-2
+
+      .swiper-slide
+        include ../../components/items/item-1
+
+      .swiper-slide
+        include ../../components/items/item-2
+
+      .swiper-slide
+        include ../../components/items/item-1
+
+      .swiper-slide
+        include ../../components/items/item-2
+
+    .default-pagination
+
+  .default-carousel-prev.sw-prev-1
+    +icon('chevron-left', 'default-carousel__icon')
+  .default-carousel-next.sw-next-1
+    +icon('chevron-right', 'default-carousel__icon')

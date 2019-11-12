@@ -1,0 +1,54 @@
+body {
+  font-weight: $font-base-weight;
+  font-size: $font-base-size;
+  font-family:  $font-base-stack;
+  line-height: $base-line-height;
+  color: $font-base-color;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: $headings-weight;
+  font-family: $headings-fonts-stack;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1,
+.h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+h2,
+.h2 {
+  font-size: 2.6rem;
+  margin-bottom: 1.75rem;
+}
+h3,
+.h3 {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+h4,
+.h4 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+h5,
+.h5 {
+  margin-bottom: 1rem;
+}
+h6,
+.h6 {
+  margin-bottom: .75rem;
+}

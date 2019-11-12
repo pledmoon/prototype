@@ -1,0 +1,40 @@
+article.product
+  .product__wrap
+
+    header.product__header
+      a.product__img-wrap(href="#")
+        img.product__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="Product Img")
+      .product__view-btn.btn.btn--main Быстрый просмотр
+
+    .product__body
+      .product__title #[a.product__title-link(href="#") Товарный заголовок]
+      .product__price 1 003 300 р. #[small.product__old-price 300 000 р.]
+      .product__add.btn.btn--main
+        +icon('shopping-cart', 'product__add-icon')
+        | Купить
+
+    footer.product__footer
+      dl.product__params
+        dt.product__param-property Артикул:
+        dd.product__param-value 496-394-lsg
+        dt.product__param-property Вес:
+        dd.product__param-value 56 кг.
+        dt.product__param-property Количество:
+        dd.product__param-value 9 шт.
+      .product__controls
+        .product__control 
+          a.product__fast-buy(href="#") 
+            +icon('shopping-cart', 'product__fast-buy-icon')
+            | В 1 клик
+        .product__control 
+          a.product__add-favourite(href="#")
+            +icon('heart', 'product__add-favourite-icon')
+            | В избранное
+        .product__control 
+          a.product__action-compare(href="#")
+            +icon('compare', 'product__action-compare-icon')
+            | Сравнить
+        .product__control
+          .product__instock
+            +icon('tick', 'product__instock-icon')
+            | В наличии

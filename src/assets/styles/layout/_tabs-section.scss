@@ -1,0 +1,51 @@
+.tabs {
+  border: 1px solid $gray--light;
+  
+  /* Tabs Items */
+  &__list {
+    display: flex;
+  }
+
+  &__container {}
+
+  &__item {
+    font-size: 1.6rem;
+  }
+
+  &__link {
+    color: $black;
+    display: block;
+    background: $gray--light;
+    border-radius: 5px 5px 0 0;
+    padding: 1rem 2rem;
+    border: 1px solid $gray;
+    border-bottom: none;
+    cursor: pointer;
+
+    &:hover {
+      background: $gray--medium;
+    }
+
+    &.is-active {
+      background: $white;
+      cursor: default;
+      transform: translateY(1px);
+    }
+  }
+  /* Tabs Items */
+
+  /* Tabs Body */
+  &__panes {
+    border: 1px solid $gray;
+  }
+
+  &__tab-pane {
+    padding: 2rem;
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+  /* Tabs Body */
+}

@@ -1,0 +1,45 @@
+.callback-form {
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $black;
+    font-size: 2.6rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    @media (min-width: $md) {
+      font-size: 3rem;
+    }
+  }
+
+  &__field {
+    margin-bottom: 2rem;
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    color: $black;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  &__label-required {
+    color: $color-primary;
+  }
+
+  &__input {
+    border: 1px solid $gray--medium;
+  }
+
+  &__textarea {
+    border: 1px solid $gray--medium;
+  }
+
+  &__submit {
+    width: auto;
+  }
+}

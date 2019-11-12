@@ -1,0 +1,71 @@
+@charset 'UTF-8';
+
+// 1.Abstracts (Configuration and Helpers)
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/functions";
+
+// 2.Vendors
+@import "../../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "../../../node_modules/swiper/swiper.scss";
+@import "../../../node_modules/lightgallery.js/src/sass/lightgallery.scss";
+@import "../../../node_modules/choices.js/src/styles/choices.scss";
+
+// 2.Vendors-extensions
+@import "vendors-extensions/bootstrap";
+@import "vendors-extensions/choices.scss";
+@import "vendors/nouislider.scss";
+@import "vendors/drift-basic.scss";
+
+// 3.Base stuff
+@import "base/fonts";
+@import "base/base"; // maybe reset
+@import "base/typography";
+@import "base/utilities"; // aka helpers
+@import "base/forms";
+@import "base/animations";
+
+// 4.Layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/promo-carousel";
+@import "layout/items-carousel";
+@import "layout/tabs-section";
+@import "layout/inner-page-layout";
+@import "layout/sidebar";
+@import "layout/catalog-header-controls";
+@import "layout/catalog-main";
+@import "layout/catalog-list";
+
+// 5.Components
+@import "components/buttons";
+@import "components/top-header-nav";
+@import "components/select-lang";
+@import "components/logo";
+@import "components/search-form";
+@import "components/choose-location";
+@import "components/header-contacts";
+@import "components/header-utility";
+@import "components/main-nav";
+@import "components/footer-collapse";
+@import "components/modal-wins";
+@import "components/callback-form";
+@import "components/soc";
+@import "components/item";
+@import "components/counter";
+@import "components/service";
+@import "components/news";
+@import "components/breadcrumbs";
+@import "components/pagination";
+@import "components/filter";
+@import "components/category-nav";
+@import "components/ui-slider";
+@import "components/view-modes";
+@import "components/product";
+@import "components/product-line";
+
+// 6.Pages (page-specific styles)
+//@import 'pages/home'
+
+// 7.Themes
+// @import 'themes/default';

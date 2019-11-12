@@ -1,0 +1,28 @@
+.catalog-main {
+  display: flex;
+  flex-flow: row wrap;
+
+  @media (min-width: $lg) {
+    &__item {
+      flex-basis: 25%;
+      max-width: 25%;
+    }
+  }
+  
+  /* Borders */
+  @media (min-width: $lg) {
+    &__item .product__wrap {
+      border-top: none;
+      border-left: none;
+    }
+
+    &__item:nth-child(-n+4) {
+      border-top: 1px solid $gray--medium;
+    }
+
+    &__item:nth-child(4n+1) {
+      border-left: 1px solid $gray--medium;
+    }
+  }
+  /* Borders */
+}

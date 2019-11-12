@@ -1,0 +1,40 @@
+/* Header Top Area */
+.header-top-area {
+  background: $gray--light;
+  border-bottom: 1px solid $gray;
+
+  &__main {
+    display: flex;
+  }
+
+  .top-header-nav {
+    flex: auto;
+  }
+}
+/* Header Top Area */
+
+/* Header Main Area */
+.header {
+  display: flex;
+  align-items: center;
+  margin: 0 -1rem;
+
+  > * {
+    padding: 0 1rem;
+  }
+
+  &__search-form {
+    flex: auto;
+  }
+
+  &__header-contacts {
+    padding: 1rem 0;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+}
+/* Header Main Area */

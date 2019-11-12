@@ -1,0 +1,91 @@
+/* footer-collapse */
+.footer-collapse {
+  $self: &;
+
+  &__title {
+    color: $color-primary;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    padding: 2.6rem 1.5rem;
+    margin: 0 -15px;
+    border-bottom: 1px solid $footer-border-color;
+
+    @media (min-width: $md) {
+      margin: 0 0 2rem;
+      padding: 0 0 .8rem;
+      border: none;
+    }
+
+    #{$self}.is-toggled & {
+      border-bottom: none;
+    }
+  }
+
+  &__title-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    width: 1.7rem;
+    height: 1.7rem;
+    transform: translateY(-50%);
+    fill: $color-primary;
+    transition: all .3s;
+
+    .is-toggled & {
+      transform: translateY(-50%) rotate(180deg);
+      fill: $white;
+    }
+
+    @media (min-width: $md) {
+      display: none;
+    }
+  }
+
+  &__body {
+    display: none;
+
+    @media (min-width: $md) {
+      display: block;
+    }
+    
+    @media (max-width: $md--mw) {
+      #{$self}.is-toggled & {
+        display: block;
+
+        border-bottom: 1px solid $footer-border-color;
+        margin: 0 -15px;
+        padding: 0 15px 2.2rem;
+      }
+    }
+  }
+
+  &__nav {}
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    list-style: none;
+  }
+
+  &__item {
+    margin-top: .8rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    color: $white;
+    font-size: 1.4rem;
+    transition: all .3s;
+
+    &:hover {
+      color: $color-primary;
+      text-decoration: none;
+    }
+  }
+}

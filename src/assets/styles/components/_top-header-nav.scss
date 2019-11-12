@@ -1,0 +1,121 @@
+.top-header-nav {
+  $self: &;
+  
+  position: relative;
+  white-space: nowrap;
+
+  &.has-dropdown {
+    padding-left: 2rem;
+  }
+
+  &__list {
+    visibility: hidden;
+    transition: all .3s;
+
+    @media (min-width: $md) {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    font-size: 1.4rem;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+
+    &::before {
+      border-left: 1px solid $gray--medium;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 1.5rem;
+      transform: translateY(-50%);
+    }
+
+    &:first-child::before {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: $dark--medium;
+    display: block;
+    padding: 0 1rem;
+    transition: color .3s ease-in-out;
+    position: relative;
+
+    &:hover {
+      color: $font-base-color;
+      text-decoration: none;
+    }
+
+    &:hover #{$self}__text::after {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    display: block;
+    vertical-align: middle;
+    height: 100%;
+    padding: .7rem 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 0%;
+      height: 2px;
+      background: $color-primary;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transition: all .4s ease-in-out;
+    }
+  }
+
+  &__toggle {
+    background: transparent;
+    border: none;
+    width: 2.25rem;
+    height: 2.25rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    outline: none;
+    margin-top: -2px;
+
+    @media (min-width: $md) {
+      display: none;
+    }
+
+    #{$self}.has-dropdown & {
+      display: block;
+    }
+  }
+
+  &__toggle-icon {
+    fill: $dark--medium;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  &__dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: $gray--light;
+    flex-direction: column;
+    max-width: 22rem;
+    z-index: 2;
+    display: none;
+    border: 1px solid $gray--medium;
+  }
+
+  &.is-active &__dropdown {
+    display: flex;
+  }
+}

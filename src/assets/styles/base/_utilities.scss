@@ -1,0 +1,31 @@
+/* Misc Global Classes
+------------------------------------------ */
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.mb-small {
+  margin-bottom: 2rem;
+}
+.mb-medium {
+  margin-bottom: 2rem;
+
+  @media (min-width: $md) {
+    margin-bottom: 3rem;
+  }
+  
+  @media (min-width: $lg) {
+    margin-bottom: 4rem;
+  }
+}
+.mb-big {
+  margin-bottom: 8rem;
+}
+/* Misc Global Classes
+------------------------------------------ */

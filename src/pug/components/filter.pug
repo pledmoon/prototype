@@ -1,0 +1,147 @@
+.filter
+
+  .filter__heading.h3 Фильтр
+    button.filter__close.d-md-none
+      +icon('close', 'filter__close-icon')
+
+  .filter__main
+
+    .filter__section
+      .filter__title Цена #[span / RUB]
+      .filter__body
+
+        include ui-slider
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="is-available" id="opt-avail")
+          label.checkbox-label__main(for="opt-avail") На складе
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="is-discount" id="opt-discount")
+          label.checkbox-label__main(for="opt-discount") Распродажа
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="is-action" id="opt-action")
+          label.checkbox-label__main(for="opt-action") Акции
+
+    .filter__section
+      .filter__title Бренд
+      .filter__body
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="Ok" id="opt-ok")
+          label.checkbox-label__main(for="opt-ok") Ok
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="Aftermarket" id="opt-aftermarket")
+          label.checkbox-label__main(for="opt-aftermarket") Aftermarket
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="ABRO" id="opt-abro")
+          label.checkbox-label__main(for="opt-abro") ABRO
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="Accessory" id="opt-accessory")
+          label.checkbox-label__main(for="opt-accessory") Accessory
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="AGA" id="opt-aga")
+          label.checkbox-label__main(for="opt-aga") AGA (Hi-Gear)
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="BLUECHEM" id="opt-bluechem")
+          label.checkbox-label__main(for="opt-bluechem") BLUECHEM
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="MOTUL" id="opt-motul")
+          label.checkbox-label__main(for="opt-motul") MOTUL
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="WYNN" id="opt-wynn")
+          label.checkbox-label__main(for="opt-wynn") WYNN'S
+
+        a.filter__more-options(href="#") Показать все
+
+    .filter__section.is-hidden
+      .filter__title Размеры
+      .filter__body
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="sm" id="opt-sm")
+          label.checkbox-label__main(for="opt-sm") sm
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="xxl" id="opt-xl")
+          label.checkbox-label__main(for="opt-xl") xl
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="xxl" id="opt-xxl")
+          label.checkbox-label__main(for="opt-xxl") xxl
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="xxxl" id="opt-xxxl")
+          label.checkbox-label__main(for="opt-xxxl") xxxl
+
+    .filter__section.is-hidden
+      .filter__title Цвета
+      .filter__body
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="red" id="opt-red")
+          label.checkbox-label__main(for="opt-red") Красный
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="orange" id="opt-orange")
+          label.checkbox-label__main(for="opt-orange") Оранжевый
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="brown" id="opt-brown")
+          label.checkbox-label__main(for="opt-brown") Коричневый
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="yellow" id="opt-yellow")
+          label.checkbox-label__main(for="opt-yellow") Желтый
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="purple" id="opt-purple")
+          label.checkbox-label__main(for="opt-purple") Фиолетовый
+
+    .filter__section.is-hidden
+      .filter__title Характеристики
+      .filter__body
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-1" id="opt-char-1")
+          label.checkbox-label__main(for="opt-char-1") Характеристика-1
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-2" id="opt-char-2")
+          label.checkbox-label__main(for="opt-char-2") Характеристика-2
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-3" id="opt-char-3")
+          label.checkbox-label__main(for="opt-char-3") Характеристика-3
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-4" id="opt-char-4")
+          label.checkbox-label__main(for="opt-char-4") Характеристика-4
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-5" id="opt-char-5")
+          label.checkbox-label__main(for="opt-char-5") Характеристика-5
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-6" id="opt-char-6")
+          label.checkbox-label__main(for="opt-char-6") Характеристика-6
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-7" id="opt-char-7")
+          label.checkbox-label__main(for="opt-char-7") Характеристика-7
+    
+    .filter__footer
+
+        .filter__btns
+            a.filter__btn-reset.btn.btn--reverse(href="#") Применить
+            a.filter__btn-accept.btn.btn--ghost(href="#") 
+              +icon('update-arrow', 'filter__btn-icon')
+              | Сбросить

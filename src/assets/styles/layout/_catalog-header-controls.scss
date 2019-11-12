@@ -1,0 +1,132 @@
+.header-controls {
+  margin: 0 0 3rem;
+  padding-bottom: 3rem;
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid $gray--medium;
+
+  @media (min-width: $lg) {
+    margin: 0 0 3rem;
+  }
+}
+
+.header-control {
+  $self: &;
+
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  margin: 0 .5rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-left: auto;
+  }
+
+  @media (min-width: $lg) {
+    margin: 0 1rem;
+  }
+
+  &__title {
+    color: $dark--medium;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 1rem 0 0;
+    white-space: nowrap;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__current {
+    color: $color-primary;
+    border-bottom: 1px dotted $color-primary;
+    display: inline-block;
+    vertical-align: middle;
+    transition: all .3s;
+
+    &:hover {
+      border-bottom-color: transparent;
+      text-decoration: none;
+      color: $color-primary;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: middle;
+    color: $black;
+    background: $gray--thin;
+    padding: .7rem 1rem .7rem 3rem;
+    border-radius: 3px;
+    position: relative;
+    margin-left: 1rem;
+
+    @media (min-width: $lg) {
+      margin-left: 2rem;
+    }
+
+    &::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-width: 0 .5rem .5rem .5rem;
+      border-style: none solid solid solid;
+      border-color: transparent transparent $color-primary transparent;
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #{$self}__item.link--high &::before {
+      border-width: .5rem .5rem 0 .5rem;
+      border-style: solid solid none solid;
+      border-color: $color-primary transparent transparent transparent;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $black;
+      background: $gray--medium;
+    }
+  }
+
+  .choices__inner {
+    font-size: 1.4rem;
+  }
+
+  .filter-toggle,
+  .sort-by {
+    color: $black;
+    transition: all .3s;
+
+    &:hover {
+      text-decoration: none;
+      color: $color-primary;
+    }
+
+    &__icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: $color-primary;
+      margin: -3px .5rem 0 0;
+    }
+  }
+
+  .sort-by {
+    text-align: right;
+  }
+}

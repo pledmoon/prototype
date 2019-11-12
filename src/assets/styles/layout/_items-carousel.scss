@@ -1,0 +1,72 @@
+.items-carousel-wrap {
+  position: relative;
+  padding: 0 3.5rem;
+}
+
+.items-carousel {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+
+  &.swiper-container-initialized {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.default-pagination {
+  text-align: center;
+  margin-top: 2rem;
+
+  .swiper-pagination-bullet {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 .5rem;
+    display: inline-block;
+    border: .3rem solid $gray;
+    background: $white;
+    transition: all .3s;
+    outline: none;
+    z-index: 3;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $gray;
+    cursor: default;
+  }
+}
+
+.default-carousel {
+  &-prev,
+  &-next {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    outline: none;
+    margin-top: -3.5rem;
+  }
+
+  &-prev {
+    left: 0;
+  }
+
+  &-next {
+    right: 0;
+  }
+
+  &-icon {
+    width: 3rem;
+    height: 3rem;
+    transition: all .3s;
+  }
+
+  &-prev:hover &__icon,
+  &-next:hover &__icon {
+    fill: $dark--medium;
+  }
+}

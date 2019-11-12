@@ -1,0 +1,40 @@
+.counter {
+  position: relative;
+  height: 100%;
+
+  &__btn {
+    border: none;
+    background: none;
+    padding: 0;
+    outline: none;
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    width: 2rem;
+    text-align: center;
+    cursor: pointer;
+    background: $gray--light;
+    transition: all .3s;
+
+    &:hover {
+      background: $gray;
+    }
+  }
+
+  &__field {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: center;
+    border-color: $gray--medium;
+    outline: none;
+    height: 100%;
+  }
+
+  &--add {
+    right: 1px;
+  }
+
+  &--remove {
+    left: 1px;
+  }
+}

@@ -1,0 +1,22 @@
+.select-lang {
+  max-width: 12rem;
+  max-height: 3.4rem;
+
+  .choices {
+    border: none;
+    background: none;
+  }
+
+  .choices__inner {
+    text-align: right;
+  }
+
+  .choices__item--choice {
+    text-align: center;
+  }
+
+  .is-open .choices__list--dropdown {
+    width: 15rem;
+    right: 0;
+  }
+}

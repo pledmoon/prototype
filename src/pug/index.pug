@@ -1,0 +1,23 @@
+extends templates/main
+
+block variables
+  - let title = 'Главная страница';
+  - let pageClass = 'index-page';
+
+block content
+
+  include layouts/header
+
+  .main-nav-section
+    .container-fluid
+      include components/main-nav/main-nav-2
+
+  .container-fluid
+    include layouts/carousels/promo-carousel-offset
+    include layouts/items-section/items-section-1
+    include layouts/service-cards-section
+    include layouts/tabs-section
+    include layouts/items-section/items-section-2
+    include layouts/news-section
+
+  include layouts/footer

@@ -1,0 +1,19 @@
+.header-contacts {
+  &__separate {
+
+    &:not(:last-child) {
+      margin-bottom: .7rem;
+    }
+  }
+
+  &__tel {
+    color: $black;
+  }
+
+  &__phone {
+    max-width: 2rem;
+    max-height: 2rem;
+    transform: translateY(-2px);
+    margin-right: 1rem;
+  }
+}

@@ -1,0 +1,15 @@
+.sidebar-area {
+  .h2, 
+  .h3 {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    color: $black;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+    font-weight: 500;
+  }
+
+  > *:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+}

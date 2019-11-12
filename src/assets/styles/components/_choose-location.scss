@@ -1,0 +1,11 @@
+.choose-location {
+  display: inline-block;
+
+  .choices {
+    border: none;
+  }
+
+  .is-open .choices__list--dropdown {
+    width: 15rem;
+  }
+}

@@ -1,0 +1,34 @@
+.search-form {
+  position: relative;
+  
+  &__input {
+    padding-right: 3rem;
+  }
+
+  &__submit {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    background: none;
+    border: none;
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    fill: $gray;
+    transition: all .3s;
+
+    &:hover {
+      fill: $black;
+    }
+  }
+}

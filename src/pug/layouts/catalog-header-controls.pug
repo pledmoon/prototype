@@ -1,0 +1,34 @@
+.header-controls.d-none.d-md-flex
+
+  .header-control
+    label.header-control__title(for="show-by-select") Показывать
+    select.js-select-default#show-by-select
+      option(value="12") 12
+      option(value="24") 24
+      option(value="36") 36
+      option(value="48") 48
+
+  .header-control
+    span.header-control__title Сортировать по: 
+    ul.header-control__list
+      li.header-control__item
+        a.header-control__current(href="#") Название
+      li.header-control__item
+        a.header-control__link(href="#") Цена
+      li.header-control__item.link--high
+        a.header-control__link(href="#") Наличие
+
+  .header-control
+    include ../components/view-modes
+
+.header-controls.d-md-none
+
+  .header-control
+    a.filter-toggle(href="#") 
+      +icon('sliders-h', 'filter-toggle__icon')
+      | Фильтры
+
+  .header-control
+    a.sort-by(href="#") 
+      +icon('sort', 'sort-by__icon')
+      | Сортировка

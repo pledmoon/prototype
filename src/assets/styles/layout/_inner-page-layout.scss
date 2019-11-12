@@ -1,0 +1,24 @@
+.primary-content {
+  padding: 0 0 3rem;
+
+  @media (min-width: $md) {
+    display: flex;
+    padding-bottom: 5rem
+  }
+}
+
+.sidebar-area {
+  @media (min-width: $md) {
+    max-width: 22.5%;
+    flex-basis: 22.5%;
+    padding-right: 1rem;
+  }
+}
+
+.main-content {
+  @media (min-width: $md) {
+    flex-basis: 78.5%;
+    max-width: 78.5%;
+    padding-left: 2rem;
+  }
+}

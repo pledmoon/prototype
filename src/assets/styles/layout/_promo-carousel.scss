@@ -1,0 +1,169 @@
+.promo-carousel {
+  $self: &;
+  
+  &__container {
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    &.swiper-container-initialized {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__slide {
+    position: relative;
+    height: 1px;
+    min-height: 42rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    background-position: center;
+
+    @media (min-width: $lg) {
+      min-height: 45rem;
+    }
+  }
+
+  &__desc {
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    max-width: $layout-max-width;
+    padding: 0 1.5rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-weight: 300;
+    color: $white;
+    position: relative;
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 2rem;
+    padding: 2.5rem 0;
+
+    &::after {
+      content: "";
+      width: 6.5rem;
+      border-top: 3px solid $color-primary;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    @media (min-width: $lg) {
+      font-size: 5rem;
+    }
+  }
+
+  &__title-emphasis {
+    display: block;
+    font-weight: 700;
+  }
+
+  &__desc-small {
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: $white;
+    text-transform: uppercase;
+    margin: 0 0 1.5rem;
+  }
+
+  &__more {}
+
+  &__prev,
+  &__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba($black, .5);
+    width: 6rem;
+    height: 6rem;
+    z-index: 2;
+    cursor: pointer;
+    outline: none;
+    transition: all .3s;
+
+    #{$self}__move-icon {
+      fill: $white;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: $lg--mw) {
+      display: none;
+    }
+
+    &:hover {
+      background: $white;
+    }
+
+    &:hover #{$self}__move-icon {
+      fill: $color-primary;
+    }
+  }
+
+  &__prev {
+    left: 0;
+  }
+
+  &__next {
+    right: 0;
+  }
+
+  &__pagination {
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 3;
+    transform: translateX(-50%);
+    text-align: center;
+    max-width: calc(#{$layout-max-width} - 30px);
+    width: 100%;
+    padding: 0 0 4rem;
+
+    @media (min-width: $sm) {
+      padding: 0 0 5rem;
+    }
+
+    @media (min-width: $xlg) {
+      text-align: right;
+      padding: 0 0 7rem;
+    }
+
+    .swiper-pagination-bullet {
+      width: 1.5rem;
+      height: 1.5rem;
+      border: .2rem solid $white;
+      display: inline-block;
+      margin: 0 .5rem;
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .swiper-pagination-bullet-active {
+      border: .5rem solid $white;
+    }
+  }
+  
+  @media (min-width: $md) {
+    &--offset {
+      margin-top: 1rem;
+      margin-left: 22rem;
+
+      #{$self}__slide {
+        min-height: 59rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+// Template main colors
+$color-primary: #55c57a !default;
+$color-secondary: #7ed56f !default;
+$color-tertiary: #28b485 !default;
+
+$white: #ffffff !default;
+$black: #000000 !default;
+$dark: #333333 !default;
+$dark--medium: #999999 !default;
+
+$gray: #cccccc !default;
+$gray--medium: #e6e6e6 !default;
+$gray--light: #f7f7f7 !default;
+$gray--thin: #f5f5f5 !default;
+
+// Base styles
+$body-bg: #ffffff !default;
+$layout-max-width: 1280px !default;
+
+$font-base-weight: 400 !default;
+$font-base-stack: 'Open Sans', Arial, sans-serif !default;
+$font-base-size: 1.6rem !default;
+$font-base-color: #333333 !default;
+$base-line-height: 1.5 !default;
+
+// Headings
+$headings-weight: 600 !default;
+$headings-fonts-stack: 'Open Sans', Arial, sans-serif !default;
+$headings-color: #333333 !default;
+$headings-line-height: 1.1 !default;
+
+// Buttons styles
+$btn-bg-color: #ffffff !default;
+$btn-radius: 10rem !default;
+$btn-icon-fill-color: #ffffff !default;
+
+// footer
+$footer-bg: #444 !default;
+$footer-border-color: #999999 !default;
+
+// Breakpoints
+$breakpoints: (
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xlg: 1200px
+);
+
+$xs: 480px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xlg: 1200px;
+
+$xs--mw: 479px;
+$sm--mw: 575px;
+$md--mw: 767px;
+$lg--mw: 991px;
+$xlg--mw: 1199px;
+
+// main-nav
+$first-level-size: 1.5rem;
+$first-level-color: #333333;
+$first-level-bg-color: #ffffff;
+
+$second-level-size: 1.4rem;
+$second-level-color: #333333;
+$second-level-bg-color: #ffffff;
+
+$tertiary-level-size: 1.4rem;
+$tertiary-level-color: #333333;
+$tertiary-level-bg-color: #f5f5f5;

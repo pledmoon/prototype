@@ -1,0 +1,29 @@
+form.callback-form
+  .callback-form__title Задать вопрос менеджеру
+  
+  .row
+    .col-md-6
+      .callback-form__field
+        label(for="f1").callback-form__label Ваше имя #[span.callback-form__label-required *]
+        input(id="f1" type="text" name="user-name").callback-form__input
+    .col-md-6
+      .callback-form__field
+        label(for="f2").callback-form__label Обратный адрес или телефон #[span.callback-form__label-required *]
+        input(id="f2" type="text" name="user-contacts").callback-form__input
+  
+  .row
+    .col-md-6
+      .callback-form__field
+        label(for="f4").callback-form__label Ваш email #[span.callback-form__label-required *]
+        input(id="f4" type="email" name="user-email").callback-form__input
+    .col-md-6
+      .callback-form__field
+        label(for="f5").callback-form__label Ваш номер заказа
+        input(id="f5" type="tel" name="user-number").callback-form__input
+
+  .callback-form__field
+      label(for="f3").callback-form__label Ваш вопрос #[span.callback-form__label-required *]
+      textarea(id="f3" rows="3" name="user-message").callback-form__textarea
+
+  .callback-form__field
+    input(type="submit" value="Отправить" name="send-data").callback-form__submit.btn.btn--main
