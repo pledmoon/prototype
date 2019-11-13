@@ -1,0 +1,26 @@
+.product-controls
+  
+  .product-controls__price 156 750 руб.
+  small.product-controls__old-price 198 470 руб.
+
+  ul.product-controls__stickers
+    li.product-controls__sticker
+      span.product-controls__sticker-discount -30%
+    li.product-controls__sticker
+      span.product-controls__sticker-discount-value Экономия: 41 720 руб.
+  
+  .product-controls__meta
+    .product-controls__instock
+      +icon('check', 'product-controls__instock-icon')
+      | Много
+    a.product-controls__offers(href="#")
+      +icon('wallet', 'product-controls__offers-icon')
+      | Нашли дешевле?
+
+  .product-controls__footer
+    .product-controls__footer-control
+      include ../components/counter
+    .product-controls__footer-control
+      a.product-controls__add.btn.btn--main(href="#") В корзину
+    .product-controls__footer-control
+      a.product-controls__fast-buy.btn.btn--reverse(href="#") Купить в 1 клик

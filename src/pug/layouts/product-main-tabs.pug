@@ -1,0 +1,44 @@
+.tabs-section
+
+  .tabs
+
+    .tabs__header
+
+      ul.tabs__list
+        li.tabs__item
+          a.tabs__link.is-active(href="#section-1") Похожие #[span.tabs__amount (25)]
+        li.tabs__item
+          a.tabs__link(href="#section-2") Характеристики
+        li.tabs__item
+          a.tabs__link(href="#section-3") Отзывы
+        li.tabs__item
+          a.tabs__link(href="#section-4") Описание
+        li.tabs__item
+          a.tabs__link(href="#section-5") Документация
+
+    .tabs__panes
+
+      .tabs__tab-pane.is-active.is-opened
+        .tabs__accordeon-toggle Похожие #[span.tabs__amount (42)]
+        .tabs__accordeon-body
+          include ../layouts/carousels/items-carousel-1
+
+      .tabs__tab-pane
+        .tabs__accordeon-toggle Характеристики
+        .tabs__accordeon-body
+          include ../components/product-main-params
+
+      .tabs__tab-pane
+        .tabs__accordeon-toggle Отзывы
+        .tabs__accordeon-body
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+
+      .tabs__tab-pane
+        .tabs__accordeon-toggle Описание
+        .tabs__accordeon-body
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+
+      .tabs__tab-pane
+        .tabs__accordeon-toggle Документация
+        .tabs__accordeon-body
+          include ../components/product-main-docs

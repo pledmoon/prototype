@@ -3,7 +3,7 @@ let imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     cache = require('gulp-cache'),
     imgPATH = {
-        "input": ["./src/assets/images/**/*.{png,jpg,gif,svg}",
+        "input": ["./src/assets/images/**/*.{png,jpg,jpeg,gif,svg}",
             '!./src/assets/images/svg/*'],
         "output": "./dist/assets/images/"
     };

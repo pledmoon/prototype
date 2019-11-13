@@ -36,6 +36,7 @@
 @import "layout/catalog-header-controls";
 @import "layout/catalog-main";
 @import "layout/catalog-list";
+@import "layout/product-main";
 
 // 5.Components
 @import "components/buttons";
@@ -63,6 +64,9 @@
 @import "components/view-modes";
 @import "components/product";
 @import "components/product-line";
+@import "components/product-main-promo";
+@import "components/product-main-docs";
+@import "components/product-main-params";
 
 // 6.Pages (page-specific styles)
 //@import 'pages/home'

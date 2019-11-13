@@ -1,0 +1,65 @@
+.manual-params {
+  $self: &;
+
+  margin: 0 -.7rem;
+
+  &__param {
+    font-size: 1.4rem;
+    color: $black;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    display: flex;
+    
+    @media (min-width: $md) {
+      max-width: 80rem;
+      align-items: flex-end;
+    }
+
+    &--section {
+      padding-top: 1rem;
+    }
+  }
+  
+  &__value {
+    font-weight: normal;
+    padding-right: .5rem;
+
+    flex-basis: 50%;
+    max-width: 50%;
+
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      border-bottom: 1px dotted $gray;
+      content: "";
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+    }
+
+    b {
+      font-weight: 600;
+    }
+  }
+
+  &__property {
+    font-weight: 600;
+    padding-left: .5rem;
+
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  &__text {
+    @media (min-width: $md) {
+      position: relative;
+      top: 5px;
+      z-index: 3;
+      background: $white;
+      padding: 2px .7rem;
+      display: inline-block;
+    }
+  }
+}

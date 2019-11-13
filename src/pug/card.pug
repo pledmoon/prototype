@@ -1,0 +1,42 @@
+extends templates/main
+
+block variables
+  - let title = 'Карта товара';
+  - let pageClass = 'card-page';
+
+block content
+
+  include layouts/header
+
+  .main-nav-section
+    .container-fluid
+      include components/main-nav/main-nav
+
+  .container-fluid
+    include components/breadcrumbs
+    
+    .product-main-header
+      h1.product-heading Заголовок товара длинный
+      ul.product-tools
+        li.product-tools__item
+          a.product-tools__share(href="#")
+            +icon('share-thin', 'product-tools__share-icon')
+          .product-tools__tooltip
+            .product-tools__tooltip-title Поделиться:
+            include components/soc
+        li.product-tools__item
+          a.product-tools__wish(href="#")
+            +icon('heart-thin', 'product-tools__wish-icon')
+          .product-tools__tooltip Добавить в сравнение
+        li.product-tools__item
+          a.product-tools__compare(href="#")
+            +icon('compare-thin', 'product-tools__compare-icon')
+          .product-tools__tooltip Добавить в избранное
+
+    include layouts/product-main
+    include layouts/product-main-tabs
+
+    .h2 Похожие товары
+    include layouts/carousels/items-carousel-2
+
+  include layouts/footer

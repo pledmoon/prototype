@@ -362,6 +362,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.tabs').forEach(function(item) {
 
     item.querySelectorAll('.tabs__link').forEach(function(item, i) {
+
       item.addEventListener('click', function(e) {
         let target = e.target;
 
@@ -377,6 +378,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let root = target.closest('.tabs');
         clearTabClasses(root, i);
       });
+
     });
 
   });
@@ -388,8 +390,15 @@ document.addEventListener('DOMContentLoaded', function() {
     root.querySelectorAll('.tabs__tab-pane').forEach(function(item) {
       item.classList.remove('is-active');
     });
+
     root.querySelector('.tabs__item:nth-child(' + (i+1) + ') .tabs__link').classList.add('is-active');
     root.querySelector('.tabs__tab-pane:nth-child(' + (i+1) + ')').classList.add('is-active');
+
+    /* Update Carousel Inside Tabs */
+    if ( root.querySelector('.tabs__tab-pane:nth-child(' + (i+1) + ')').querySelector('.items-carousel') ) {
+      instanceOne.update();
+    }
+    /* Update Carousel Inside Tabs */
   }
 
   let currentHash = window.location.hash;
@@ -398,6 +407,35 @@ document.addEventListener('DOMContentLoaded', function() {
     let ev = new Event('click');
     hashTab.dispatchEvent(ev);
   }
+
+  /* Tabs Accordeon */
+  document.addEventListener('click', function(e) {
+    let toggle = e.target.closest('.tabs__accordeon-toggle');
+
+    if (!toggle) return;
+
+    let parent = toggle.closest('.tabs__tab-pane');
+
+    if ( parent.classList.contains('is-opened') ) {
+
+      parent.classList.remove('is-opened');
+
+    } else {
+
+      document.querySelectorAll('.tabs__tab-pane').forEach(function(item) {
+        item.classList.remove('is-opened');
+      });
+
+      parent.classList.add('is-opened');
+
+      /* Update Carousel Inside Tabs */
+      if ( parent.querySelector('.items-carousel') ) {
+        instanceOne.update();
+      }
+      /* Update Carousel Inside Tabs */
+    }
+  });
+  /* Tabs Accordeon */
   /* ------------ Tabs ------------ */
 
   /* ------------ Filter ------------ */
@@ -507,6 +545,89 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   /* Filter-Mobile */
   /* ------------ Filter ------------ */
+
+  /* ------------ Product-Main ------------ */
+  let galleryThumbs = new Swiper('.js-thumbs-list', {
+    direction: 'vertical',
+    slidesPerView: 5,
+    spaceBetween: 5,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+
+    navigation: {
+        prevEl: '.product-main-promo__th-prev',
+        nextEl: '.product-main-promo__th-next'
+    }
+  });
+
+  let galleryMain = new Swiper('.js-promo-main', {
+      spaceBetween: 10,
+      // effect: 'coverflow',
+
+      pagination: {
+        el: '.product-main-promo__pagination',
+        clickable: true
+      },
+
+      breakpoints: {
+          768: {}
+      },
+
+      thumbs: {
+          swiper: galleryThumbs
+      }
+  });
+
+  lightGallery(document.querySelector('.js-promo-main'), {
+    selector: ".product-main-promo__img-wrap"
+  });
+
+  /* Drift Zoom */
+  if ( window.matchMedia('(min-width: 992px)').matches ) {
+
+    let driftPaneContainer = document.querySelector(".product-main-promo__zoom-pane");
+    let driftInstance = null;
+
+    initDriftZoom(document.querySelector(".js-promo-main .swiper-slide-active img"), driftPaneContainer);
+
+    galleryMain.on('slideChange', function() {
+      setTimeout(function() {
+
+        driftInstance.destroy();
+        initDriftZoom(document.querySelector(".js-promo-main .swiper-slide-active img"), driftPaneContainer);
+      
+      });
+    });
+
+    function initDriftZoom(driftTriggerElement, driftPaneContainer) {
+      if ( !driftTriggerElement ) return;
+      
+      driftInstance = new Drift(driftTriggerElement, {
+        paneContainer: driftPaneContainer,
+        hoverBoundingBox: true,
+        zoomFactor: 4,
+        inlinePane: false,
+        handleTouch: false
+      });
+    }
+
+  }
+  /* Drift Zoom */
+  /* ------------ Product-Main ------------ */
+
+  /* Navbar 3 max-width */
+  document.querySelectorAll('.main-nav__item--full-catalog .main-nav__catalog-item').forEach(function(item) {
+    let navWidthContainer = document.querySelector('.main-nav__catalog-list');
+
+    item.addEventListener('mouseenter', function(e) {
+      navWidthContainer.classList.add('active');
+    });
+
+    item.addEventListener('mouseleave', function(e) {
+      navWidthContainer.classList.remove('active');
+    });
+  });
+  /* Navbar 3 max-width */
 
 });
 

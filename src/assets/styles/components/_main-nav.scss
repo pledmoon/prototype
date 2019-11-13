@@ -312,6 +312,90 @@
       display: block;
     }
     /* Dropdown */
+
+    /* --------------- Catalog-Item-Full --------------- */
+    &__item--full-catalog {
+      position: static;
+
+      #{$self}__catalog-list {
+        background: transparent;
+        max-width: 21rem;
+
+        &.active {
+          max-width: 100%;
+        }
+      }
+
+      #{$self}__catalog-item {
+        max-width: calc(21rem - 2px);
+        background: $white;
+      }
+
+      #{$self}__subcatalog-list {
+        right: 0;
+        width: 100%;
+        padding-left: 22rem;
+        z-index: -1;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        columns: 20rem 4;
+      }
+
+      #{$self}__subcatalog-item {
+        font-weight: 600;
+
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      #{$self}__subcatalog-link {
+        padding-top: .3rem;
+        padding-bottom: .3rem;
+        display: inline-block;
+      }
+
+      #{$self}__subcatalog-item-icon {
+        display: none;
+      }
+
+      #{$self}__tertcatalog-list {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+        border: none;
+      }
+
+      #{$self}__tertcatalog-item {
+        font-weight: 400;
+      }
+
+      #{$self}__tertcatalog-link {
+        padding-top: .3rem;
+        padding-bottom: .3rem;
+        display: inline-block;
+
+        &:hover {
+          background: transparent;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    /* Interactive */
+    &__item--full-catalog {
+      #{$self}__catalog-item:hover #{$self}__subcatalog-list {
+        left: 0;
+      }
+      #{$self}__subcatalog-item:hover #{$self}__subcatalog-link {
+        background: transparent;
+        text-decoration: underline;
+      }
+    }
+    /* Interactive */
+    /* --------------- Catalog-Item-Full --------------- */
     /* --- Catalog Nav --- */
 
     /* --- Rows Navbar --- */
