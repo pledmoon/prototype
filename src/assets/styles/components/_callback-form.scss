@@ -42,4 +42,15 @@
   &__submit {
     width: auto;
   }
+
+  &__terms {
+    font-size: 1.2rem;
+    border-bottom: 1px dotted $color-primary;
+    transition: all .3s;
+    color: $color-primary;
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
+  }
 }

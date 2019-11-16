@@ -1,0 +1,86 @@
+.product-table {
+  $self: &;
+
+  width: 100%;
+  border: 1px solid $gray--medium;
+  transition: all .3s;
+  margin-bottom: 2rem;
+  table-layout: fixed;
+
+  &:hover {
+    border-color: $gray;
+  }
+
+  &__td {
+    padding: .5rem 1rem;
+
+    &:nth-child(1) {
+      width: 12rem;
+    }
+
+    &:nth-child(2) {
+      width: 20%;
+    }
+
+    &:nth-child(3) {
+      text-align: center;
+    }
+
+    &:nth-child(4) {
+      text-align: center;
+    }
+
+    &:nth-child(5) {}
+
+    &:nth-child(6) {
+      width: 22rem;
+    }
+  }
+
+  .product__img-wrap {}
+
+  .product__img {
+    position: static;
+    transform: none;
+    max-width: 7.5rem;
+    margin: 0 auto;
+    max-height: 9rem;
+  }
+
+  .product__params {
+    margin: 0;
+  }
+
+  .product__param-property {
+    display: block;
+    float: none;
+    margin: 0;
+  }
+
+  .product__param-value {}
+
+  .product__title {
+    max-width: 25rem;
+    font-size: 1.4rem;
+  }
+
+  .product__price {
+    white-space: normal;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .product__old-price {
+    display: block;
+  }
+
+  .product__add {
+    font-size: 1.4rem;
+    padding: .7rem 1rem;
+    margin: 0;
+  }
+
+  .product__controls {}
+
+  .product__control {}
+}

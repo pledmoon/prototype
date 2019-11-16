@@ -10,6 +10,7 @@
   &__item {
     border-bottom: 1px solid $gray--medium;
     font-size: 1.4rem;
+    position: relative;
 
     &:first-child {
       border-top: 1px solid $gray--medium;
@@ -41,5 +42,38 @@
     right: 1.5rem;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  &__sublist {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 2;
+    border: 1px solid $gray--medium;
+    min-width: 20rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s;
+
+    #{$self}__item:hover & {
+      left: 100%;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__subitem {}
+
+  &__sublink {
+    color: $dark;
+    display: block;
+    transition: all .3s;
+    padding: .5rem 1.5rem;
+    background: $white;
+
+    &:hover {
+      color: $color-primary;
+      background: $gray--light;
+    }
   }
 }

@@ -15,14 +15,8 @@ block sidebar
 block main
   h1.main-title #{pageHeading}
   include layouts/catalog-header-controls
-  include layouts/catalog-list-grid-main
+  include layouts/catalog-list-table
   include components/pagination
 
 block footer
   include layouts/footer
-  
-  //- Product Modals Fast View
-  include components/modal-wins/product-card-modal-1
-  include components/modal-wins/product-card-modal-2
-  include components/modal-wins/product-card-modal-3
-  include components/modal-wins/product-card-modal-4

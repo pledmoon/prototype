@@ -1,4 +1,6 @@
 .modal-win {
+  $self: &;
+
   position: fixed;
   left: -9999px;
   top: 0;
@@ -11,7 +13,7 @@
   overflow-x: hidden;
   overflow-y: auto;
 
-  .is-modal-opened & {
+  &.is-visible {
     visibility: visible;
     left: 0;
     opacity: 1;
@@ -31,6 +33,10 @@
 
     .is-modal-opened & {
       animation: .3s scaleIn forwards;
+    }
+
+    #{$self}--wide & {
+      max-width: 115rem;
     }
   }
 
@@ -53,17 +59,18 @@
     &:hover &-icon {
       fill: $dark;
     }
-  }
 
-  &__close-icon {
-    fill: $gray;
-    max-width: 1.6rem;
-    max-height: 1.6rem;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: all .3s;
+    &-icon {
+      fill: $gray;
+      max-width: 1.6rem;
+      max-height: 1.6rem;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all .3s;
+      cursor: pointer;
+    }
   }
 }
 

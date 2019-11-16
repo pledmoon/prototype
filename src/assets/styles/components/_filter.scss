@@ -6,31 +6,59 @@
 
   &__section {
     border-top: 1px solid $gray--medium;
-    padding: 2rem 0;
     font-size: 1.4rem;
-
-    &.is-hidden {
-      display: none;
-    }
   }
 
   &__title {
     font-size: 1.4rem;
     color: $color-primary;
-    margin-bottom: 1.5rem;
+    padding: 2rem 2rem 2rem 0;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &::after {
+      content: "\f078";
+      position: absolute;
+      right: 0;
+      top: 2rem;
+      font-family: fa;
+      font-size: 1.4rem;
+      transition: all .3s;
+    }
+
+    .is-hidden &::after {
+      transform: rotate(180deg);
+    }
 
     & span {
-      color: #d4d4d4;
+      color: $dark--medium;
     }
   }
 
   &__body {
+    padding-bottom: 2rem;
+
     > *:not(:last-child) {
       padding: 0 0 1.5rem;
+    }
+
+    .is-hidden & {
+      display: none;
     }
   }
 
   &__option {
+    &.is-field-off {
+      display: none;
+    }
+
+    .is-fields-on &.is-field-off {
+      display: block;
+    }
+
     .checkbox-label__main {
       line-height: 1.4rem;
       min-height: 1.8rem;

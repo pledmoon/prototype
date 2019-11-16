@@ -121,10 +121,14 @@ document.addEventListener('DOMContentLoaded', function() {
   /* ------------ Main Carousel ------------ */
 
   /* ------------ Modal-Win ------------ */
+  let modalWinId;
+
   document.addEventListener('click', function(e) {
     let trigger = e.target.closest('[data-modal-win-trigger]');
 
     if ( !trigger ) return;
+
+    modalWinId = trigger.dataset.modalWinTrigger;
 
     let body = document.body;
 
@@ -132,6 +136,18 @@ document.addEventListener('DOMContentLoaded', function() {
       addOverlay();
       body.classList.add('is-modal-opened');
       body.style.paddingRight = scrollWidth() + 'px';
+
+      document.querySelector('[data-modal-win="' + modalWinId + '"]').classList.add('is-visible');
+
+      /* Carousel Inside Modal */
+      if (document.querySelector('[data-modal-win="' + modalWinId + '"]').querySelector('.swiper-container')) {
+        initProductGallery(
+          document.querySelector('[data-modal-win="' + modalWinId + '"] .product-main-promo__main .swiper-container'), 
+          document.querySelector('[data-modal-win="' + modalWinId + '"] .product-main-promo__thumbs .swiper-container'),
+          modalWinId
+        );
+      }
+      /* Carousel Inside Modal */
 
       setTimeout(function() {
         document.addEventListener('click', clickOutsideModalWin);
@@ -150,6 +166,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.remove('is-modal-opened');
     document.body.style.paddingRight = '';
 
+    document.querySelector('[data-modal-win="' + modalWinId + '"]').classList.remove('is-visible');
+
     document.removeEventListener('click', clickOutsideModalWin);
   });
 
@@ -161,6 +179,8 @@ document.addEventListener('DOMContentLoaded', function() {
     removeOverlay();
     document.body.classList.remove('is-modal-opened');
     document.body.style.paddingRight = '';
+
+    document.querySelector('[data-modal-win="' + modalWinId + '"]').classList.remove('is-visible');
 
     document.removeEventListener('click', clickOutsideModalWin);
   }
@@ -471,23 +491,34 @@ document.addEventListener('DOMContentLoaded', function() {
   /* Filter-Slider */
 
   /* Show more */
-  let filterMoreToggle = document.querySelector('.filter__more-options');
+  let filterHeadings = document.querySelectorAll('.filter__title');
 
-  if (filterMoreToggle) {
+  filterHeadings.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      let parent = e.target.closest('.filter__section');
 
-    filterMoreToggle.addEventListener('click', function(e) {
-      document.querySelectorAll('.filter__section').forEach(function(item) {
-        item.classList.remove('is-hidden');
-      });
+      parent.classList.toggle('is-hidden');
+    });
+  });
+
+  let filterMoreToggles = document.querySelectorAll('.filter__more-options');
+
+  filterMoreToggles.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      let parent = e.target.closest('.filter__section');
+      let textNode = this.children[0];
+      
+      if ( parent.classList.contains('is-fields-on') ) {
+        parent.classList.remove('is-fields-on');
+        textNode.innerHTML = 'Показать все';
+      } else {
+        parent.classList.add('is-fields-on');
+        textNode.innerHTML = 'Скрыть';
+      }
 
       e.preventDefault();
-
-      setTimeout(() => {
-        this.remove();
-      });
     });
-
-  }
+  });
   /* Show more */
 
   /* Filter-Mobile */
@@ -615,7 +646,7 @@ document.addEventListener('DOMContentLoaded', function() {
   /* Drift Zoom */
   /* ------------ Product-Main ------------ */
 
-  /* Navbar 3 max-width */
+  /* ------------ Navbar 3 max-width ------------ */
   document.querySelectorAll('.main-nav__item--full-catalog .main-nav__catalog-item').forEach(function(item) {
     let navWidthContainer = document.querySelector('.main-nav__catalog-list');
 
@@ -627,7 +658,42 @@ document.addEventListener('DOMContentLoaded', function() {
       navWidthContainer.classList.remove('active');
     });
   });
-  /* Navbar 3 max-width */
+  /* ------------ Navbar 3 max-width ------------ */
+
+  /* ------------ Modal Cards ------------ */
+  function initProductGallery(mainContainer, thumbs, modalWinId) {
+    let galleryThumbs = new Swiper(thumbs, {
+      direction: 'vertical',
+      slidesPerView: 5,
+      spaceBetween: 5,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+
+      navigation: {
+          prevEl: '[data-modal-win="' + modalWinId + '"] .product-main-promo__th-prev',
+          nextEl: '[data-modal-win="' + modalWinId + '"] .product-main-promo__th-next'
+      }
+    });
+
+    let galleryMain = new Swiper(mainContainer, {
+        spaceBetween: 10,
+        // effect: 'coverflow',
+
+        pagination: {
+          el: '[data-modal-win="' + modalWinId + '"] .product-main-promo__pagination',
+          clickable: true
+        },
+
+        breakpoints: {
+            768: {}
+        },
+
+        thumbs: {
+            swiper: galleryThumbs
+        }
+    });
+  }
+  /* ------------ Modal Cards ------------ */
 
 });
 

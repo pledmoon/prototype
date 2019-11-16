@@ -1,0 +1,137 @@
+section.tiny-product-card
+
+  header.tiny-product-card__header
+    h2.tiny-product-card__heading Четвертый заголовок
+  
+  .tiny-product-card__body
+
+    .row
+
+      .col-sm-4
+
+        .product-main-promo
+
+          .product-main-promo__main
+            .swiper-container
+              .swiper-wrapper
+
+                .swiper-slide
+                  a.product-main-promo__img-wrap(href="assets/images/content/product-main-promo-zoom-3.jpeg")
+                    img.product-main-promo__img.img-responsive(src="assets/images/content/product-main-promo-slider-3.jpeg" alt="Product")
+                .swiper-slide
+                  a.product-main-promo__img-wrap(href="assets/images/content/product-main-promo-zoom-1.jpeg")
+                    img.product-main-promo__img.img-responsive(src="assets/images/content/product-main-promo-slider-1.jpeg" alt="Product")
+                .swiper-slide
+                  a.product-main-promo__img-wrap(href="assets/images/content/product-main-promo-zoom-7.jpeg")
+                    img.product-main-promo__img.img-responsive(src="assets/images/content/product-main-promo-slider-7.jpeg" alt="Product")
+                .swiper-slide
+                  a.product-main-promo__img-wrap(href="assets/images/content/product-main-promo-zoom-6.jpeg")
+                    img.product-main-promo__img.img-responsive(src="assets/images/content/product-main-promo-slider-6.jpeg" alt="Product")
+                .swiper-slide
+                  a.product-main-promo__img-wrap(href="assets/images/content/product-main-promo-zoom-4.jpeg")
+                    img.product-main-promo__img.img-responsive(src="assets/images/content/product-main-promo-slider-4.jpeg" alt="Product")
+                .swiper-slide
+                  a.product-main-promo__img-wrap(href="assets/images/content/product-main-promo-zoom-5.jpeg")
+                    img.product-main-promo__img.img-responsive(src="assets/images/content/product-main-promo-slider-5.jpeg" alt="Product")
+                .swiper-slide
+                  a.product-main-promo__img-wrap(href="assets/images/content/product-main-promo-zoom-2.jpeg")
+                    img.product-main-promo__img.img-responsive(src="assets/images/content/product-main-promo-slider-2.jpeg" alt="Product")
+
+            .product-main-promo__pagination
+
+          .product-main-promo__thumbs
+            .swiper-container
+              .swiper-wrapper
+
+                .swiper-slide
+                  span.product-main-promo__thumb
+                    img.product-main-promo__thumb-img.img-responsive(src="assets/images/content/product-main-promo-thumb-3.jpeg" alt="Product Thumb")
+                .swiper-slide
+                  span.product-main-promo__thumb
+                    img.product-main-promo__thumb-img.img-responsive(src="assets/images/content/product-main-promo-thumb-1.jpeg" alt="Product Thumb")
+                .swiper-slide
+                  span.product-main-promo__thumb
+                    img.product-main-promo__thumb-img.img-responsive(src="assets/images/content/product-main-promo-thumb-7.jpeg" alt="Product Thumb")
+                .swiper-slide
+                  span.product-main-promo__thumb
+                    img.product-main-promo__thumb-img.img-responsive(src="assets/images/content/product-main-promo-thumb-6.jpeg" alt="Product Thumb")
+                .swiper-slide
+                  span.product-main-promo__thumb
+                    img.product-main-promo__thumb-img.img-responsive(src="assets/images/content/product-main-promo-thumb-4.jpeg" alt="Product Thumb")
+                .swiper-slide
+                  span.product-main-promo__thumb
+                    img.product-main-promo__thumb-img.img-responsive(src="assets/images/content/product-main-promo-thumb-5.jpeg" alt="Product Thumb")
+                .swiper-slide
+                  span.product-main-promo__thumb
+                    img.product-main-promo__thumb-img.img-responsive(src="assets/images/content/product-main-promo-thumb-2.jpeg" alt="Product Thumb")
+
+            .product-main-promo__th-prev
+              +icon('chevron-up', 'product-main-promo__th-prev-icon')
+            .product-main-promo__th-next
+              +icon('chevron-down', 'product-main-promo__th-next-icon')
+
+      .col-sm-4
+
+        .product-main-info
+
+          .product-main-info__preview
+            .product-main-info__brand
+              a.product-main-info__brand-link(href="#")
+                img.product-main-info__brand-img.img-responsive(src="assets/images/content/samsung.png")
+            .product-main-info__review
+              .product-main-info__review-rate.product-main-info__review-rate--good 4.5
+              a.product-main-info__review-rate-opinions(href="#") 150 отзывов
+
+          span.product-main-info__articul Артикул: SVN 555-355-65h
+
+          .product-main-info__about
+            .product-main-info__heading Описание товара:
+            p.product-main-info__desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vitae aliquid ex necessitatibus repellat a illo fuga dolore aperiam, totam tempore nisi neque delectus labore!
+
+          .product-main-info__params
+            .product-main-info__heading Характеристики:
+            .manual-params
+              dl.manual-params__param
+                dt.manual-params__value #[span.manual-params__text Коллекция продукции]
+                dd.manual-params__property #[span.manual-params__text Процессоры Intel Core i7]
+              dl.manual-params__param
+                dt.manual-params__value #[span.manual-params__text Кодовое название]
+                dd.manual-params__property #[span.manual-params__text Coffee Lake]
+              dl.manual-params__param
+                dt.manual-params__value #[span.manual-params__text Количество ядер]
+                dd.manual-params__property #[span.manual-params__text 8]
+              dl.manual-params__param
+                dt.manual-params__value #[span.manual-params__text Тактовая частота]
+                dd.manual-params__property #[span.manual-params__text 3,60 GHz]
+            a.product-main-info__full-params(href="#") 
+              +icon('chevron-down', 'product-main-info__full-params-icon')
+              | Все характеристики
+
+      .col-sm-4  
+
+        .product-controls
+      
+          .product-controls__price 516 950 руб.
+          small.product-controls__old-price 918 470 руб.
+
+          ul.product-controls__stickers
+            li.product-controls__sticker
+              span.product-controls__sticker-discount -80%
+            li.product-controls__sticker
+              span.product-controls__sticker-discount-value Экономия: 141 720 руб.
+          
+          .product-controls__meta
+            .product-controls__instock
+              +icon('check', 'product-controls__instock-icon')
+              | Много
+            a.product-controls__offers(href="#")
+              +icon('wallet', 'product-controls__offers-icon')
+              | Нашли дешевле?
+
+          .product-controls__footer
+            .product-controls__footer-control
+              include ../counter
+            .product-controls__footer-control
+              a.product-controls__add.btn.btn--main(href="#") В корзину
+            .product-controls__footer-control
+              a.product-controls__fast-buy.btn.btn--reverse(href="#") Купить в 1 клик

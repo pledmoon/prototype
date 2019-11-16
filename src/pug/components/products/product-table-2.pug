@@ -1,0 +1,50 @@
+table.product-table
+
+  tbody.product-table__tbody
+
+    tr.product-table__tr
+
+      td.product-table__td
+
+        a.product__img-wrap(href="#")
+          img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="Product Img")
+
+      td.product-table__td
+
+        .product__title #[a.product__title-link(href="#") Заголовок товара]
+      
+      td.product-table__td
+
+        dl.product__params
+          dt.product__param-property Артикул:
+          dd.product__param-value 225-856-kg3
+
+      td.product-table__td
+
+        .product__price 3 000 р. #[small.product__old-price 1 000 р.]
+
+      td.product-table__td
+
+        .product__add.btn.btn--main
+          +icon('shopping-cart', 'product__add-icon')
+          | Купить
+
+      td.product-table__td
+
+        .product__controls
+          .product__control 
+            a.product__fast-buy(href="#") 
+              +icon('shopping-cart', 'product__fast-buy-icon')
+              | В 1 клик
+          .product__control 
+            a.product__add-favourite(href="#")
+              +icon('heart', 'product__add-favourite-icon')
+              | В избранное
+          .product__control 
+            a.product__action-compare(href="#")
+              +icon('compare', 'product__action-compare-icon')
+              | Сравнить
+          .product__control
+            .product__instock
+              +icon('tick', 'product__instock-icon')
+              | В наличии
