@@ -1,10 +1,6 @@
 .tabs {
   $self: &;
 
-  @media (min-width: $md) {
-    margin: 0 0 2rem;
-  }
-
   /* Tabs Items */
   &__header {
     display: none;
@@ -117,6 +113,10 @@
     padding: 1.5rem;
     margin: 0 -15px;
     cursor: pointer;
+
+    #{$self}__tab-pane:last-child & {
+      border-bottom: 1px solid $gray--medium;
+    }
 
     @media (min-width: $md) {
       display: none;

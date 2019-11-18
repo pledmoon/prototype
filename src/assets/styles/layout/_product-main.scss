@@ -1,13 +1,22 @@
 .product-main {
   display: flex;
+  flex-wrap: wrap;
 
   &__details {
     flex-grow: 1;
     min-width: 20rem;
+    flex-basis: 100%;
 
     @media (min-width: $md) {
       padding-left: 2rem;
+      flex-basis: 20rem;
     }
+  }
+
+  .product__stickers {
+    left: auto;
+    right: 0;
+    z-index: 3;
   }
 }
 
@@ -108,6 +117,13 @@
 .product-controls {
   $self: &;
 
+  max-width: 40rem;
+  margin: 0 auto 2.5rem;
+
+  @media (min-width: $md) {
+    margin: 0 0 2.5rem;
+  }
+
   &__price {
     font-size: 2.6rem;
     font-weight: 700;
@@ -203,15 +219,19 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 -.5rem;
+    max-width: 40rem;
 
-    &-control:not(:last-child) {
-      flex-basis: 50%;
-      max-width: 50%;
-      margin-bottom: 1rem;
+    &-control:nth-child(2) {
+      flex-grow: 1;
+    }
+
+    &-control:last-child {
+      margin-top: 1rem;
+      flex-basis: 100%;
+      max-width: 100%;
     }
 
     &-control {
-      flex-grow: 1;
       padding: 0 .5rem;
     }
   }
@@ -224,6 +244,7 @@
 
 .product-heading {
   padding-right: 12rem;
+  text-align: left;
 }
 
 .product-tools {
@@ -257,9 +278,10 @@
 
   &__tooltip {
     position: absolute;
-    left: 50%;
+    left: -9999px;
     top: 100%;
-    min-width: 21rem;
+    min-width: 18rem;
+    white-space: nowrap;
     margin-top: .5rem;
     transform: translateX(-50%);
     border: 1px solid $gray--medium;
@@ -267,7 +289,7 @@
     padding: .5rem 1rem;
     opacity: 0;
     visibility: hidden;
-    transition: all .3s;
+    transition: opacity .3s;
     background: $white;
     z-index: 3;
     text-align: center;
@@ -276,6 +298,7 @@
     #{$self}__item:hover & {
       visibility: visible;
       opacity: 1;
+      left: 50%;
     }
 
     &-title {

@@ -10,16 +10,20 @@
 
   header.header
 
+    button.main-nav-trigger
+      +icon('menu', 'main-nav-trigger-icon')
+
     include ../components/logo-2
 
     .header__search-form
       include ../components/search-form
-    .header__choose__location
+    .header__choose__location.d-none.d-md-block
       include ../components/choose-location
-    .header__header-contacts
+    .header__header-contacts.d-none.d-md-block
       include ../components/header-contacts
 
     .header-utilities
+      include ../components/header-utility/header-utility-0
       include ../components/header-utility/header-utility-1
       include ../components/header-utility/header-utility-2
       include ../components/header-utility/header-utility-3

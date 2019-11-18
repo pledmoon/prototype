@@ -1,0 +1,29 @@
+.tiny-product-card {
+  &__header {}
+
+  &__heading {
+    font-weight: 300;
+  }
+
+  &__body {
+    .product-main-info {
+      height: 45rem;
+      overflow: hidden;
+      position: relative;
+
+      &__body {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding-right: 2.5rem;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 2.5rem;
+      }
+    }
+
+    .product-main-promo__img-wrap {
+      cursor: default;
+    }
+  }
+}

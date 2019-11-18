@@ -2,6 +2,7 @@
   $self: &;
 
   display: flex;
+  align-items: center;
 
   &__img-wrap {
     padding: .3rem;
@@ -84,7 +85,7 @@
     line-height: 1.2;
     margin: 0 0 .7rem;
 
-    @media (max-width: $md--mw) {
+    @media (max-width: $sm--mw) {
       display: none;
     }
   }

@@ -22,6 +22,10 @@ h6,
   font-family: $headings-fonts-stack;
   line-height: $headings-line-height;
   color: $headings-color;
+
+  @media (max-width: $sm--mw) {
+    text-align: center;
+  }
 }
 
 h1,

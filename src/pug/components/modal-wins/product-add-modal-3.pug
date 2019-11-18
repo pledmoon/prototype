@@ -1,0 +1,24 @@
+.modal-win(data-modal-win="add249")
+
+  .modal-win__body
+    
+    button.modal-win__close
+      +icon('close', 'modal-win__close-icon')
+    
+    .product-added
+
+      .h3.product-added__heading Товар добавлен в корзину
+
+      article.product
+
+        header.product__header
+          a.product__img-wrap(href="#")
+            img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="Product Img")
+
+        .product__body
+          .product__title #[a.product__title-link(href="#") Заголовок товара длинный]
+          .product__price 125 000 р
+
+      footer.product-added__footer
+        a.btn.btn--reverse(href="#") Продолжить покупки
+        a.btn.btn--main(href="#") Перейти в корзину

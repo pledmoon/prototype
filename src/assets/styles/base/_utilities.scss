@@ -27,5 +27,13 @@
 .mb-big {
   margin-bottom: 8rem;
 }
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
 /* Misc Global Classes
 ------------------------------------------ */

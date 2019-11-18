@@ -34,9 +34,13 @@
 @import "layout/inner-page-layout";
 @import "layout/sidebar";
 @import "layout/catalog-header-controls";
-@import "layout/catalog-main";
+@import "layout/catalog-list-main";
 @import "layout/catalog-list";
+@import "layout/catalog-list-table";
 @import "layout/product-main";
+@import "layout/service-cards-section";
+@import "layout/news-section";
+@import "layout/product-card-modal";
 
 // 5.Components
 @import "components/buttons";
@@ -54,7 +58,7 @@
 @import "components/soc";
 @import "components/item";
 @import "components/counter";
-@import "components/service";
+@import "components/service-card";
 @import "components/news";
 @import "components/breadcrumbs";
 @import "components/pagination";

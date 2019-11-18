@@ -2,8 +2,21 @@
   display: flex;
   flex-flow: row wrap;
 
-  @media (min-width: $lg) {
-    &__item {
+  &__item {
+    flex-basis: 100%;
+    max-width: 100%;
+
+    @media (min-width: 420px) {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+
+    @media (min-width: $sm) {
+      flex-basis: 33.333%;
+      max-width: 33.333%;
+    }
+
+    @media (min-width: $lg) {
       flex-basis: 25%;
       max-width: 25%;
     }

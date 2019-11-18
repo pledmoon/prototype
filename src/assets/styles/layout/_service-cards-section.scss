@@ -1,0 +1,35 @@
+.service-cards-section {
+  .row {
+    justify-content: center;
+  }
+
+  [class*="col-"]:not(:first-child) {
+    margin-top: 2rem;
+  }
+
+  @media (min-width: $sm) {
+    .row [class*="col-"] {
+      margin: 0;
+    }
+
+    [class*="col-"]:not(:nth-child(-n+2)) {
+      margin-top: 2rem;
+    }
+  }
+
+  @media (min-width: $md) {
+    .row [class*="col-"] {
+      margin: 0;
+    }
+
+    [class*="col-"]:not(:nth-child(-n+3)) {
+      margin-top: 2rem;
+    }
+  }
+
+  @media (min-width: $lg) {
+    .row [class*="col-"] {
+      margin: 0;
+    }
+  }
+}

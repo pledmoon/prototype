@@ -70,3 +70,13 @@
     fill: $dark--medium;
   }
 }
+
+.items-carousel {
+  .product {
+    height: auto;
+  }
+
+  .swiper-slide:not(.swiper-slide-active) .product {
+    margin-left: -1px;
+  }
+}

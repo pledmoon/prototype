@@ -24,11 +24,17 @@
 
   &__bottom {
     color: $gray;
+    text-align: center;
     padding-top: 2rem;
+    padding-bottom: 2rem;
+    
+    @media (min-width: $md) {
+      padding-bottom: 0;
+    }
   }
 
   .logo {
-    margin: 0 0 1rem;
+    margin: 0 auto 1rem;
   }
 
   .soc {

@@ -1,6 +1,7 @@
 .header-utilities {
   display: flex;
   align-self: stretch;
+  margin-left: auto;
 }
 
 .header-utility {
@@ -24,18 +25,38 @@
   }
 
   &__link {
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     display: flex;
     height: 100%;
     align-items: center;
     color: $black;
+
+    @media (min-width: $md) {
+      padding: 1rem 2rem;
+    }
+
+    @media (max-width: 379px) {
+      padding: 2rem 1.3rem;
+    }
 
     &-helper {
       position: relative;
     }
   }
 
-  &__icon {}
+  &__icon {
+    fill: $dark;
+
+    @media (min-width: $md) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    @media (max-width: 479px) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
 
   &__count {
     width: 2rem;
@@ -56,6 +77,11 @@
   &__desc {
     font-size: 1.2rem;
     margin-left: 1.5rem;
+    display: none;
+
+    @media (min-width: $lg) {
+      display: block;
+    }
   }
 
   &__price {

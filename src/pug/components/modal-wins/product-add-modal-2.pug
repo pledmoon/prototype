@@ -1,0 +1,24 @@
+.modal-win(data-modal-win="add267")
+
+  .modal-win__body
+    
+    button.modal-win__close
+      +icon('close', 'modal-win__close-icon')
+    
+    .product-added
+
+      .h3.product-added__heading Товар добавлен в корзину
+
+      article.product
+
+        header.product__header
+          a.product__img-wrap(href="#")
+            img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="Product Img")
+
+        .product__body
+          .product__title #[a.product__title-link(href="#") Заголовок товара длинный]
+          .product__price 125 000 р
+
+      footer.product-added__footer
+        a.btn.btn--reverse(href="#") Продолжить покупки
+        a.btn.btn--main(href="#") Перейти в корзину

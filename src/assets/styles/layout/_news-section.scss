@@ -1,0 +1,15 @@
+.news-section {
+  [class*="col-"]:not(:first-child) {
+    margin-top: 2rem;
+  }
+
+  @media (min-width: $md) {
+    .row [class*="col-"] {
+      margin: 0;
+    }
+
+    [class*="col-"]:not(:nth-child(-n+2)) {
+      margin-top: 2rem;
+    }
+  }
+}

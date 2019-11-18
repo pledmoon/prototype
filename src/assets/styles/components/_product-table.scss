@@ -2,10 +2,11 @@
   $self: &;
 
   width: 100%;
-  border: 1px solid $gray--medium;
   transition: all .3s;
-  margin-bottom: 2rem;
-  table-layout: fixed;
+
+  @media (min-width: $lg) {
+    table-layout: fixed;
+  }
 
   &:hover {
     border-color: $gray;
@@ -13,6 +14,7 @@
 
   &__td {
     padding: .5rem 1rem;
+    min-width: 11rem;
 
     &:nth-child(1) {
       width: 12rem;

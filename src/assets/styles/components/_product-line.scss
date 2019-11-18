@@ -2,12 +2,25 @@
   $self: &;
   display: flex;
   border: 1px solid $gray--medium;
+  flex-wrap: wrap;
 
   &__header {
-    flex-basis: 25%;
-    max-width: 25%;
     position: relative;
     padding: 1.5rem;
+    min-height: 15rem;
+
+    flex-basis: 100%;
+    max-width: 100%;
+
+    @media (min-width: $sm) {
+      flex-basis: 30%;
+      max-width: 30%;
+    }
+
+    @media (min-width: $md) {
+      flex-basis: 25%;
+      max-width: 25%;
+    }
 
     &:hover {
       .product__view-btn {
@@ -19,16 +32,32 @@
 
   &__body {
     flex: none;
-    flex-basis: 50%;
-    max-width: 50%;
     padding: 1.5rem;
+
+    flex-basis: 100%;
+    max-width: 100%;
+
+    @media (min-width: $sm) {
+      flex-basis: 70%;
+      max-width: 70%;
+    }
+
+    @media (min-width: $md) {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
   }
 
   &__footer {
-    flex-basis: 25%;
-    max-width: 25%;
+    flex-basis: 100%;
+    max-width: 100%;
     border-left: 1px solid $gray--medium;
     padding: 1.5rem;
+
+    @media (min-width: $md) {
+      flex-basis: 25%;
+      max-width: 25%;
+    }
   }
 
   /* Line Mods */
@@ -40,6 +69,10 @@
 
   .product__title-link:hover {
     color: $color-primary;
+  }
+
+  .product__img {
+    max-height: 90%;
   }
 
   .counter {

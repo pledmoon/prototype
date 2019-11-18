@@ -157,18 +157,20 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
   });
 
-  document.querySelector('.modal-win__close').addEventListener('click', function(e) {
-    let target = e.target.closest('.modal-win__close');
+  document.querySelectorAll('.modal-win__close').forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      let target = e.target.closest('.modal-win__close');
 
-    if ( !target ) return;
+      if ( !target ) return;
 
-    removeOverlay();
-    document.body.classList.remove('is-modal-opened');
-    document.body.style.paddingRight = '';
+      removeOverlay();
+      document.body.classList.remove('is-modal-opened');
+      document.body.style.paddingRight = '';
 
-    document.querySelector('[data-modal-win="' + modalWinId + '"]').classList.remove('is-visible');
+      document.querySelector('[data-modal-win="' + modalWinId + '"]').classList.remove('is-visible');
 
-    document.removeEventListener('click', clickOutsideModalWin);
+      document.removeEventListener('click', clickOutsideModalWin);
+    });
   });
 
   function clickOutsideModalWin(e) {
@@ -246,12 +248,18 @@ document.addEventListener('DOMContentLoaded', function() {
     document.removeEventListener('click', clickOutsideNavbar);
   }
 
-  document.querySelector('.main-nav__close-nav-wrap').addEventListener('click', function() {
-    document.body.classList.remove('is-navbar-opened');
-    document.body.style.paddingRight = '';
-    removeOverlay();
-    document.removeEventListener('click', clickOutsideNavbar);
-  });
+  /* Close Nav Button */
+  let toggleNavButton = document.querySelector('.main-nav__close-nav')
+
+  if (toggleNavButton) {
+    toggleNavButton.addEventListener('click', function() {
+      document.body.classList.remove('is-navbar-opened');
+      document.body.style.paddingRight = '';
+      removeOverlay();
+      document.removeEventListener('click', clickOutsideNavbar);
+    });
+  }
+  /* Close Nav Button */
 
   /* Toggles Inside */
   // create toggles
@@ -325,9 +333,6 @@ document.addEventListener('DOMContentLoaded', function() {
         480: {
           slidesPerView: 2
         },
-        576: {
-          //slidesPerView: 3
-        },
         768: {
           slidesPerView: 3
         },
@@ -343,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let opts2 = {
     loop: true,
     slidesPerView: 1,
-    spaceBetween: 10,
+    // spaceBetween: 10,
 
     pagination: {
       el: '.default-pagination',
@@ -358,9 +363,6 @@ document.addEventListener('DOMContentLoaded', function() {
     breakpoints: {
         480: {
           slidesPerView: 2
-        },
-        576: {
-          //slidesPerView: 3
         },
         768: {
           slidesPerView: 3
@@ -456,6 +458,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   /* Tabs Accordeon */
+
+  /* Go To Full Params Tab */
+  let toggle = document.querySelector('.product-main-info__full-params');
+
+  if (toggle) {
+    toggle.addEventListener('click', function(e) {
+      let hash = this.getAttribute('href');
+      console.log(hash);
+      let hashTab = document.querySelector('.tabs__link[href="' + hash + '"]');
+
+      if (hashTab) {
+        let ev = new Event('click');
+        hashTab.dispatchEvent(ev);
+      }
+
+      e.preventDefault();
+    });
+  }
+  /* Go To Full Params Tab */
   /* ------------ Tabs ------------ */
 
   /* ------------ Filter ------------ */
@@ -694,6 +715,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   /* ------------ Modal Cards ------------ */
+
+  /* ------------ Mobile Search Toggle ------------ */
+  let searchBarToggle = document.querySelector('.js-toggle-searchbar')
+
+  if (searchBarToggle) {
+    searchBarToggle.addEventListener('click', function(e) {
+      let parent = this.closest('.header');
+
+      parent.classList.toggle('is-searchbar-opened');
+
+      e.preventDefault();
+    });
+  }
+  /* ------------ Mobile Search Toggle ------------ */
 
 });
 

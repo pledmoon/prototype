@@ -1,41 +1,5 @@
 .tabs-section.mb-medium
 
-  .h2 Табы обычные
-
-  .tabs
-
-    .tabs__header
-
-      ul.tabs__list
-        li.tabs__item
-          a.tabs__link.is-active(href="#") Вкладка
-        li.tabs__item
-          a.tabs__link(href="#") Раздел
-        li.tabs__item
-          a.tabs__link(href="#") Описание
-        li.tabs__item
-          a.tabs__link(href="#") Обзор
-
-    .tabs__panes
-
-      .tabs__tab-pane.is-active
-        .h3 Вкладка
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
-
-      .tabs__tab-pane
-        .h3 Раздел
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
-
-      .tabs__tab-pane
-        .h3 Описание
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
-
-      .tabs__tab-pane
-        .h3 Обзор
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
-
-.tabs-section.mb-medium
-
   .h2 Табы с хэшем
 
   .tabs
@@ -51,27 +15,29 @@
           a.tabs__link(href="#section-3") Описание
         li.tabs__item
           a.tabs__link(href="#section-4") Обзор
-        //- li.tabs__item
-        //-   a.tabs__link(href="#section-5") Карусель
 
     .tabs__panes
 
-      .tabs__tab-pane.is-active#section-1
-        .h3 Вкладка
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+      .tabs__tab-pane.is-active.is-opened
+        .tabs__accordeon-toggle Вкладка
+        .tabs__accordeon-body
+          .h3 Вкладка
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
 
-      .tabs__tab-pane#section-2
-        .h3 Раздел
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+      .tabs__tab-pane
+        .tabs__accordeon-toggle Раздел
+        .tabs__accordeon-body
+          .h3 Раздел
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
 
-      .tabs__tab-pane#section-3
-        .h3 Описание
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+      .tabs__tab-pane
+        .tabs__accordeon-toggle Описание
+        .tabs__accordeon-body
+          .h3 Описание
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
 
-      .tabs__tab-pane#section-4
-        .h3 Обзор
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
-
-      //- .tabs__tab-pane#section-5
-      //-   .h3 Карусель
-      //-   include carousels/items-carousel-1
+      .tabs__tab-pane
+        .tabs__accordeon-toggle Обзор
+        .tabs__accordeon-body
+          .h3 Обзор
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
