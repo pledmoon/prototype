@@ -1,6 +1,7 @@
 //- button.main-nav-trigger
 //-   +icon('menu', 'main-nav-trigger-icon')
 
+// main-nav
 nav.main-nav
 
   button.main-nav__close-nav Закрыть меню
@@ -8,7 +9,7 @@ nav.main-nav
 
   ul.main-nav__container
     
-    li.main-nav__item.main-nav__item--catalog.is-catalog-opened
+    li.main-nav__item.main-nav__item--catalog
       a.main-nav__link(href="#") Каталог товаров
         +icon('chevron-down', 'main-nav__item-icon')
       ul.main-nav__catalog-list
@@ -18,6 +19,9 @@ nav.main-nav
         li.main-nav__catalog-item
           a.main-nav__catalog-link(href="#") Новый вид каталога
             +icon('chevron-right', 'main-nav__catalog-item-icon')
+          .main-nav__dropdown-banner
+            a.main-nav__dropdown-banner-link(href="#")
+              img.main-nav__dropdown-banner-img(src="https://dummyimage.com/210x610/cccccc/fff.jpg" alt="Banner")
           ul.main-nav__subcatalog-list
             li.main-nav__subcatalog-item
               a.main-nav__subcatalog-link(href="#") Подуровень
@@ -395,3 +399,4 @@ nav.main-nav
     
     li.main-nav__item
       a.main-nav__link(href="#") Еще пункт
+// /main-nav

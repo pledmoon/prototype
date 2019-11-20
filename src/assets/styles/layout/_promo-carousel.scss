@@ -51,7 +51,7 @@
     &::after {
       content: "";
       width: 6.5rem;
-      border-top: 3px solid $color-primary;
+      border-top: 3px solid $primary-color;
       position: absolute;
       left: 0;
       bottom: 0;
@@ -107,7 +107,7 @@
     }
 
     &:hover #{$self}__move-icon {
-      fill: $color-primary;
+      fill: $primary-color;
     }
   }
 

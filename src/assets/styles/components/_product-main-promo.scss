@@ -59,7 +59,7 @@
       vertical-align: middle;
 
       &-active {
-        border: .5rem solid $color-primary;
+        border: .5rem solid $primary-color;
       }
     }
   }
@@ -121,7 +121,7 @@
     outline: none;
 
     &:hover &-icon {
-      fill: $color-primary;
+      fill: $primary-color;
     }
 
     &-icon {
@@ -146,7 +146,7 @@
   }
 
   .swiper-slide-thumb-active &__thumb {
-    border-color: $color-primary;
+    border-color: $primary-color;
     border-width: 2px;
   }
   /* Thumbs Carousel */

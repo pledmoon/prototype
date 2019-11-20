@@ -12,29 +12,29 @@ html(lang="ru-RU")
 
     meta(name="viewport" content="width=device-width,initial-scale=1")
     meta(name="keywords" content="")
+      
+    link(rel="icon" href="images/favicon.ico")
 
     link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap&subset=cyrillic" rel="stylesheet")
     link(rel="stylesheet" type="text/css" href="assets/css/styles.min.css")
 
   body(class=pageClass)
 
-    block header
-
-    .main-nav-section
-      .container-fluid
-        include ../components/main-nav/main-nav
+    include ../layouts/headers/header-inner
+    include ../components/navbars/main-nav
 
     .container-fluid
 
-      include ../components/breadcrumbs
+      if breadcrumbs
+        include ../components/breadcrumbs
 
       .primary-content
 
-          .sidebar-area
-            block sidebar
-          
-          main.main-content
-            block main
+        .sidebar-area
+          block sidebar
+        
+        main.main-content
+          block main
 
     block footer
 

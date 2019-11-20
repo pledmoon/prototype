@@ -6,6 +6,38 @@
   }
 }
 
+@mixin absolute-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-vertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+@mixin hide-element {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin truncate-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin size($val) {
+  width: $val;
+  height: $val;
+}
+
 /// Responsive breakpoint manager
 /// @access public
 /// @param {String} $breakpoint - Breakpoint

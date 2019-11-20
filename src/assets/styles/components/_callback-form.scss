@@ -28,7 +28,7 @@
   }
 
   &__label-required {
-    color: $color-primary;
+    color: $primary-color;
   }
 
   &__input {
@@ -45,9 +45,9 @@
 
   &__terms {
     font-size: 1.2rem;
-    border-bottom: 1px dotted $color-primary;
+    border-bottom: 1px dotted $primary-color;
     transition: all .3s;
-    color: $color-primary;
+    color: $primary-color;
 
     &:hover {
       border-bottom-color: transparent;

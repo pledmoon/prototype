@@ -21,7 +21,7 @@
       content: "\f078";
       font-family: fa;
       font-size: 1.4rem;
-      color: $color-primary;
+      color: $primary-color;
 
       border: none;
       right: 1rem;
@@ -72,7 +72,7 @@
 
     &:hover {
       background: $gray--light;
-      color: $color-primary;
+      color: $primary-color;
       transition: all .3s;
     }
 
@@ -80,7 +80,7 @@
       content: "";
       width: 2px;
       height: 2rem;
-      background: $color-primary;
+      background: $primary-color;
       position: absolute;
       left: 0;
       top: 50%;

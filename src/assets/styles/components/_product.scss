@@ -97,7 +97,7 @@
     }
 
     &--hot {
-      background: $color-primary;
+      background: $primary-color;
       color: $white;
     }
   }
@@ -133,7 +133,7 @@
       vertical-align: middle;
 
       &:hover {
-        color: $color-primary;
+        color: $primary-color;
       }
     }
   }
@@ -210,11 +210,11 @@
     }
 
     &:hover {
-      color: $color-tertiary;
+      color: $tertiary-color;
     }
 
     &:hover &-icon {
-      fill: $color-tertiary;
+      fill: $tertiary-color;
     }
   }
 
@@ -223,7 +223,7 @@
     transition: all .3s;
 
     &:hover {
-      color: $color-tertiary;
+      color: $tertiary-color;
     }
 
     &-icon {
@@ -235,11 +235,11 @@
     }
 
     &:hover {
-      color: $color-tertiary;
+      color: $tertiary-color;
     }
 
     &:hover &-icon {
-      fill: $color-tertiary;
+      fill: $tertiary-color;
     }
   }
 
@@ -256,11 +256,11 @@
     }
 
     &:hover {
-      color: $color-tertiary;
+      color: $tertiary-color;
     }
 
     &:hover &-icon {
-      fill: $color-tertiary;
+      fill: $tertiary-color;
     }
   }
 
@@ -275,24 +275,4 @@
     }
   }
   /* Footer Elements */
-}
-
-.product-added {
-  &__footer {
-    .btn {
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 1rem;
-    }
-  }
-
-  .product {
-    height: auto;
-    border: none;
-
-    &:hover {
-      height: auto;
-      box-shadow: none;
-    }
-  }
 }

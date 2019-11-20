@@ -3,7 +3,7 @@
   $self: &;
 
   &__title {
-    color: $color-primary;
+    color: $primary-color;
     font-size: 1.6rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -30,7 +30,7 @@
     width: 1.7rem;
     height: 1.7rem;
     transform: translateY(-50%);
-    fill: $color-primary;
+    fill: $primary-color;
     transition: all .3s;
 
     .is-toggled & {
@@ -84,7 +84,7 @@
     transition: all .3s;
 
     &:hover {
-      color: $color-primary;
+      color: $primary-color;
       text-decoration: none;
     }
   }

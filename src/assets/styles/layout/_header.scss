@@ -23,12 +23,21 @@
   position: relative;
 
   > * {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
   .logo {
     @media (max-width: $sm) {
       display: none;
+    }
+  }
+
+  &__company-motto {
+    max-width: 16rem;
+    flex-basis: 16rem;
+
+    &-desc {
+      font-size: 1.4rem;
     }
   }
 

@@ -1,0 +1,20 @@
+extends templates/main
+
+block variables
+  - let title = 'UI сайта';
+  - let pageClass = 'index-page';
+
+block content
+
+  include layouts/headers/header-inner
+
+  .main-nav-section
+    .container-fluid
+      include components/navbars/main-nav
+
+  .container-fluid
+    include components/breadcrumbs
+
+    include layouts/ui-components
+
+  include layouts/footers/footer

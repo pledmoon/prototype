@@ -1,11 +1,20 @@
 extends templates/main
 
 block variables
-  - let title = 'Страница контента';
+  - let title = 'Страница поста';
   - let pageClass = 'index-page';
 
 block content
 
-  include layouts/header
+  include layouts/headers/header-inner
 
-  include layouts/footer
+  .main-nav-section
+    .container-fluid
+      include components/navbars/main-nav
+
+  .container-fluid
+    include components/breadcrumbs
+
+    include layouts/ui-post
+    
+  include layouts/footers/footer

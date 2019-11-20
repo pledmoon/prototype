@@ -71,7 +71,7 @@
         position: absolute;
         left: 1.5rem;
         right: 1.5rem;
-        background: $color-primary;
+        background: $primary-color;
         height: 3px;
         bottom: 0;
       }
@@ -127,7 +127,7 @@
       font-family: fa;
       font-size: 1.6rem;
       float: right;
-      color: $color-primary;
+      color: $primary-color;
       transition: all .3s;
     }
 
@@ -147,7 +147,7 @@
       position: absolute;
       bottom: 0;
       height: 3px;
-      background: $color-primary;
+      background: $primary-color;
     }
   }
 

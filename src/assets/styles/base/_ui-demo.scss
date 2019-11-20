@@ -1,0 +1,14 @@
+.ui-demo {
+  margin-top: 3rem;
+
+  &__section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+
+    > .btn {
+      margin-right: 1rem;
+    }
+  }
+}

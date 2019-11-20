@@ -6,11 +6,8 @@ block variables
 
 block content
 
-  include layouts/header
-
-  .main-nav-section
-    .container-fluid
-      include components/main-nav/main-nav
+  include layouts/headers/header
+  include components/navbars/main-nav
 
   include layouts/carousels/promo-carousel
 
@@ -21,4 +18,4 @@ block content
     include layouts/items-section/items-section-2
     include layouts/news-section
 
-  include layouts/footer
+  include layouts/footers/footer

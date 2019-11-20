@@ -10,7 +10,12 @@
   box-sizing: border-box;
 }
 
-ul {
+a:focus {
+  outline: none;
+}
+
+ul,
+ol {
   list-style: none;
 }
 
@@ -45,23 +50,21 @@ a {
   text-decoration: none;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 .container-fluid {
   max-width: $layout-max-width;
 }
 
 .overlay {
   background: rgba($black, .5);
-  z-index: 10;
+  z-index: 101;
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-}
-
-.icon {
-  display: inline-block;
-  width: 2.5rem;
-  height: 2.5rem;
-  vertical-align: middle;
 }

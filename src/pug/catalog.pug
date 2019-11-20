@@ -4,9 +4,7 @@ block variables
   - let title = 'Каталог';
   - let pageClass = 'catalog-page';
   - let pageHeading = 'Каталог товаров';
-
-block header
-  include layouts/header-inner
+  - let breadcrumbs = true;
 
 block sidebar
   include components/category-nav
@@ -19,7 +17,7 @@ block main
   include components/pagination
 
 block footer
-  include layouts/footer
+  include layouts/footers/footer
   
   //- Product Modals Fast View
   include components/modal-wins/product-card-modal-1

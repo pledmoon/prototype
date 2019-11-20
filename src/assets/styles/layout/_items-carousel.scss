@@ -1,6 +1,35 @@
 .items-carousel-wrap {
   position: relative;
   padding: 0 3.5rem;
+
+  &--no-gutter {
+    padding: 0;
+
+    .default-carousel-prev,
+    .default-carousel-next {
+      background: $white;
+      width: 4rem;
+      height: 6rem;
+      border: 1px solid $gray--medium;
+      border-radius: 3px;
+
+      &__icon {
+        @include absolute-center;
+
+        &:hover {
+          fill: $primary-color;
+        }
+      }
+    }
+
+    .default-carousel-prev {
+      left: 1rem;
+    }
+
+    .default-carousel-next {
+      right: 1rem;
+    }
+  }
 }
 
 .items-carousel {
@@ -49,6 +78,14 @@
     cursor: pointer;
     outline: none;
     margin-top: -3.5rem;
+    z-index: 3;
+
+    &__icon {
+      fill: $dark--medium;
+      width: 3rem;
+      height: 3rem;
+      transition: all .3s;
+    }
   }
 
   &-prev {
@@ -57,17 +94,6 @@
 
   &-next {
     right: 0;
-  }
-
-  &-icon {
-    width: 3rem;
-    height: 3rem;
-    transition: all .3s;
-  }
-
-  &-prev:hover &__icon,
-  &-next:hover &__icon {
-    fill: $dark--medium;
   }
 }
 

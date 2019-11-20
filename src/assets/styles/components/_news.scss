@@ -13,7 +13,7 @@
     max-width: 25rem;
 
     &:hover {
-      border-color: $color-primary;
+      border-color: $primary-color;
     }
 
     &:hover #{$self}__img {
@@ -64,7 +64,7 @@
       content: "";
       width: 3.5rem;
       height: 3px;
-      background: $color-primary;
+      background: $primary-color;
       position: absolute;
       left: 0;
       top: 100%;
@@ -72,11 +72,11 @@
   }
 
   &__title-link {
-    color: $color-primary;
+    color: $primary-color;
 
     &:hover {
       text-decoration: underline;
-      color: $color-primary;
+      color: $primary-color;
     }
   }
 
@@ -106,7 +106,7 @@
     transition: all .3s;
 
     &:hover {
-      color: $color-primary;
+      color: $primary-color;
       text-decoration: none;
     }
   }

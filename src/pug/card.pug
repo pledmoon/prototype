@@ -6,11 +6,8 @@ block variables
 
 block content
 
-  include layouts/header-inner
-
-  .main-nav-section
-    .container-fluid
-      include components/main-nav/main-nav
+  include layouts/headers/header-inner
+  include components/navbars/main-nav
 
   .container-fluid
     include components/breadcrumbs
@@ -39,4 +36,4 @@ block content
     .h2 Похожие товары
     include layouts/carousels/items-carousel-2
 
-  include layouts/footer
+  include layouts/footers/footer

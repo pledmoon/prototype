@@ -6,18 +6,12 @@ body {
   color: $font-base-color;
 }
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
   font-weight: $headings-weight;
   font-family: $headings-fonts-stack;
   line-height: $headings-line-height;
@@ -26,33 +20,94 @@ h6,
   @media (max-width: $sm--mw) {
     text-align: center;
   }
+
+  span,
+  small {
+    color: $dark--medium;
+    font-size: smaller;
+    font-weight: 400;
+  }
 }
 
-h1,
-.h1 {
+h1,.h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
 }
-h2,
-.h2 {
+h2,.h2 {
   font-size: 2.6rem;
   margin-bottom: 1.75rem;
 }
-h3,
-.h3 {
+h3,.h3 {
   font-size: 2.4rem;
   margin-bottom: 1.5rem;
 }
-h4,
-.h4 {
+h4,.h4 {
   font-size: 2rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.4rem;
 }
-h5,
-.h5 {
+h5,.h5 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+h6,.h6 {
+  font-size: 1.6rem;
   margin-bottom: 1rem;
 }
-h6,
-.h6 {
-  margin-bottom: .75rem;
+
+/* ---------- Post Typography ---------- */
+.post {
+  margin: 3rem 0 0;
+
+  > * {
+    margin: 0 0 2rem;
+  }
+
+  a {
+
+  }
+
+  p {
+    margin: 0 0 2rem;
+  }
+
+  ul {
+    list-style-position: inside;
+    list-style-type: disc;
+
+    li {}
+  }
+
+  ol {
+    counter-reset: item-counter;
+
+    li {
+      counter-increment: item-counter;
+
+      &::before {
+        content: counter(item-counter) ". ";
+        font-weight: bold;
+      }
+    }
+  }
+
+  dl {
+    dt {}
+
+    dd {}
+  }
+
+  blockquote {}
+
+  cite {}
+
+  .float-left {
+    float: left;
+    margin: 1.5rem 1.5rem 1.5rem 0;
+  }
+
+  .float-right {
+    float: right;
+    margin: 1.5rem 0 1.5rem 1.5rem;
+  }
 }
+/* ---------- Post Typography ---------- */

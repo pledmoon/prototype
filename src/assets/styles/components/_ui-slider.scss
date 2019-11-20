@@ -28,11 +28,11 @@
     background: $gray;
 
     .noUi-connect {
-      background: $color-primary;
+      background: $primary-color;
     }
 
     .noUi-handle {
-      background: darken($color-primary, 25%);
+      background: darken($primary-color, 25%);
       height: 1.5rem;
       width: 1.5rem;
       box-shadow: none;

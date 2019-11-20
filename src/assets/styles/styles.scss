@@ -1,9 +1,10 @@
 @charset 'UTF-8';
 
 // 1.Abstracts (Configuration and Helpers)
-@import "abstracts/variables";
 @import "abstracts/mixins";
 @import "abstracts/functions";
+@import "abstracts/variables";
+// @import "abstracts/production-variables";
 
 // 2.Vendors
 @import "../../../node_modules/bootstrap/scss/bootstrap-grid.scss";
@@ -18,21 +19,24 @@
 @import "vendors/drift-basic.scss";
 
 // 3.Base stuff
-@import "base/fonts";
 @import "base/base"; // maybe reset
-@import "base/typography";
 @import "base/utilities"; // aka helpers
+@import "base/fonts";
+@import "base/typography";
 @import "base/forms";
 @import "base/animations";
+@import "base/print";
+@import "base/ui-demo";
+@import "base/icons";
 
 // 4.Layout
 @import "layout/header";
 @import "layout/footer";
+@import "layout/sidebar";
 @import "layout/promo-carousel";
 @import "layout/items-carousel";
 @import "layout/tabs-section";
 @import "layout/inner-page-layout";
-@import "layout/sidebar";
 @import "layout/catalog-header-controls";
 @import "layout/catalog-list-main";
 @import "layout/catalog-list";
@@ -72,7 +76,6 @@
 @import "components/product-main-promo";
 @import "components/product-main-docs";
 @import "components/product-main-params";
-@import "components/product-card-modal";
 
 // 6.Pages (page-specific styles)
 //@import 'pages/home'

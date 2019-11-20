@@ -1,74 +1,84 @@
 .btn {
-  background: $btn-bg-color;
-  color: $dark;
-  text-decoration: none;
+  display: inline-block;
   padding: 1rem 1.5rem;
   font-size: 1.6rem;
-  border: none;
-  transition: all .3s;
-  display: inline-block;
-  transition: all .3s;
+  border: 2px solid transparent;
   text-align: center;
   cursor: pointer;
-  position: relative;
-
+  color: $btn-color;
+  transition: all .3s;
+  outline: none;
+  vertical-align: middle;
+  user-select: none;
+  white-space: nowrap;
+  
+  /* --- Radius Buttons --- */
   &--radius {
     border-radius: $btn-radius;
   }
+  /* --- Radius Buttons --- */
 
-  &:hover {
-    box-shadow: 0 5px 5px rgba(0,0,0, .2);
+  /* --- Buttons Types --- */
+  &--primary {
+    color: $btn-primary-color;
+    background: $btn-primary-bg;
+
+    &:hover {
+      background: darken($btn-primary-bg, 15%);
+    }
   }
 
-  &:active {
-    transform: translateY(-1px);
+  &--secondary {
+    color: $btn-secondary-color;
+    background: $btn-secondary-bg;
+
+    &:hover {
+      background: darken($btn-secondary-bg, 15%);
+    }
   }
 
+  &--tertiary {
+    color: $btn-tertiary-color;
+    background: $btn-tertiary-bg;
+
+    &:hover {
+      background: darken($btn-tertiary-bg, 15%);
+    }
+  }
+
+  &--reverse {
+    background: $btn-reverse-bg;
+    color: $btn-reverse-color;
+    border: 2px solid $btn-reverse-border;
+
+    &:hover {
+      background: $btn-reverse-color;
+      color: $btn-reverse-bg;
+    }
+  }
+  /* --- Buttons Types --- */
+
+  /* --- Buttons Sizes --- */
+  &--xs {}
+
+  &--sm {}
+
+  &--md {}
+
+  &--lg {}
+
+  &--xg {}
+  /* --- Buttons Sizes --- */
+
+  /* --- Buttons Icon --- */
   &__icon {
     fill: $btn-icon-fill-color;
     color: $btn-icon-fill-color;
     max-width: 1.5rem;
     max-height: 1.5rem;
     display: inline-block;
+    vertical-align: middle;
+    margin-right: 1rem;
   }
-  
-  /* Btn Types */
-  &--main {
-    background: $color-primary;
-    color: $white;
-
-    &:hover {
-      background: darken($color-primary, 11%);
-      text-decoration: none;
-      color: $white;
-    }
-  }
-
-  &--reverse {
-    background: $white;
-    border: 1px solid $color-primary;
-    color: $color-primary;
-
-    &:hover {
-      box-shadow: none;
-      color: $white;
-      background: $color-primary;
-      text-decoration: none;
-    }
-  }
-
-  &--ghost {
-    background: $white;
-    border: none;
-    color: $dark--medium;
-
-    &:hover {
-      box-shadow: none;
-      color: $dark--medium;
-    }
-  }
-  /* Btn Types */
-
-  /* Btn Sizes */
-  /* Btn Sizes */
+  /* --- Buttons Icon --- */
 }

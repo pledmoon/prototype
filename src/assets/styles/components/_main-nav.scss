@@ -1,50 +1,54 @@
-$dropdownZIndex: 11;
-
-.main-nav-section {
-  background: $gray--medium;
-  border-top: 1px solid $gray;
-
-  @media (min-width: $md) {
-    border-bottom: 1px solid $gray;
-  }
-}
-
+/**
+ * ==================
+ * = Main Nav START =
+ * ==================
+ */
 .main-nav {
   $self: &;
 
+  background: $main-nav-bg;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  
+  /* --- Desktop Navbar --- */
   @media (min-width: $md) {
-    /* --- First-Level --- */
+    // Base Navbar START
+    // -----------------------------------------
+    // --- First-Level
     &__container {
       display: flex;
       position: relative;
+      max-width: $layout-max-width;
+      width: 100%;
+      margin: 0 auto;
     }
 
     &__item {
-      font-size: $first-level-size;
+      font-size: $main-nav-font-size;
       position: relative;
       flex: auto;
       text-align: center;
 
       &:hover #{$self}__link {
-        background: $dark--medium;
+        background: darken($main-nav-bg, 15%);
         color: $white;
       }
 
       &:hover #{$self}__item-icon {
         fill: $white;
       }
-    }
 
-    &__item-icon {
-      width: 1rem;
-      height: 1rem;
-      fill: $first-level-color;
-      transition: all .3s;
-      margin: 0 0 0 1rem;
+      &-icon {
+        width: 1rem;
+        height: 1rem;
+        fill: $main-nav-text-color;
+        transition: all .3s;
+        margin: 0 0 0 1rem;
+      }
     }
 
     &__link {
-      color: $first-level-color;
+      color: $main-nav-text-color;
       padding: 1.5rem 1.5rem;
       display: flex;
       align-items: center;
@@ -56,58 +60,54 @@ $dropdownZIndex: 11;
       #{$self}__item:not(:first-child) &::before {
         width: 1px;
         height: 60%;
-        background: $dark--medium;
-        left: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        background: darken($main-nav-bg, 20%);
         content: "";
+
+        @include absolute-vertical;
       }
     }
-    /* --- First-Level --- */
+    // --- /First-Level
 
-    /* --- Second-Level --- */
+    // --- Second-Level
     &__secondary-container {
-      position: absolute;
-      left: -9999px;
       top: 100%;
       background: $second-level-bg-color;
-      opacity: 0;
-      visibility: hidden;
       border: 1px solid $gray;
       width: 100%;
       z-index: $dropdownZIndex;
+
+      @include hide-element;
     }
 
     &__secondary-item {
-      font-size: $second-level-size;
+      font-size: $second-level-font-size;
       text-align: left;
       position: relative;
 
       &:hover #{$self}__secondary-link {
-        background: $gray--light;
+        background: darken($second-level-bg-color, 5%);
+      }
+
+      &-icon {
+        width: 1rem;
+        height: 1rem;
+        fill: $second-level-text-color;
+        transition: all .3s;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
 
-    &__secondary-item-icon {
-      width: 1rem;
-      height: 1rem;
-      fill: $second-level-color;
-      transition: all .3s;
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
     &__secondary-link {
-      color: $second-level-color;
+      color: $second-level-text-color;
       display: block;
       padding: 1rem 1.5rem;
     }
-    /* --- Second-Level --- */
+    // --- /Second-Level
 
-    /* --- Tertiary-Level --- */
+    // --- Tertiary-Level
     &__tertiary-container {
       position: absolute;
       left: -9999px;
@@ -120,21 +120,21 @@ $dropdownZIndex: 11;
     }
 
     &__tertiary-item {
-      font-size: $second-level-size;
+      font-size: $second-level-font-size;
 
       &:hover #{$self}__tertiary-link {
-        background: $gray;
+        background: darken($tertiary-level-bg-color, 5%);
       }
     }
 
     &__tertiary-link {
-      color: $tertiary-level-color;
+      color: $tertiary-level-text-color;
       display: block;
       padding: 1rem 1.5rem;
     }
-    /* --- Tertiary-Level --- */
+    // --- /Tertiary-Level
 
-    /* Interactive */
+    // --- Interactive
     &__item:hover #{$self}__secondary-container {
       left: 0;
       visibility: visible;
@@ -148,29 +148,30 @@ $dropdownZIndex: 11;
       animation: .3s fadeInLeft;
       opacity: 1;
     }
-    /* Interactive */
+    // --- /Interactive
+    // Base Navbar END
+    // -----------------------------------------
 
-    /* --- Catalog Nav --- */
-    /* First-Level */
+    // Catalog Nav START
+    // -----------------------------------------
+    // --- First-Level
     &__item--catalog {
-      max-width: 21rem;
-      flex-basis: 21rem;
+      max-width: $main-nav-catalog-max-width;
+      flex-basis: $main-nav-catalog-max-width;
     }
 
     &__catalog-list {
-      height: 60rem;
+      height: $main-nav-catalog-height;
       display: flex;
       flex-direction: column;
-      position: absolute;
       width: 100%;
       top: 100%;
-      background: $white;
+      background: $first-level-bg-color;
       border: 1px solid $gray;
       text-align: left;
       z-index: $dropdownZIndex;
-      opacity: 0;
-      visibility: hidden;
-      left: -9999px;
+
+      @include hide-element;
     }
 
     &__catalog-item {
@@ -181,98 +182,94 @@ $dropdownZIndex: 11;
       }
 
       &:hover #{$self}__catalog-link {
-        background: $gray--light;
+        background: darken($first-level-bg-color, 5%);
+      }
+
+      &-icon {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        fill: $first-level-text-color;
+        width: 1rem;
+        height: 1rem;
       }
     }
 
     &__catalog-link {
       padding: 0 1rem;
-      color: $black;
+      color: $first-level-text-color;
       display: flex;
       align-items: center;
       height: 100%;
       position: relative;
     }
+    // --- /First-Level
 
-    &__catalog-item-icon {
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      fill: $black;
-      width: 1rem;
-      height: 1rem;
-    }
-    /* First-Level */
-
-    /* Second-Level */
+    // --- Second-Level
     &__subcatalog-list {
-      position: absolute;
-      left: -9999px;
       top: 0;
-      opacity: 0;
-      visibility: hidden;
       height: 100%;
       transition: opacity .5s;
-      background: $white;
-      width: 21rem;
+      background: $second-level-bg-color;
+      width: $main-nav-catalog-max-width;
       border: 1px solid $gray--light;
+
+      @include hide-element;
     }
 
     &__subcatalog-item {
       &:hover #{$self}__subcatalog-link {
-        background: $gray--light;
+        background: darken($second-level-bg-color, 5%);
+      }
+
+      &-icon {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        fill: $second-level-text-color;
+        width: 1rem;
+        height: 1rem;
       }
     }
 
     &__subcatalog-link {
       padding: 1rem 1rem;
-      color: $black;
+      color: $second-level-text-color;
       position: relative;
       transition: all .3s;
       display: block;
     }
+    // --- /Second-Level
 
-    &__subcatalog-item-icon {
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      fill: $black;
-      width: 1rem;
-      height: 1rem;
-    }
-    /* Second-Level */
-
-    /* Third-Level */
+    // --- Third-Level
     &__tertcatalog-list {
-      position: absolute;
-      left: -9999px;
       top: 0;
-      opacity: 0;
-      visibility: hidden;
       height: 100%;
       transition: opacity .5s;
-      background: $white;
-      width: 21rem;
+      background: $second-level-bg-color;
+      width: $main-nav-catalog-max-width;
       border: 1px solid $gray--light;
+
+      @include hide-element;
     }
 
     &__tertcatalog-item {}
 
     &__tertcatalog-link {
       padding: 1rem 1rem;
-      color: $black;
+      color: $second-level-text-color;
       transition: all .3s;
       display: block;
 
       &:hover {
-        background: $gray--light;
+        background: darken($second-level-bg-color, 5%);
       }
     }
-    /* Third-Level */
+    // --- /Third-Level
 
-    /* Interactive */
+    // --- Interactive
     &__item--catalog.is-catalog-opened #{$self}__catalog-list,
     &__item--catalog:hover #{$self}__catalog-list {
       opacity: 1;
@@ -289,14 +286,14 @@ $dropdownZIndex: 11;
       visibility: visible;
       left: 100%;
     }
-    /* Interactive */
+    // --- /Interactive
 
-    /* Dropdown */
+    // --- Dropdown-Bannes
     &__dropdown-banner {
       position: absolute;
       left: -9999px;
       top: 0;
-      width: 21rem;
+      width: $main-nav-catalog-max-width;
       display: none;
       height: 100%;
       border: 1px solid $gray--light;
@@ -320,15 +317,15 @@ $dropdownZIndex: 11;
       height: 100%;
       display: block;
     }
-    /* Dropdown */
+    // --- /Dropdown-Banners
 
-    /* --------------- Catalog-Item-Full --------------- */
+    // --------------- MOD: Catalog-Item-Full --------------- //
     &__item--full-catalog {
       position: static;
 
       #{$self}__catalog-list {
         background: transparent;
-        max-width: 21rem;
+        max-width: $main-nav-catalog-max-width;
 
         &.active {
           max-width: 100%;
@@ -336,14 +333,14 @@ $dropdownZIndex: 11;
       }
 
       #{$self}__catalog-item {
-        max-width: calc(21rem - 2px);
-        background: $white;
+        max-width: calc(#{$main-nav-catalog-max-width} - 2px);
+        background: $first-level-bg-color;
       }
 
       #{$self}__subcatalog-list {
         right: 0;
         width: 100%;
-        padding-left: 22rem;
+        padding-left: $main-nav-catalog-max-width + 1rem;
         z-index: -1;
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -357,16 +354,16 @@ $dropdownZIndex: 11;
         -webkit-column-break-inside: avoid;
         page-break-inside: avoid;
         break-inside: avoid;
+
+        &-icon {
+          display: none;
+        }
       }
 
       #{$self}__subcatalog-link {
         padding-top: .3rem;
         padding-bottom: .3rem;
         display: inline-block;
-      }
-
-      #{$self}__subcatalog-item-icon {
-        display: none;
       }
 
       #{$self}__tertcatalog-list {
@@ -393,7 +390,7 @@ $dropdownZIndex: 11;
       }
     }
 
-    /* Interactive */
+    // --- Interactive
     &__item--full-catalog {
       #{$self}__catalog-item:hover #{$self}__subcatalog-list {
         left: 0;
@@ -403,33 +400,34 @@ $dropdownZIndex: 11;
         text-decoration: underline;
       }
     }
-    /* Interactive */
-    /* --------------- Catalog-Item-Full --------------- */
-    /* --- Catalog Nav --- */
+    // --- /Interactive
+    // --------------- MOD: Catalog-Item-Full --------------- //
+    // Catalog Nav END
+    // -----------------------------------------
 
-    /* --- Rows Navbar --- */
+    // Rows Navbar START
+    // -----------------------------------------
     &__item--rows {
       position: static;
     }
+
     &__rows-list {
-      position: absolute;
       left: 0;
       right: 0;
       text-align: left;
-      background: $white;
+      background: $first-level-bg-color;
       top: 100%;
       z-index: $dropdownZIndex;
       padding: 2rem;
       line-height: 1.7;
       border: 1px solid $gray;
       columns: 2rem 6;
-      opacity: 0;
-      visibility: hidden;
-      left: -9999px;
+
+      @include hide-element;
     }
 
     &__rows-item {
-      font-size: 1.4rem;
+      font-size: $first-level-font-size;
       -webkit-column-break-inside: avoid;
       page-break-inside: avoid;
       break-inside: avoid;
@@ -450,44 +448,45 @@ $dropdownZIndex: 11;
     &__rows-subitem {}
 
     &__rows-sublink {
-      color: $black;
+      color: $second-level-text-color;
 
       &:hover {
         text-decoration: underline;
       }
     }
 
-    /* interactive */
+    // --- Interactive
     &__item--rows:hover &__rows-list {
       left: 0;
       opacity: 1;
       visibility: visible;
       animation: .3s fadeInUp;
     }
-    /* interactive */
-    /* --- Rows Navbar --- */
+    // --- /Interactive
+    // Rows Navbar END
+    // -----------------------------------------
 
-    /* --- Columns Navbar --- */
+    // Columns Navbar START
+    // -----------------------------------------
     &__item--cols {
       position: static;
     }
-
+    
+    // --- First Level
     &__cols-list {
-      position: absolute;
-      left: -9999px;
       right: 0;
-      background: $white;
+      background: $first-level-bg-color;
       top: 100%;
       z-index: $dropdownZIndex;
       text-align: left;
       border: 1px solid $gray;
-      opacity: 0;
-      visibility: hidden;
       transition: opacity .3s;
+
+      @include hide-element;
     }
 
     &__cols-item {
-      width: 21rem;
+      width: $main-nav-catalog-max-width;
       border-right: 1px solid $gray;
 
       &:not(:first-child) {
@@ -509,17 +508,17 @@ $dropdownZIndex: 11;
     &__item-cols-icon {
       width: 1rem;
       height: 1rem;
-      fill: $first-level-color;
+      fill: $first-level-text-color;
       transition: all .3s;
       position: absolute;
       right: 1rem;
       top: 50%;
       transform: translateY(-50%);
     }
+    // --- /First Level
 
+    // --- Second Level
     &__cols-sublist {
-      position: absolute;
-      left: -9999px;
       right: 0;
       top: 0;
       padding: 1rem 1rem 1rem 22rem;
@@ -527,10 +526,10 @@ $dropdownZIndex: 11;
       min-height: 100%;
       z-index: -1;
       columns: 20rem 4;
-      opacity: 0;
-      visibility: hidden;
       transition: opacity .3s ease-in-out;
-      background: $white;
+      background: $second-level-bg-color;
+
+      @include hide-element;
 
       #{$self}__item--cols:hover #{$self}__cols-item:first-child & {
         visibility: visible;
@@ -545,15 +544,17 @@ $dropdownZIndex: 11;
       display: inline-block;
       vertical-align: top;
       padding: 1rem;
-      color: $black;
+      color: $second-level-text-color;
       transition: all .3s;
       border-radius: 5px;
 
       &:hover {
-        background: $gray--light;
+        background: darken($second-level-bg-color, 5%);
       }
     }
-    /* interactive */
+    // --- /Second Level
+
+    // --- Interactive
     &__item--cols:hover &__cols-list {
       left: 0;
       opacity: 1;
@@ -565,9 +566,11 @@ $dropdownZIndex: 11;
       opacity: 1;
       visibility: visible;
     }
-    /* interactive */
-    /* --- Columns Navbar --- */
+    // --- /Interactive
+    // Columns Navbar END
+    // -----------------------------------------
   }
+  /* --- /Desktop Navbar --- */
 
   /* --- Mobile Navbar --- */
   @media (max-width: $md--mw) {
@@ -576,16 +579,15 @@ $dropdownZIndex: 11;
     top: 0;
     bottom: 0;
     transition: left .3s ease-in-out;
-    z-index: 11;
-    background: $white;
+    z-index: $overlayAboveZIndex;
+    background: $first-level-bg-color;
     width: 30rem;
 
     .is-navbar-opened & {
-      display: block;
       left: 0;
     }
     
-    /* First-Level */
+    // --- First-Level
     &__container {
       height: 100%;
       overflow-y: auto;
@@ -593,30 +595,32 @@ $dropdownZIndex: 11;
     }
 
     &__item {
+      font-size: $first-level-font-size;
+
       &:not(:first-child) {
         border-top: 1px solid $gray--medium;
+      }
+
+      &-icon {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        fill: $first-level-text-color;
       }
     }
 
     &__link {
-      font-size: 1.5rem;
       display: block;
       padding: 1rem 1.5rem;
-      color: $black;
+      color: $first-level-text-color;
       position: relative;
     }
+    // --- /First-Level
 
-    &__item-icon {
-      width: 1rem;
-      height: 1rem;
-      position: absolute;
-      right: 1.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    /* First-Level */
-
-    /* Second-Level */
+    // --- Second-Level
     &__secondary-container,
     &__catalog-list,
     &__rows-list,
@@ -633,10 +637,10 @@ $dropdownZIndex: 11;
     &__catalog-link,
     &__rows-link,
     &__cols-link {
-      background: $gray--light;
+      background: $first-level-bg-color;
       display: block;
       padding: 1rem 1rem 1rem 3rem;
-      color: $black;
+      color: $first-level-text-color;
       position: relative;
     }
 
@@ -651,15 +655,16 @@ $dropdownZIndex: 11;
       top: 50%;
       transform: translateY(-50%);
     }
-    /* Second-Level */
+    // --- /Second-Level
 
-    /* Third-Level */
+    // --- Third-Level
     &__tertiary-container,
     &__subcatalog-list,
     &__rows-sublist,
     &__cols-sublist {
       display: none;
     }
+
     &__tertiary-item,
     &__subcatalog-item,
     &__rows-subitem,
@@ -669,10 +674,10 @@ $dropdownZIndex: 11;
     &__subcatalog-link,
     &__rows-sublink,
     &__cols-sublink {
-      background: $gray--medium;
+      background: $second-level-bg-color;
       display: block;
       padding: 1rem 1rem 1rem 4rem;
-      color: $black;
+      color: $second-level-text-color;
       position: relative;
     }
 
@@ -684,9 +689,9 @@ $dropdownZIndex: 11;
       top: 50%;
       transform: translateY(-50%);
     }
-    /* Third-Level */
+    // --- /Third-Level
     
-    /* Fourth Level */
+    // --- Fourth Level
     &__tertcatalog-list {
       display: none;
     }
@@ -694,25 +699,25 @@ $dropdownZIndex: 11;
     &__tertcatalog-item {}
 
     &__tertcatalog-link {
-      background: $gray;
+      background: $tertiary-level-bg-color;
       display: block;
       padding: 1rem 1rem 1rem 6rem;
-      color: $black;
+      color: $tertiary-level-text-color;
       position: relative;
     }
-    /* Fourth Level */
+    // --- /Fourth Level
 
-    /* Interactive */
+    // --- Interactive
     .is-opened > ul {
       display: block;
     }
-    /* Interactive */
+    // --- /Interactive
 
     &__dropdown-banner {
       display: none;
     }
     
-    /* Misc */
+    // --- Misc
     &-trigger {
       border: none;
       background: none;
@@ -740,7 +745,7 @@ $dropdownZIndex: 11;
         float: right;
       }
     }
-    /* Misc */
+    // -- /Misc
   }
 
   @media (min-width: $md) {
@@ -750,9 +755,14 @@ $dropdownZIndex: 11;
       display: none;
     }
   }
-  /* --- Mobile Navbar --- */
+  /* --- /Mobile Navbar --- */
 }
 
-.is-navbar-opened {
+body.is-navbar-opened {
   overflow: hidden;
 }
+/**
+ * ================
+ * = Main Nav END =
+ * ================
+ */

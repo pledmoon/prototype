@@ -1,3 +1,8 @@
+/**
+ * ==================
+ * = Filter START =
+ * ==================
+ */
 .filter {
 
   &__heading {}
@@ -11,7 +16,7 @@
 
   &__title {
     font-size: 1.4rem;
-    color: $color-primary;
+    color: $primary-color;
     padding: 2rem 2rem 2rem 0;
     cursor: pointer;
     position: relative;
@@ -206,6 +211,11 @@
   /* Mobile */
 }
 
-.is-filter-opened {
+body.is-filter-opened {
   overflow: hidden;
 }
+/**
+ * ==================
+ * = Filter START =
+ * ==================
+ */

@@ -51,8 +51,8 @@
   }
 
   &__current {
-    color: $color-primary;
-    border-bottom: 1px dotted $color-primary;
+    color: $primary-color;
+    border-bottom: 1px dotted $primary-color;
     display: inline-block;
     vertical-align: middle;
     transition: all .3s;
@@ -60,7 +60,7 @@
     &:hover {
       border-bottom-color: transparent;
       text-decoration: none;
-      color: $color-primary;
+      color: $primary-color;
     }
   }
 
@@ -84,7 +84,7 @@
       height: 0;
       border-width: 0 .5rem .5rem .5rem;
       border-style: none solid solid solid;
-      border-color: transparent transparent $color-primary transparent;
+      border-color: transparent transparent $primary-color transparent;
       position: absolute;
       left: 1rem;
       top: 50%;
@@ -94,7 +94,7 @@
     #{$self}__item.link--high &::before {
       border-width: .5rem .5rem 0 .5rem;
       border-style: solid solid none solid;
-      border-color: $color-primary transparent transparent transparent;
+      border-color: $primary-color transparent transparent transparent;
     }
 
     &:hover {
@@ -115,13 +115,13 @@
 
     &:hover {
       text-decoration: none;
-      color: $color-primary;
+      color: $primary-color;
     }
 
     &__icon {
       width: 1.5rem;
       height: 1.5rem;
-      fill: $color-primary;
+      fill: $primary-color;
       margin: -3px .5rem 0 0;
     }
   }

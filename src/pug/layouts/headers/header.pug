@@ -1,0 +1,30 @@
+.header-top-area
+
+  .container-fluid
+
+    .header-top-area__main
+      include ../../components/navbars/top-header-nav
+      include ../../components/select-lang
+
+.container-fluid
+
+  header.header
+
+    button.main-nav-trigger
+      +icon('menu', 'main-nav-trigger-icon')
+
+    include ../../components/logo
+
+    .header__search-form
+      include ../../components/search-form
+    .header__choose__location.d-none.d-md-block
+      include ../../components/choose-location
+    .header__header-contacts.d-none.d-md-block
+      include ../../components/header-contacts
+
+    .header-utilities
+      include ../../components/header-utility/header-utility-0
+      include ../../components/header-utility/header-utility-1
+      include ../../components/header-utility/header-utility-2
+      include ../../components/header-utility/header-utility-3
+      include ../../components/header-utility/header-utility-4
