@@ -1,7 +1,7 @@
 // ************************
 // | Template main colors |
 // ************************
-$primary-color: #bebebe !default;
+$primary-color: #1976d2 !default;
 $secondary-color: lighten($primary-color, 10%) !default;
 $tertiary-color: lighten($primary-color, 20%);
 
@@ -102,8 +102,9 @@ $footer-border-color: #999999 !default;
 // | Main Nav |
 // ************
 $main-nav-font-size: 1.5rem;
-$main-nav-text-color: #333333;
-$main-nav-bg: $gray--medium !default;
+$main-nav-text-color: #ffffff;
+$main-nav-bg: $primary-color !default;
+$main-nav-borders-bg: mix(white, $primary-color, 20%);
 
 $first-level-font-size: 1.5rem !default;
 $first-level-text-color: #333333;

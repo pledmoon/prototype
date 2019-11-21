@@ -6,14 +6,15 @@ block variables
 
 block content
 
-  include layouts/headers/ligabt-header
-  include components/navbars/main-nav-3
-
-  include layouts/carousels/promo-carousel
+  include layouts/headers/header
+  include components/navbars/main-nav-2
 
   .container-fluid
-    include layouts/news-section
+    include layouts/carousels/promo-carousel-offset
+    include layouts/items-section/items-section-1
     include layouts/service-cards-section
+    include layouts/tabs-section
     include layouts/items-section/items-section-2
+    include layouts/news-section
 
   include layouts/footers/footer

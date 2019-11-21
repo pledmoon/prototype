@@ -7,8 +7,8 @@
   $self: &;
 
   background: $main-nav-bg;
-  border-top: 1px solid $gray;
-  border-bottom: 1px solid $gray;
+  border-top: 1px solid $main-nav-borders-bg;
+  border-bottom: 1px solid $main-nav-borders-bg;
   
   /* --- Desktop Navbar --- */
   @media (min-width: $md) {
@@ -30,7 +30,7 @@
       text-align: center;
 
       &:hover #{$self}__link {
-        background: darken($main-nav-bg, 15%);
+        background: $main-nav-borders-bg;
         color: $white;
       }
 
@@ -60,7 +60,7 @@
       #{$self}__item:not(:first-child) &::before {
         width: 1px;
         height: 60%;
-        background: darken($main-nav-bg, 20%);
+        background: $main-nav-borders-bg;
         content: "";
 
         @include absolute-vertical;
@@ -167,7 +167,7 @@
       width: 100%;
       top: 100%;
       background: $first-level-bg-color;
-      border: 1px solid $gray;
+      border: 1px solid transparent;
       text-align: left;
       z-index: $dropdownZIndex;
 
