@@ -1,7 +1,7 @@
 // ************************
 // | Template main colors |
 // ************************
-$primary-color: #563d7c !default;
+$primary-color: #bebebe !default;
 $secondary-color: lighten($primary-color, 10%) !default;
 $tertiary-color: lighten($primary-color, 20%);
 
@@ -75,7 +75,7 @@ $btn-secondary-bg: $secondary-color !default;
 $btn-tertiary-color: $white !default;
 $btn-tertiary-bg: $tertiary-color !default;
 $btn-reverse-color: $primary-color !default;
-$btn-reverse-bg: $white !default;
+$btn-reverse-bg: transparent !default;
 $btn-reverse-border: $primary-color;
 
 $btn-radius: 10rem !default;
@@ -87,12 +87,15 @@ $btn-icon-fill-color: #ffffff !default;
 // **********
 $header-utility-color: $black !default;
 $header-utility-icon-color: $dark !default;
-$header-utility-icon-size: 1.5rem !default;
 
 // **********
 // | Footer |
 // **********
+$header-top-area-bg: $gray--light !default;
+$header-top-area-text-color: $gray--light !default;
+
 $footer-bg: #444444 !default;
+$footer-text-color: #ffffff !default;
 $footer-border-color: #999999 !default;
 
 // ************

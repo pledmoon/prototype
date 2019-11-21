@@ -1,9 +1,11 @@
 .primary-content {
   padding: 0 0 3rem;
+  margin-top: 2rem;
 
   @media (min-width: $md) {
     display: flex;
-    padding-bottom: 5rem
+    padding-bottom: 5rem;
+    margin-top: 3rem;
   }
 }
 

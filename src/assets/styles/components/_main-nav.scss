@@ -18,7 +18,7 @@
     &__container {
       display: flex;
       position: relative;
-      max-width: $layout-max-width;
+      max-width: calc(#{$layout-max-width} - 30px);
       width: 100%;
       margin: 0 auto;
     }

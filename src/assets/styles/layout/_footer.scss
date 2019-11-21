@@ -1,6 +1,7 @@
 .footer {
   background: $footer-bg;
   margin-top: 3rem;
+  color: $footer-text-color;
 
   @media (min-width: $sm) {
     margin-top: 5rem;
@@ -35,6 +36,39 @@
 
   .logo {
     margin: 0 auto 1rem;
+  }
+
+  .footer-collapse__body {
+    .footer-about {
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+    }
+
+    .logo {
+      margin: 0 0 2rem;
+    }
+
+    .footer-contacts__tel {
+      color: $gray--medium;
+
+      &-icon {
+        fill: $gray--medium;
+        margin: -3px 1rem 0 0;
+      }
+    }
+
+    .footer-contacts__request-wrap {
+      margin: 2rem 0 0;
+    }
+
+    .footer-contacts__request {
+      font-size: 1.4rem;
+      padding: .5rem 1rem;
+    }
+
+    .footer-contacts {
+      margin-bottom: 2rem;
+    }
   }
 
   .soc {

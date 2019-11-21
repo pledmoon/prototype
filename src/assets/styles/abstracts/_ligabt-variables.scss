@@ -74,7 +74,7 @@ $btn-secondary-color: $white;
 $btn-secondary-bg: $secondary-color;
 $btn-tertiary-color: $white;
 $btn-tertiary-bg: $tertiary-color;
-$btn-reverse-color: $primary-color;
+$btn-reverse-color: transparent;
 $btn-reverse-bg: $white;
 $btn-reverse-border: $primary-color;
 
@@ -85,9 +85,10 @@ $btn-icon-fill-color: #ffffff;
 // **********
 // | Header |
 // **********
+$header-top-area-bg: $gray--light;
+
 $header-utility-color: $black;
 $header-utility-icon-color: $dark;
-$header-utility-icon-size: 1rem;
 
 // **********
 // | Footer |
