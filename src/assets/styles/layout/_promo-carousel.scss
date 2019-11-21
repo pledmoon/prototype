@@ -15,14 +15,18 @@
   &__slide {
     position: relative;
     height: 1px;
-    min-height: 42rem;
+    min-height: $promo-full-xs-height;
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
     background-position: center;
 
+    @media (min-width: $sm) {
+      min-height: $promo-full-mob-height;
+    }
+
     @media (min-width: $lg) {
-      min-height: 45rem;
+      min-height: $promo-full-height;
     }
   }
 
@@ -162,7 +166,7 @@
       margin-left: 22rem;
 
       #{$self}__slide {
-        min-height: 59rem;
+        min-height: $promo-full-offset-height;
       }
     }
   }

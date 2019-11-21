@@ -5,10 +5,93 @@
 
   &__main {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 0;
+    position: relative;
+
+    > * {
+      flex-basis: 33.333%;
+      max-width: 33.333%;
+    }
+
+    @media (min-width: $md) {
+      padding: 0;
+    }
   }
 
   .top-header-nav {
-    flex: auto;
+    
+  }
+
+  .header-contacts {
+    text-align: center;
+
+    @media (max-width: 479px) {
+      flex-basis: auto;
+      max-width: 100%;
+
+      @include absolute-horizontal;
+    }
+
+    &__tel {
+      color: $white;
+      font-weight: 300;
+
+      &-icon {
+        fill: $white;
+      }
+    }
+  }
+
+  .auth {
+    text-align: right;
+
+    &__toggle {
+      &-icon {
+        fill: $white;
+        @include size(2rem);
+      }
+    }
+
+    &__list {}
+
+    &__item {
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      padding-right: .7rem;
+
+      &:not(:first-child) {
+        padding-left: 1rem;
+
+        &::before {
+          content: "";
+          width: 0;
+          height: 50%;
+          border-left: 1px solid $white;
+
+          @include absolute-vertical;
+        }
+      }
+    }
+
+    &__link {
+      color: $white;
+      font-size: 1.4rem;
+      transition: all .3s;
+
+      &:hover {
+        color: $primary-color;
+      }
+
+      &-icon {
+        fill: $white;
+        margin: 0 .7rem 0 0;
+
+        @include size(1.25rem);
+      }
+    }
   }
 }
 /* Header Top Area */
@@ -37,12 +120,13 @@
     flex-basis: 16rem;
 
     &-desc {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
   }
 
   &__search-form {
     flex: auto;
+    max-width: 40rem;
 
     @media (max-width: $md--mw) {
       position: absolute;
@@ -56,6 +140,7 @@
       border-bottom: 1px solid $gray--medium;
       box-shadow: 0 .5rem 1rem rgba($black, .1);
       display: none;
+      max-width: 100%;
 
       #{$self}.is-searchbar-opened & {
         display: block;

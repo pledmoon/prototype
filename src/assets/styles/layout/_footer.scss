@@ -2,6 +2,7 @@
   background: $footer-bg;
   margin-top: 3rem;
   color: $footer-text-color;
+  border-top: 1px solid $gray;
 
   @media (min-width: $sm) {
     margin-top: 5rem;
@@ -24,7 +25,7 @@
   }
 
   &__bottom {
-    color: $gray;
+    color: $dark--medium;
     text-align: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -38,40 +39,48 @@
     margin: 0 auto 1rem;
   }
 
-  .footer-collapse__body {
-    .footer-about {
-      margin-bottom: 2rem;
-      font-size: 1.4rem;
-    }
+  .footer-about {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+  }
 
-    .logo {
-      margin: 0 0 2rem;
-    }
+  .logo {
+    margin: 0 0 2rem;
+  }
 
-    .footer-contacts__tel {
-      color: $gray--medium;
+  .footer-contacts {
+    margin-bottom: 2rem;
+
+    &__tel {
+      color: $dark;
+      font-weight: 600;
 
       &-icon {
-        fill: $gray--medium;
+        fill: $dark;
         margin: -3px 1rem 0 0;
       }
     }
 
-    .footer-contacts__request-wrap {
+    &__request-wrap {
       margin: 2rem 0 0;
     }
 
-    .footer-contacts__request {
+    &__request {
       font-size: 1.4rem;
       padding: .5rem 1rem;
-    }
-
-    .footer-contacts {
-      margin-bottom: 2rem;
     }
   }
 
   .soc {
     margin-bottom: 2rem;
+    white-space: nowrap;
+
+    &__link {
+      border-color: $dark--medium;
+    }
+
+    &__icon {
+      fill: $dark--medium;
+    }
   }
 }

@@ -3,9 +3,9 @@
   $self: &;
 
   &__title {
-    color: $primary-color;
-    font-size: 1.6rem;
-    font-weight: 600;
+    color: $footer-collapse-heading-color;
+    font-size: $footer-collapse-heading-font-size;
+    font-weight: 700;
     text-transform: uppercase;
     position: relative;
     padding: 2.6rem 1.5rem;
@@ -35,7 +35,7 @@
 
     .is-toggled & {
       transform: translateY(-50%) rotate(180deg);
-      fill: $white;
+      fill: $dark;
     }
 
     @media (min-width: $md) {
@@ -79,8 +79,8 @@
   }
 
   &__link {
-    color: $white;
-    font-size: 1.4rem;
+    color: $footer-collapse-link-color;
+    font-size: $footer-collapse-link-font-size;
     transition: all .3s;
 
     &:hover {
@@ -89,3 +89,4 @@
     }
   }
 }
+/* /footer-collapse */

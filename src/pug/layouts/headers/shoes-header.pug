@@ -4,16 +4,22 @@
 
     .header-top-area__main
       include ../../components/navbars/shoes-top-header-nav
+
       div.header-contacts
         a.header-contacts__tel(href="tel:+495111111") 
           +icon('phone-call', 'header-contacts__tel-icon')
           | + (495)-111-11-11
-
-      ul.auth
-        li.auth__item
-          a.auth__link Войти
-        li.auth__item
-          a.auth__link Регистрация
+      
+      .auth
+        a.auth__toggle.d-md-none(href="#")
+          +icon('user', 'auth__toggle-icon')
+        ul.auth__list.d-none.d-md-block
+          li.auth__item
+            a.auth__link(href="#")
+              +icon('user', 'auth__link-icon')
+              | Вход
+          li.auth__item
+            a.auth__link(href="#") Регистрация
 
 .container-fluid
 
@@ -24,17 +30,11 @@
 
     include ../../components/logo
 
-    .header__company-motto.d-none.d-md-block
-      p.header__company-motto-desc Краткое описание компании
-
     .header__search-form
       include ../../components/search-form
-    .header__header-contacts.d-none.d-md-block
-      include ../../components/header-contacts
 
     .header-utilities
       include ../../components/header-utility/header-utility-0
-      include ../../components/header-utility/header-utility-1
       include ../../components/header-utility/header-utility-5
       include ../../components/header-utility/header-utility-3
       include ../../components/header-utility/header-utility-4

@@ -20,6 +20,12 @@
   left: 0;
 }
 
+@mixin absolute-horizontal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 @mixin hide-element {
   position: absolute;
   left: -9999px;

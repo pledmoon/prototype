@@ -1,6 +1,7 @@
 .footer-collapse
   .footer-collapse__title Компания
     +icon('chevron-down', 'footer-collapse__title-icon')
+
   .footer-collapse__body
 
     div.logo
@@ -14,6 +15,6 @@
         +icon('phone-call', 'footer-contacts__tel-icon')
         | + (495)-111-11-11
       div.footer-contacts__request-wrap
-        a.footer-contacts__request.btn.btn--reverse(href="#" data-modal-win-trigger="callback") Заказать звонок
+        a.footer-contacts__request.btn.btn--reverse.btn--radius(href="#" data-modal-win-trigger="callback") Заказать звонок
 
     include soc

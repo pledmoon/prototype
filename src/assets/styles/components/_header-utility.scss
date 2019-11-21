@@ -10,7 +10,7 @@
   align-self: stretch;
 
   &:not(:first-child) {
-    border-left: 1px solid $gray;
+    border-left: 1px solid $gray--medium;
   }
 
   &:hover #{$self}__link {
@@ -32,7 +32,7 @@
     color: $header-utility-color;
 
     @media (min-width: $md) {
-      padding: 1rem 2rem;
+      padding: 1rem 1.5rem;
     }
 
     @media (max-width: 379px) {
@@ -50,8 +50,7 @@
     @include size(2rem);
 
     @media (min-width: $md) {
-      width: 2.5rem;
-      height: 2.5rem;
+      @include size(2.2rem);
     }
   }
 

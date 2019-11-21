@@ -3,6 +3,7 @@
   
   position: relative;
   white-space: nowrap;
+  align-self: stretch;
 
   &.has-dropdown {
     padding-left: 2rem;
@@ -25,7 +26,7 @@
     position: relative;
 
     &::before {
-      border-left: 1px solid $gray--medium;
+      border-left: 1px solid $top-header-nav-color;
       content: "";
       position: absolute;
       left: 0;
@@ -40,14 +41,14 @@
   }
 
   &__link {
-    color: $dark--medium;
+    color: $top-header-nav-color;
     display: block;
     padding: 0 1rem;
     transition: color .3s ease-in-out;
     position: relative;
 
     &:hover {
-      color: $font-base-color;
+      color: $white;
       text-decoration: none;
     }
 
@@ -74,6 +75,39 @@
       transition: all .4s ease-in-out;
     }
   }
+
+  /* SubLevel */
+  &__sublist {
+    transition: opacity .3s;
+    background: $white;
+    border: 1px solid $gray--medium;
+    z-index: $dropdownZIndex;
+    top: 100%;
+
+    @include hide-element;
+
+    #{$self}__item:hover & {
+      opacity: 1;
+      visibility: visible;
+      left: 0;
+    }
+  }
+
+  &__subitem {
+    font-size: 1.4rem;
+  }
+
+  &__sublink {
+    color: $font-base-color;
+    padding: .5rem 1rem;
+    display: block;
+
+    &:hover {
+      background: $gray--medium;
+      color: $primary-color;
+    }
+  }
+  /* SubLevel */
 
   &__toggle {
     background: transparent;
@@ -113,6 +147,12 @@
     z-index: 2;
     display: none;
     border: 1px solid $gray--medium;
+
+    margin-top: .5rem;
+
+    #{$self}__link {
+      color: $dark;
+    }
   }
 
   &.is-active &__dropdown {
