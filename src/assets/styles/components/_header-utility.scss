@@ -1,7 +1,7 @@
 .header-utilities {
   display: flex;
   align-self: stretch;
-  margin-left: auto;
+  // margin-left: auto;
 }
 
 .header-utility {
@@ -9,9 +9,9 @@
 
   align-self: stretch;
 
-  &:not(:first-child) {
+  /*&:not(:first-child) {
     border-left: 1px solid $gray--medium;
-  }
+  }*/
 
   &:hover #{$self}__link {
     background: $gray--light;
@@ -134,3 +134,9 @@
     vertical-align: top;
   }
 }
+
+/* --- */
+.header-utility__icon-sm {
+  @include size(2rem);
+}
+/* --- */

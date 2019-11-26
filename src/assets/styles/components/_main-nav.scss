@@ -421,9 +421,31 @@
       padding: 2rem;
       line-height: 1.7;
       border: 1px solid $gray;
-      columns: 2rem 6;
+      // columns: 2rem 6;
+      columns: 2rem 4;
 
       @include hide-element;
+      
+      @media (min-width: $md) {
+        &.has-banner {
+          columns: 2rem 3;
+          padding-right: 20%;
+
+          .main-nav__dropdown-banner {
+            position: static;
+            right: 2rem;
+            width: 20%;
+            top: 2rem;
+            border: none;
+            height: auto;
+            left: auto;
+
+            &-img {
+              height: auto;
+            }
+          }
+        }
+      }
     }
 
     &__rows-item {
@@ -766,3 +788,10 @@ body.is-navbar-opened {
  * = Main Nav END =
  * ================
  */
+
+
+/* --- Blame --- */
+.main-nav__item:hover .main-nav__dropdown-banner {
+  position: absolute;
+}
+/* --- Blame --- */

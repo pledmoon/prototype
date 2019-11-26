@@ -106,3 +106,26 @@
     margin-left: -1px;
   }
 }
+
+// BLAME
+.items-carousel-wrap--cut .product {
+  height: 34.7rem;
+
+  &:hover {
+    height: 34.7rem;
+  }
+
+  @media (min-width: $md) {
+    height: 28.5rem;
+
+    &:hover {
+      height: 28.5rem;
+    }
+  }
+
+  .product__wrap {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+// BLAME
