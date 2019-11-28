@@ -9,14 +9,14 @@ nav.main-nav
 
   ul.main-nav__container
     
-    li.main-nav__item.main-nav__item--catalog.main-nav__item--full-catalog
+    li.main-nav__item.main-nav__item--catalog
       a.main-nav__link(href="#") Каталог товаров
         +icon('chevron-down', 'main-nav__item-icon')
       ul.main-nav__catalog-list
         li.main-nav__catalog-item
           a.main-nav__catalog-link(href="#") Холодильники
 
-        li.main-nav__catalog-item
+        li.main-nav__catalog-item.main-nav__catalog-item--full-catalog
           a.main-nav__catalog-link(href="#") Новый вид каталога
             +icon('chevron-right', 'main-nav__catalog-item-icon')
           ul.main-nav__subcatalog-list
@@ -153,6 +153,9 @@ nav.main-nav
         li.main-nav__catalog-item
           a.main-nav__catalog-link(href="#") Ссылка
             +icon('chevron-right', 'main-nav__catalog-item-icon')
+          .main-nav__dropdown-banner
+            a.main-nav__dropdown-banner-link(href="#")
+              img.main-nav__dropdown-banner-img(src="https://dummyimage.com/210x610/cccccc/fff.jpg" alt="Banner")
           ul.main-nav__subcatalog-list
             li.main-nav__subcatalog-item
               a.main-nav__subcatalog-link(href="#") Подуровень
@@ -191,7 +194,7 @@ nav.main-nav
     li.main-nav__item
       a.main-nav__link(href="#") Простой пункт
     
-    li.main-nav__item
+    li.main-nav__item.main-nav__item--to-right
       a.main-nav__link(href="#") Первый тип меню
         +icon('chevron-down', 'main-nav__item-icon')
       ul.main-nav__secondary-container

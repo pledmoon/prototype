@@ -45,6 +45,11 @@
       &::after {
         display: none;
       }
+
+      &-lower,
+      &-upper {
+        right: -8px !important;
+      }
     }
   }
 }

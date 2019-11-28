@@ -62,10 +62,7 @@ button:focus {
   }
 
   &__input {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    left: -9999px;
+    @include hide-element;
   }
 
   &__input:checked + .checkbox-label__main::before {
@@ -77,3 +74,50 @@ button:focus {
   }
 }
 /* Checkbox */
+
+/* Radio */
+.radio-label {
+  &__main {
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: $font-base-color;
+    height: 100%;
+    padding: 0 1.5rem 0 2.5rem;
+    position: relative;
+    margin: 0;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.6rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::before {
+      content: "";
+      width: 1.6rem;
+      height: 1.6rem;
+      border: .5rem solid $primary-color;
+      border-radius: 3px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      line-height: 1.6rem;
+      border-radius: 50%;
+      background: $white;
+    }
+  }
+
+  &__input {
+    @include hide-element;
+  }
+
+  &__input:checked + .radio-label__main::before {
+    background: $primary-color;
+    border-color: $primary-color;
+  }
+}
+/* Radio */

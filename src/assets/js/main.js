@@ -502,6 +502,14 @@ document.addEventListener('DOMContentLoaded', function() {
       range: {
         'min': 0,
         'max': 1000000
+      },
+      format: {
+        to: function (value) {
+          return Math.round(value);
+        },
+        from: function (value) {
+          return Number(value);
+        }
       }
     });
 
@@ -676,8 +684,8 @@ document.addEventListener('DOMContentLoaded', function() {
   /* ------------ Product-Main ------------ */
 
   /* ------------ Navbar 3 max-width ------------ */
-  document.querySelectorAll('.main-nav__item--full-catalog .main-nav__catalog-item').forEach(function(item) {
-    let navWidthContainer = document.querySelector('.main-nav__catalog-list');
+  document.querySelectorAll('.main-nav__catalog-item--full-catalog').forEach(function(item) {
+    let navWidthContainer = document.querySelector('.main-nav__item--catalog');
 
     item.addEventListener('mouseenter', function(e) {
       navWidthContainer.classList.add('active');

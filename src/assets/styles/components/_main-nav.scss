@@ -75,6 +75,7 @@
       border: 1px solid $gray;
       width: 100%;
       z-index: $dropdownZIndex;
+      min-width: 20rem;
 
       @include hide-element;
     }
@@ -148,6 +149,18 @@
       animation: .3s fadeInLeft;
       opacity: 1;
     }
+
+    /* to-rigt position */
+    #{$self}__item--to-right:hover #{$self}__secondary-container {
+      left: auto;
+      right: 0;
+    }
+
+    #{$self}__item--to-right #{$self}__secondary-item:hover #{$self}__tertiary-container {
+      left: auto;
+      right: 100%;
+    }
+    /* to-rigt position */
     // --- /Interactive
     // Base Navbar END
     // -----------------------------------------
@@ -176,6 +189,7 @@
 
     &__catalog-item {
       flex: auto;
+      height: calc(100% / 11);
 
       &:not(:first-child) {
         border-top: 1px solid $gray--light;
@@ -320,22 +334,9 @@
     // --- /Dropdown-Banners
 
     // --------------- MOD: Catalog-Item-Full --------------- //
-    &__item--full-catalog {
-      position: static;
-
-      #{$self}__catalog-list {
-        background: transparent;
-        max-width: $main-nav-catalog-max-width;
-
-        &.active {
-          max-width: 100%;
-        }
-      }
-
-      #{$self}__catalog-item {
-        max-width: calc(#{$main-nav-catalog-max-width} - 2px);
-        background: $first-level-bg-color;
-      }
+    &__catalog-item--full-catalog {
+      max-width: calc(#{$main-nav-catalog-max-width} - 2px);
+      background: $first-level-bg-color;
 
       #{$self}__subcatalog-list {
         right: 0;
@@ -344,6 +345,7 @@
         z-index: -1;
         padding-top: 1rem;
         padding-bottom: 1rem;
+        transition: none;
 
         columns: 20rem 4;
       }
@@ -390,11 +392,26 @@
       }
     }
 
+    #{$self}__item.active {
+      position: static;
+
+      .main-nav__catalog-item {
+        max-width: calc(#{$main-nav-catalog-max-width} - 2px);
+      }
+
+      .main-nav__catalog-list {
+        background: transparent;
+        max-width: $main-nav-catalog-max-width;
+        max-width: 100%;
+      }
+    }
+
     // --- Interactive
-    &__item--full-catalog {
-      #{$self}__catalog-item:hover #{$self}__subcatalog-list {
+    &__catalog-item--full-catalog {
+      &:hover #{$self}__subcatalog-list {
         left: 0;
       }
+
       #{$self}__subcatalog-item:hover #{$self}__subcatalog-link {
         background: transparent;
         text-decoration: underline;
@@ -421,7 +438,7 @@
       padding: 2rem;
       line-height: 1.7;
       border: 1px solid $gray;
-      columns: 2rem 6;
+      columns: 2rem 4;
 
       @include hide-element;
     }
