@@ -16,10 +16,11 @@
 
   &__title {
     font-size: 1.4rem;
-    color: $primary-color;
+    color: $dark;
     padding: 2rem 2rem 2rem 0;
     cursor: pointer;
     position: relative;
+    font-weight: 600;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

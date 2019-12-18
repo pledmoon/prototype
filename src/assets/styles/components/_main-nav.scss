@@ -30,7 +30,7 @@
       text-align: center;
 
       &:hover #{$self}__link {
-        background: darken($main-nav-bg, 15%);
+        background: darken($main-nav-bg, 5%);
         color: $white;
       }
 
@@ -431,6 +431,8 @@
           columns: 2rem 3;
           padding-right: 20%;
 
+          min-height: 22rem;
+
           .main-nav__dropdown-banner {
             position: static;
             right: 2rem;
@@ -457,7 +459,7 @@
     }
 
     &__rows-link {
-      font-weight: 700;
+      font-weight: 600;
       color: $black;
 
       &:hover {

@@ -48,7 +48,7 @@
     position: relative;
 
     &:hover {
-      color: $white;
+      color: $black;
       text-decoration: none;
     }
 
@@ -68,7 +68,7 @@
       content: "";
       width: 0%;
       height: 2px;
-      background: $primary-color;
+      background: $black;
       position: absolute;
       left: 0;
       bottom: 0;
@@ -103,7 +103,7 @@
     display: block;
 
     &:hover {
-      background: $gray--medium;
+      // background: $gray--medium;
       color: $primary-color;
     }
   }
