@@ -428,7 +428,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /* Update Carousel Inside Tabs */
     if ( root.querySelector('.tabs__tab-pane:nth-child(' + (i+1) + ')').querySelector('.items-carousel') ) {
-      instanceOne.update();
+      
+      /*if ( instanceOne.length ) {
+        instanceOne[0].update();
+      } else {
+        instanceOne.update();
+      }*/
+
+      if ( instanceTwo.length ) {
+        instanceTwo[0].update();
+      } else {
+        instanceTwo.update();
+      }
+
     }
     /* Update Carousel Inside Tabs */
   }
@@ -462,7 +474,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
       /* Update Carousel Inside Tabs */
       if ( parent.querySelector('.items-carousel') ) {
-        instanceOne.update();
+
+        /*if ( instanceOne.length ) {
+          instanceOne[0].update();
+        } else {
+          instanceOne.update();
+        }*/
+
+        if ( instanceTwo.length ) {
+          instanceTwo[0].update();
+        } else {
+          instanceTwo.update();
+        }
+        
       }
       /* Update Carousel Inside Tabs */
     }
