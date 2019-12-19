@@ -772,6 +772,28 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   /* ------------ Mobile Search Toggle ------------ */
 
+  /* ------------ Sticky! ------------ */
+  let stickyElement = document.querySelector('.js-sticky');
+
+  if (stickyElement) {
+    let elemPosition = stickyElement.getBoundingClientRect().top + window.pageYOffset;
+    let endStickyPosition = document.querySelector('.footer').getBoundingClientRect().top + window.pageYOffset;
+
+    checkSticky(stickyElement, elemPosition, endStickyPosition);
+
+    window.onscroll = function() {
+      checkSticky(stickyElement, elemPosition, endStickyPosition);
+    }
+  }
+
+  function checkSticky(el, elPos, endPos) {
+    (window.pageYOffset < elPos || window.pageYOffset > endPos)
+      ?
+    el.classList.remove('is-sticky')
+      :
+    el.classList.add('is-sticky');
+  }
+  /* ------------ Sticky! ------------ */
 });
 
 svg4everybody({});
