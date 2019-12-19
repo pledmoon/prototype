@@ -35,5 +35,15 @@
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+
+@media (min-width: $md) {
+  .js-sticky.is-sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: $dropdownZIndex;
+  }
+}
 /* Misc Global Classes
 ------------------------------------------ */
