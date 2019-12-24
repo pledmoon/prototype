@@ -10,7 +10,7 @@
   align-self: stretch;
 
   &:not(:first-child) {
-    border-left: 1px solid $gray;
+    border-left: 1px solid $gray--medium;
   }
 
   &:hover #{$self}__link {

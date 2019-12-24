@@ -24,6 +24,10 @@ button:focus {
   outline: none;
 }
 
+label {
+  user-select: none;
+}
+
 /* Checkbox */
 .checkbox-label {
   &__main {
@@ -36,12 +40,14 @@ button:focus {
     margin: 0;
     user-select: none;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
     line-height: 1.6rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    
+    min-width: 1.6rem;
+    min-height: 1.6rem;
 
     &::before {
       content: "";
@@ -62,10 +68,7 @@ button:focus {
   }
 
   &__input {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    left: -9999px;
+    @include hide-element;
   }
 
   &__input:checked + .checkbox-label__main::before {
@@ -77,3 +80,49 @@ button:focus {
   }
 }
 /* Checkbox */
+
+/* Radio */
+.radio-label {
+  &__main {
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: $font-base-color;
+    height: 100%;
+    padding: 0 1.5rem 0 2.5rem;
+    position: relative;
+    margin: 0;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    line-height: 1.6rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::before {
+      content: "";
+      width: 1.6rem;
+      height: 1.6rem;
+      border: 1px solid $gray;
+      border-radius: 3px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      line-height: 1.6rem;
+      border-radius: 50%;
+      background: $white;
+    }
+  }
+
+  &__input {
+    @include hide-element;
+  }
+
+  &__input:checked + .radio-label__main::before {
+    border-width: .5rem;
+    border-color: $primary-color;
+  }
+}
+/* Radio */

@@ -7,8 +7,8 @@
   $self: &;
 
   background: $main-nav-bg;
-  border-top: 1px solid $main-nav-borders-bg;
-  border-bottom: 1px solid $main-nav-borders-bg;
+  border-top: 1px solid $gray--medium;
+  border-bottom: 1px solid $gray--medium;
   
   /* --- Desktop Navbar --- */
   @media (min-width: $md) {
@@ -30,7 +30,7 @@
       text-align: center;
 
       &:hover #{$self}__link {
-        background: $main-nav-borders-bg;
+        background: darken($main-nav-bg, 15%);
         color: $white;
       }
 
@@ -60,7 +60,7 @@
       #{$self}__item:not(:first-child) &::before {
         width: 1px;
         height: 60%;
-        background: $main-nav-borders-bg;
+        background: $gray--medium;
         content: "";
 
         @include absolute-vertical;
@@ -72,9 +72,10 @@
     &__secondary-container {
       top: 100%;
       background: $second-level-bg-color;
-      border: 1px solid $gray;
+      border: 1px solid $gray--medium;
       width: 100%;
       z-index: $dropdownZIndex;
+      min-width: 20rem;
 
       @include hide-element;
     }
@@ -115,7 +116,7 @@
       background: $tertiary-level-bg-color;
       opacity: 0;
       visibility: hidden;
-      border: 1px solid $gray;
+      border: 1px solid $gray--medium;
       min-width: 20rem;
     }
 
@@ -148,6 +149,18 @@
       animation: .3s fadeInLeft;
       opacity: 1;
     }
+
+    /* to-rigt position */
+    #{$self}__item--to-right:hover #{$self}__secondary-container {
+      left: auto;
+      right: 0;
+    }
+
+    #{$self}__item--to-right #{$self}__secondary-item:hover #{$self}__tertiary-container {
+      left: auto;
+      right: 100%;
+    }
+    /* to-rigt position */
     // --- /Interactive
     // Base Navbar END
     // -----------------------------------------
@@ -167,7 +180,7 @@
       width: 100%;
       top: 100%;
       background: $first-level-bg-color;
-      border: 1px solid transparent;
+      border: 1px solid $gray--medium;
       text-align: left;
       z-index: $dropdownZIndex;
 
@@ -176,6 +189,7 @@
 
     &__catalog-item {
       flex: auto;
+      height: calc(100% / 11);
 
       &:not(:first-child) {
         border-top: 1px solid $gray--light;
@@ -320,22 +334,9 @@
     // --- /Dropdown-Banners
 
     // --------------- MOD: Catalog-Item-Full --------------- //
-    &__item--full-catalog {
-      position: static;
-
-      #{$self}__catalog-list {
-        background: transparent;
-        max-width: $main-nav-catalog-max-width;
-
-        &.active {
-          max-width: 100%;
-        }
-      }
-
-      #{$self}__catalog-item {
-        max-width: calc(#{$main-nav-catalog-max-width} - 2px);
-        background: $first-level-bg-color;
-      }
+    &__catalog-item--full-catalog {
+      max-width: calc(#{$main-nav-catalog-max-width} - 2px);
+      background: $first-level-bg-color;
 
       #{$self}__subcatalog-list {
         right: 0;
@@ -344,6 +345,7 @@
         z-index: -1;
         padding-top: 1rem;
         padding-bottom: 1rem;
+        transition: none;
 
         columns: 20rem 4;
       }
@@ -390,11 +392,26 @@
       }
     }
 
+    #{$self}__item.active {
+      position: static;
+
+      .main-nav__catalog-item {
+        max-width: calc(#{$main-nav-catalog-max-width} - 2px);
+      }
+
+      .main-nav__catalog-list {
+        background: transparent;
+        max-width: $main-nav-catalog-max-width;
+        max-width: 100%;
+      }
+    }
+
     // --- Interactive
-    &__item--full-catalog {
-      #{$self}__catalog-item:hover #{$self}__subcatalog-list {
+    &__catalog-item--full-catalog {
+      &:hover #{$self}__subcatalog-list {
         left: 0;
       }
+
       #{$self}__subcatalog-item:hover #{$self}__subcatalog-link {
         background: transparent;
         text-decoration: underline;
@@ -420,8 +437,8 @@
       z-index: $dropdownZIndex;
       padding: 2rem;
       line-height: 1.7;
-      border: 1px solid $gray;
-      columns: 2rem 6;
+      border: 1px solid $gray--medium;
+      columns: 2rem 4;
 
       @include hide-element;
     }
@@ -479,7 +496,7 @@
       top: 100%;
       z-index: $dropdownZIndex;
       text-align: left;
-      border: 1px solid $gray;
+      border: 1px solid $gray--medium;
       transition: opacity .3s;
 
       @include hide-element;
@@ -487,7 +504,7 @@
 
     &__cols-item {
       width: $main-nav-catalog-max-width;
-      border-right: 1px solid $gray;
+      border-right: 1px solid $gray--medium;
 
       &:not(:first-child) {
         border-top: 1px solid $gray--light;
@@ -569,6 +586,10 @@
     // --- /Interactive
     // Columns Navbar END
     // -----------------------------------------
+
+    &__catalog-list .icon {
+      transform: translateY(-50%) rotate(-90deg);
+    }
   }
   /* --- /Desktop Navbar --- */
 
@@ -745,6 +766,20 @@
         float: right;
       }
     }
+
+    /* Icon-Trigger */
+    .main-nav__container .icon {
+      width: 4rem;
+      right: 0;
+      height: 100%;
+      padding: 1.5rem;
+      border-left: 1px solid $gray--medium;
+    }
+
+    .is-opened > a > .icon {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    /* Icon-Trigger */
     // -- /Misc
   }
 
@@ -766,3 +801,5 @@ body.is-navbar-opened {
  * = Main Nav END =
  * ================
  */
+
+
