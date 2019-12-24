@@ -593,6 +593,10 @@
     // --- /Interactive
     // Columns Navbar END
     // -----------------------------------------
+
+    &__catalog-list .icon {
+      transform: translateY(-50%) rotate(-90deg);
+    }
   }
   /* --- /Desktop Navbar --- */
 
@@ -769,6 +773,20 @@
         float: right;
       }
     }
+
+    /* Icon-Trigger */
+    .main-nav__container .icon {
+      width: 4rem;
+      right: 0;
+      height: 100%;
+      padding: 1.5rem;
+      border-left: 1px solid $gray--medium;
+    }
+
+    .is-opened > a > .icon {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    /* Icon-Trigger */
     // -- /Misc
   }
 

@@ -1,4 +1,4 @@
-section.tiny-product-card
+section.tiny-product-card(data-modal-win="465")
 
   header.tiny-product-card__header
     h2.tiny-product-card__heading Заголовок товара
@@ -79,7 +79,7 @@ section.tiny-product-card
             .product-main-info__preview
               .product-main-info__brand
                 a.product-main-info__brand-link(href="#")
-                  img.product-main-info__brand-img.img-responsive(src="assets/images/media/samsung.png")
+                  img.product-main-info__brand-img.img-responsive(src="assets/images/media/samsung.png" alt="brand")
               .product-main-info__review
                 .product-main-info__review-rate.product-main-info__review-rate--good 4.5
                 a.product-main-info__review-rate-opinions(href="#") 150 отзывов
@@ -152,6 +152,6 @@ section.tiny-product-card
             .product-controls__footer-control
               include ../counter
             .product-controls__footer-control
-              a.product-controls__add.btn.btn--primary(href="#") В корзину
+              a.product-controls__add.btn.btn--primary(href="#" data-modal-win-trigger="add465") В корзину
             .product-controls__footer-control
               a.product-controls__fast-buy.btn.btn--reverse(href="#") Купить в 1 клик
