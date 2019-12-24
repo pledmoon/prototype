@@ -7,8 +7,8 @@
   $self: &;
 
   background: $main-nav-bg;
-  border-top: 1px solid $gray;
-  border-bottom: 1px solid $gray;
+  border-top: 1px solid $gray--medium;
+  border-bottom: 1px solid $gray--medium;
   
   /* --- Desktop Navbar --- */
   @media (min-width: $md) {
@@ -60,7 +60,7 @@
       #{$self}__item:not(:first-child) &::before {
         width: 1px;
         height: 60%;
-        background: darken($main-nav-bg, 20%);
+        background: $gray--medium;
         content: "";
 
         @include absolute-vertical;
@@ -72,7 +72,7 @@
     &__secondary-container {
       top: 100%;
       background: $second-level-bg-color;
-      border: 1px solid $gray;
+      border: 1px solid $gray--medium;
       width: 100%;
       z-index: $dropdownZIndex;
       min-width: 20rem;
@@ -116,7 +116,7 @@
       background: $tertiary-level-bg-color;
       opacity: 0;
       visibility: hidden;
-      border: 1px solid $gray;
+      border: 1px solid $gray--medium;
       min-width: 20rem;
     }
 
@@ -180,7 +180,7 @@
       width: 100%;
       top: 100%;
       background: $first-level-bg-color;
-      border: 1px solid $gray;
+      border: 1px solid $gray--medium;
       text-align: left;
       z-index: $dropdownZIndex;
 
@@ -437,7 +437,7 @@
       z-index: $dropdownZIndex;
       padding: 2rem;
       line-height: 1.7;
-      border: 1px solid $gray;
+      border: 1px solid $gray--medium;
       columns: 2rem 4;
 
       @include hide-element;
@@ -496,7 +496,7 @@
       top: 100%;
       z-index: $dropdownZIndex;
       text-align: left;
-      border: 1px solid $gray;
+      border: 1px solid $gray--medium;
       transition: opacity .3s;
 
       @include hide-element;
@@ -504,7 +504,7 @@
 
     &__cols-item {
       width: $main-nav-catalog-max-width;
-      border-right: 1px solid $gray;
+      border-right: 1px solid $gray--medium;
 
       &:not(:first-child) {
         border-top: 1px solid $gray--light;
@@ -586,6 +586,10 @@
     // --- /Interactive
     // Columns Navbar END
     // -----------------------------------------
+
+    &__catalog-list .icon {
+      transform: translateY(-50%) rotate(-90deg);
+    }
   }
   /* --- /Desktop Navbar --- */
 
@@ -762,6 +766,20 @@
         float: right;
       }
     }
+
+    /* Icon-Trigger */
+    .main-nav__container .icon {
+      width: 4rem;
+      right: 0;
+      height: 100%;
+      padding: 1.5rem;
+      border-left: 1px solid $gray--medium;
+    }
+
+    .is-opened > a > .icon {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    /* Icon-Trigger */
     // -- /Misc
   }
 

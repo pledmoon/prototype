@@ -10,7 +10,7 @@
   align-self: stretch;
 
   &:not(:first-child) {
-    border-left: 1px solid $gray;
+    border-left: 1px solid $gray--medium;
   }
 
   &:hover #{$self}__link {
@@ -115,9 +115,9 @@
   &__dropdown-header {}
 
   &__dropdown-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
     padding-right: 2rem;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   &__dropdown-close {

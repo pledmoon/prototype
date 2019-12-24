@@ -61,7 +61,7 @@ table {
 
 .overlay {
   background: rgba($black, .5);
-  z-index: 101;
+  z-index: $overlayZIndex;
   position: fixed;
   left: 0;
   top: 0;

@@ -2,40 +2,43 @@
   $self: &;
 
   position: fixed;
-  left: -9999px;
+  left: 0;
   top: 0;
   bottom: 0;
   right: 0;
-  opacity: 0;
-  visibility: hidden;
   transition: opacity .3s, transform .3s;
-  z-index: 111;
+  z-index: $overlayAboveZIndex;
   overflow-x: hidden;
   overflow-y: auto;
 
-  &.is-visible {
-    visibility: visible;
-    left: 0;
-    opacity: 1;
+  background: rgba($black, .5);
+
+  + .modal-win {
+    background: rgba($black, .35);
   }
 
-  &__body {
+  &__main {
     padding: 3rem;
     background: $white;
     margin: 8rem auto;
     position: relative;
     width: 92%;
 
+    opacity: 0;
+    transition: opacity 1s;
+    animation: fadeOut .25s;
+
     @media (min-width: $sm) {
       max-width: 54rem;
       width: 100%;
     }
 
-    .is-modal-opened & {
+    &.is-modal-win-opened  {
       animation: .3s scaleIn forwards;
+      opacity: 1;
     }
 
-    #{$self}--wide & {
+    &--wide {
       max-width: 115rem;
     }
   }
@@ -53,7 +56,7 @@
     cursor: pointer;
 
     &:hover {
-      transform: rotate(90deg);
+      //transform: rotate(90deg);
     }
 
     &:hover &-icon {
@@ -76,4 +79,9 @@
 
 body.is-modal-opened {
   overflow: hidden;
+}
+
+body > [data-modal-win] {
+  // @include hide-element;
+  display: none;
 }

@@ -24,6 +24,10 @@ button:focus {
   outline: none;
 }
 
+label {
+  user-select: none;
+}
+
 /* Checkbox */
 .checkbox-label {
   &__main {
@@ -36,8 +40,7 @@ button:focus {
     margin: 0;
     user-select: none;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
     line-height: 1.6rem;
     white-space: nowrap;
     overflow: hidden;
@@ -90,8 +93,7 @@ button:focus {
     margin: 0;
     user-select: none;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
     line-height: 1.6rem;
     white-space: nowrap;
     overflow: hidden;
@@ -101,7 +103,7 @@ button:focus {
       content: "";
       width: 1.6rem;
       height: 1.6rem;
-      border: .5rem solid $primary-color;
+      border: 1px solid $gray;
       border-radius: 3px;
       position: absolute;
       left: 0;
@@ -119,7 +121,7 @@ button:focus {
   }
 
   &__input:checked + .radio-label__main::before {
-    background: $primary-color;
+    border-width: .5rem;
     border-color: $primary-color;
   }
 }

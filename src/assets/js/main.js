@@ -12,12 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if ( window.matchMedia("(max-width: 767px)").matches ) {
       let el = document.querySelector('.select-lang .choices__item--selectable');
-      el.innerHTML = el.dataset.value;
+      if (el) {
+        el.innerHTML = el.dataset.value;
 
-      document.querySelector('.select-lang .js-select-default').addEventListener('change', function(e) {
-        let el = document.querySelector('.select-lang .choices__item--selectable');
-        el.innerHTML = e.detail.value;
-      });
+        document.querySelector('.select-lang .js-select-default').addEventListener('change', function(e) {
+          let el = document.querySelector('.select-lang .choices__item--selectable');
+          el.innerHTML = e.detail.value;
+        });
+      }
     }
   }
 
@@ -129,7 +131,71 @@ document.addEventListener('DOMContentLoaded', function() {
   /* ------------ Main Carousel ------------ */
 
   /* ------------ Modal-Win ------------ */
-  let modalWinId;
+  document.addEventListener('click', function(e) {
+    let target = e.target;
+
+    if (!target.hasAttribute('data-modal-win-trigger')) return;
+
+    let winId = target.dataset.modalWinTrigger;
+
+    /* If wide */
+    let cls = "";
+    if ( target.closest('.product__view-btn') ) {
+      cls = 'modal-win__main--wide';
+    }
+    /* If wide */
+
+    let instance = new Modal({
+      content: document.querySelector('[data-modal-win="' + winId +'"]'),
+      className: cls,
+      afterOpen: function() { // carousel inside
+        if ( document.querySelector('[data-modal-win="' + winId + '"]').querySelector('.swiper-container') ) {
+          initProductGallery(
+            document.querySelector('.is-modal-win-opened .product-main-promo__main .swiper-container'), 
+            document.querySelector('.is-modal-win-opened .product-main-promo__thumbs .swiper-container'),
+            winId
+          );
+        }
+      }
+    });
+
+    instance.open();
+
+    e.preventDefault();
+  });
+
+  /*let modalTriggers = document.querySelectorAll('[data-modal-win-trigger]');
+
+  modalTriggers.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      let winId = item.dataset.modalWinTrigger;
+
+      let cls = "";
+      if ( item.closest('.product__view-btn') ) {
+        cls = 'modal-win__main--wide';
+      }
+
+      let instance = new Modal({
+        content: document.querySelector('[data-modal-win="' + winId +'"]'),
+        className: cls,
+        afterOpen: function() {
+          if ( document.querySelector('[data-modal-win="' + winId + '"]').querySelector('.swiper-container') ) {
+            initProductGallery(
+              document.querySelector('.is-modal-win-opened .product-main-promo__main .swiper-container'), 
+              document.querySelector('.is-modal-win-opened .product-main-promo__thumbs .swiper-container'),
+              winId
+            );
+          }
+        }
+      });
+
+      instance.open();
+
+      e.preventDefault();
+    });
+  });*/
+
+  /*let modalWinId;
 
   document.addEventListener('click', function(e) {
     let trigger = e.target.closest('[data-modal-win-trigger]');
@@ -145,19 +211,19 @@ document.addEventListener('DOMContentLoaded', function() {
       body.classList.add('is-modal-opened');
       body.style.paddingRight = scrollWidth() + 'px';
 
-      document.querySelector('[data-modal-win="' + modalWinId + '"]').classList.add('is-visible');
-
+      document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.add('is-modal-win-opened');
+  */
       /* Carousel Inside Modal */
-      if (document.querySelector('[data-modal-win="' + modalWinId + '"]').querySelector('.swiper-container')) {
+  /*    if (document.querySelector('[data-modal-win="' + modalWinId + '"]').querySelector('.swiper-container')) {
         initProductGallery(
           document.querySelector('[data-modal-win="' + modalWinId + '"] .product-main-promo__main .swiper-container'), 
           document.querySelector('[data-modal-win="' + modalWinId + '"] .product-main-promo__thumbs .swiper-container'),
           modalWinId
         );
-      }
+      }*/
       /* Carousel Inside Modal */
 
-      setTimeout(function() {
+  /*    setTimeout(function() {
         document.addEventListener('click', clickOutsideModalWin);
       });
     }
@@ -175,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.remove('is-modal-opened');
       document.body.style.paddingRight = '';
 
-      document.querySelector('[data-modal-win="' + modalWinId + '"]').classList.remove('is-visible');
+      document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.remove('is-modal-win-opened');
 
       document.removeEventListener('click', clickOutsideModalWin);
     });
@@ -194,6 +260,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.removeEventListener('click', clickOutsideModalWin);
   }
+  */
+
+  /* ------------------- MWin inside Modal Win ---------------------*/
+  /*if ( document.body.classList.contains('is-modal-opened') ) {
+
+
+    let modalWinId;
+
+    document.addEventListener('click', function(e) {
+      let trigger = e.target.closest('[data-modal-win-trigger]');
+
+      if ( !trigger ) return;
+
+      modalWinId = trigger.dataset.modalWinTrigger;
+
+      document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.add('is-modal-win-opened');
+
+      setTimeout(function() {
+        document.addEventListener('click', clickOutsideModalWin);
+      });
+
+      e.preventDefault();
+    });
+
+    document.querySelectorAll('.modal-win__close').forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        let target = e.target.closest('.modal-win__close');
+
+        if ( !target ) return;
+
+        document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.remove('is-modal-win-opened');
+
+        document.removeEventListener('click', clickOutsideModalWin);
+      });
+    });
+
+    function clickOutsideModalWin(e) {
+      let target = e.target.closest('.modal-win__body');
+
+      if (target) return;
+
+      document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.remove('is-modal-win-opened');
+
+      document.removeEventListener('click', clickOutsideModalWin);
+    }
+
+
+  }*/
+  /* ------------------- MWin inside Modal Win ---------------------*/
   /* ------------ Modal-Win ------------ */ 
 
   /* ------------ Footer Collapse ------------ */
@@ -272,7 +387,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /* Toggles Inside */
     // create toggles
-    let navbarLinks = document.querySelectorAll('.main-nav__container a');
+    //let navbarLinks = document.querySelectorAll('.main-nav__container a');
+    let navbarLinks = document.querySelectorAll('.main-nav__container .icon');
 
     navbarLinks.forEach(function(item) {
       if ( item.closest('li').querySelector('ul') ) {
@@ -294,7 +410,36 @@ document.addEventListener('DOMContentLoaded', function() {
   /* ------------ Main-Nav ------------ */
 
   /* ------------ Counter ------------ */
-  document.querySelectorAll('.counter--add').forEach(function(item) {
+  document.addEventListener('click', function(e) {
+    let targetAdd = e.target.closest('.counter--add'),
+        targetRemove = e.target.closest('.counter--remove');
+
+    if ( !(targetAdd || targetRemove) ) return;
+
+    // Target ADD
+    if (targetAdd) {
+      let input = targetAdd.closest('.counter').querySelector('input[type="tel"]');
+      let value = input.value;
+
+      if ( !parseInt(value) === value ) return;
+
+      input.value = parseInt(value) + 1;
+    }
+
+    // Target REMOVE
+    if (targetRemove) {
+      let input = targetRemove.closest('.counter').querySelector('input[type="tel"]');
+      let value = input.value;
+
+      if ( !parseInt(value) === value ) return;
+
+      if (value > 1) {
+        input.value = parseInt(value) - 1;
+      }
+    }
+  });
+
+  /*document.querySelectorAll('.counter--add').forEach(function(item) {
 
     item.addEventListener('click', function(e) {
       let input = this.closest('.counter').querySelector('input[type="tel"]');
@@ -320,7 +465,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-  });
+  });*/
   /* ------------ Counter ------------ */
 
   /* ------------ Items Carousels ------------ */

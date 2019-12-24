@@ -4,7 +4,8 @@
  * ==================
  */
 .filter {
-
+  position: relative;
+  
   &__heading {}
 
   &__main {}
@@ -68,8 +69,15 @@
       line-height: 1.4rem;
       min-height: 1.8rem;
     }
+
     .checkbox-label__main::before {
       margin-top: -1px;
+    }
+
+    .checkbox-label__amount,
+    .radio-label__amount {
+      color: $dark--medium;
+      margin-left: .5rem;
     }
   }
 

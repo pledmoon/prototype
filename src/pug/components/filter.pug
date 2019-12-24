@@ -32,34 +32,42 @@
         .filter__option.checkbox-label
           input.checkbox-label__input(type="checkbox" name="Samsung" id="opt-samsung")
           label.checkbox-label__main(for="opt-samsung") Samsung
+            small.checkbox-label__amount (3)
 
         .filter__option.checkbox-label
           input.checkbox-label__input(type="checkbox" name="Lenovo" id="opt-lenovo")
           label.checkbox-label__main(for="opt-lenovo") Lenovo
+            small.checkbox-label__amount (95)
 
         .filter__option.checkbox-label
           input.checkbox-label__input(type="checkbox" name="ACER" id="opt-acer")
           label.checkbox-label__main(for="opt-acer") ACER
+            small.checkbox-label__amount (60)
 
         .filter__option.checkbox-label
           input.checkbox-label__input(type="checkbox" name="Asus" id="opt-asus")
           label.checkbox-label__main(for="opt-asus") Asus
+            small.checkbox-label__amount (11)
 
         .filter__option.checkbox-label
           input.checkbox-label__input(type="checkbox" name="LG" id="opt-lg")
           label.checkbox-label__main(for="opt-lg") LG (Hi-Technology)
+            small.checkbox-label__amount (43)
 
         .filter__option.checkbox-label.is-field-off
           input.checkbox-label__input(type="checkbox" name="Dell" id="opt-dell")
           label.checkbox-label__main(for="opt-dell") Dell
+            small.checkbox-label__amount (744)
 
         .filter__option.checkbox-label.is-field-off
           input.checkbox-label__input(type="checkbox" name="HP" id="opt-hp")
           label.checkbox-label__main(for="opt-hp") HP
+            small.checkbox-label__amount (6785)
 
         .filter__option.checkbox-label.is-field-off
           input.checkbox-label__input(type="checkbox" name="Apple" id="opt-apple")
           label.checkbox-label__main(for="opt-apple") Apple
+            small.checkbox-label__amount (75)
 
         a.filter__more-options(href="#") #[span Показать все] (3)
 
@@ -114,10 +122,12 @@
         .filter__option.radio-label
           input.radio-label__input(type="radio" name="is-delivery" checked id="dlv-1")
           label.radio-label__main(for="dlv-1") Доставка
+            small.checkbox-label__amount (744)
 
         .filter__option.radio-label
           input.radio-label__input(type="radio" name="is-delivery" id="dlv-2")
           label.radio-label__main(for="dlv-2") Самовывоз
+            small.radio-label__amount (15)
 
     .filter__section.is-hidden
       .filter__title Характеристики
@@ -207,7 +217,7 @@
 
         .filter__btns
             a.filter__btn-reset.btn.btn--primary(href="#") Применить
-            a.filter__btn-accept.btn.btn(href="#") 
+            a.filter__btn-accept.btn(href="#") 
               +icon('update-arrow', 'filter__btn-icon')
               | Сбросить
 // /filter
