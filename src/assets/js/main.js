@@ -261,54 +261,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.removeEventListener('click', clickOutsideModalWin);
   }
   */
-
-  /* ------------------- MWin inside Modal Win ---------------------*/
-  /*if ( document.body.classList.contains('is-modal-opened') ) {
-
-
-    let modalWinId;
-
-    document.addEventListener('click', function(e) {
-      let trigger = e.target.closest('[data-modal-win-trigger]');
-
-      if ( !trigger ) return;
-
-      modalWinId = trigger.dataset.modalWinTrigger;
-
-      document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.add('is-modal-win-opened');
-
-      setTimeout(function() {
-        document.addEventListener('click', clickOutsideModalWin);
-      });
-
-      e.preventDefault();
-    });
-
-    document.querySelectorAll('.modal-win__close').forEach(function(item) {
-      item.addEventListener('click', function(e) {
-        let target = e.target.closest('.modal-win__close');
-
-        if ( !target ) return;
-
-        document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.remove('is-modal-win-opened');
-
-        document.removeEventListener('click', clickOutsideModalWin);
-      });
-    });
-
-    function clickOutsideModalWin(e) {
-      let target = e.target.closest('.modal-win__body');
-
-      if (target) return;
-
-      document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.remove('is-modal-win-opened');
-
-      document.removeEventListener('click', clickOutsideModalWin);
-    }
-
-
-  }*/
-  /* ------------------- MWin inside Modal Win ---------------------*/
   /* ------------ Modal-Win ------------ */ 
 
   /* ------------ Footer Collapse ------------ */
@@ -928,6 +880,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.onscroll = function() {
       checkSticky(stickyElement, elemPosition, endStickyPosition);
+
+      isOpenedAndFixedCatalog();
     }
   }
 
@@ -938,6 +892,25 @@ document.addEventListener('DOMContentLoaded', function() {
       :
     el.classList.add('is-sticky');
   }
+
+  /* Opened Catalog */
+  let isCatalogOpened = document.querySelector('.promo-carousel').classList.contains('promo-carousel--offset');
+
+  function isOpenedAndFixedCatalog() {
+    if (!isCatalogOpened) return;
+
+    let opened = document.querySelector('.main-nav').classList.contains('is-sticky'),
+        catalog = document.querySelector('.main-nav__item--catalog');
+
+    if (opened) {
+      catalog.classList.remove('is-catalog-opened');
+    } else {
+      catalog.classList.add('is-catalog-opened');
+    }
+  }
+
+  isOpenedAndFixedCatalog();
+  /* Opened Catalog */
   /* ------------ Sticky! ------------ */
 });
 

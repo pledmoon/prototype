@@ -1,0 +1,75 @@
+.dropdown-products {
+  &__tbody {}
+  
+  &__tr {
+    &:last-child td {
+      border-bottom: none;
+    }
+  }
+
+  &__td {
+    padding: .5rem 1rem;
+  }
+
+  &__img-wrap {
+    max-width: 5rem;
+    width: 100%;
+    display: block;
+  }
+
+  &__img {}
+
+  &__title {
+    font-size: 1.4rem;
+    color: $black;
+    display: inline-block;
+    max-width: 24rem;
+    height: 4rem;
+    overflow: hidden;
+    line-height: 1.4;
+
+    line-height: 4rem;
+
+    &-text {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 2rem;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__price {
+    &-base {
+      display: block;
+
+      @include truncate-text;
+
+      strong {
+        font-weight: 600;
+      }
+    }
+
+    &-total {
+      display: block;
+      color: $dark;
+
+      @include truncate-text;
+    }
+  }
+
+  &__remove {
+    &-icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      color: $dark--medium;
+      transition: all .3s;
+
+      &:hover {
+        fill: #900;
+      }
+    }
+  }
+}

@@ -23,6 +23,7 @@
 @import "base/fonts";
 @import "base/typography";
 @import "base/forms";
+@import "base/table";
 @import "base/animations";
 @import "base/print";
 @import "base/ui-demo";
@@ -75,6 +76,7 @@
 @import "components/product-main-promo";
 @import "components/product-main-docs";
 @import "components/product-main-params";
+@import "components/dropdown-basket";
 
 // 6.Pages (page-specific styles)
 //@import 'pages/home'
