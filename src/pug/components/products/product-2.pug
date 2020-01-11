@@ -7,6 +7,13 @@ article.product
       a.product__view-btn.btn.btn--primary(href="#" data-modal-win-trigger="267") Быстрый просмотр
       ul.product__stickers
         li.product__sticker.product__sticker--hot Акция
+      .product__controls
+        .product__control 
+          a.product__add-favourite(href="#")
+            +icon('heart-thin', 'product__add-favourite-icon')
+        .product__control 
+          a.product__action-compare(href="#")
+            +icon('compare-thin', 'product__action-compare-icon')
 
     .product__body
       .product__title #[a.product__title-link(href="#") Заголовок товара]
@@ -14,6 +21,7 @@ article.product
       .product__add.btn.btn--primary(data-modal-win-trigger="add267")
         +icon('shopping-cart', 'product__add-icon')
         | Купить
+      .product__add.btn.btn--reverse Купить в 1 клик
 
     footer.product__footer
       dl.product__params
@@ -30,11 +38,11 @@ article.product
             | В 1 клик
         .product__control 
           a.product__add-favourite(href="#")
-            +icon('heart', 'product__add-favourite-icon')
+            +icon('heart-thin', 'product__add-favourite-icon')
             | В избранное
         .product__control 
           a.product__action-compare(href="#")
-            +icon('compare', 'product__action-compare-icon')
+            +icon('compare-thin', 'product__action-compare-icon')
             | Сравнить
         .product__control
           .product__instock

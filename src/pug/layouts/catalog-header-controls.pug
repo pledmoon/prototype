@@ -9,6 +9,13 @@
       option(value="48") 48
 
   .header-control
+    label.header-control__title(for="show-by-select") Сортировать:
+    select.js-select-default#show-by-select
+      option(value="s-name") Название
+      option(value="s-price") Цена
+      option(value="s-instock") Наличие
+
+  .header-control
     span.header-control__title Сортировать по: 
     ul.header-control__list
       li.header-control__item

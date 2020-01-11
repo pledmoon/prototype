@@ -103,9 +103,17 @@
       background: $gray--medium;
     }
   }
+  
+  .choices {
+    .choices__inner {
+      font-size: 1.4rem;
+    }
 
-  .choices__inner {
-    font-size: 1.4rem;
+    .choices__list--dropdown {
+      white-space: nowrap;
+      width: auto;
+      min-width: 100%;
+    }
   }
 
   .filter-toggle,

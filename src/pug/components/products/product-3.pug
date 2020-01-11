@@ -5,6 +5,13 @@ article.product
       a.product__img-wrap(href="#")
         img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="Product Img")
       a.product__view-btn.btn.btn--primary(href="#" data-modal-win-trigger="249") Быстрый просмотр
+      .product__controls
+        .product__control 
+          a.product__add-favourite(href="#")
+            +icon('heart-thin', 'product__add-favourite-icon')
+        .product__control 
+          a.product__action-compare(href="#")
+            +icon('compare-thin', 'product__action-compare-icon')
 
     .product__body
       .product__title #[a.product__title-link(href="#") Заголовок товара длинный]
@@ -12,6 +19,7 @@ article.product
       .product__add.btn.btn--primary(data-modal-win-trigger="add249")
         +icon('shopping-cart', 'product__add-icon')
         | Купить
+      .product__add.btn.btn--reverse Купить в 1 клик
 
     footer.product__footer
       dl.product__params
@@ -28,11 +36,11 @@ article.product
             | В 1 клик
         .product__control 
           a.product__add-favourite(href="#")
-            +icon('heart', 'product__add-favourite-icon')
+            +icon('heart-thin', 'product__add-favourite-icon')
             | В избранное
         .product__control 
           a.product__action-compare(href="#")
-            +icon('compare', 'product__action-compare-icon')
+            +icon('compare-thin', 'product__action-compare-icon')
             | Сравнить
         .product__control
           .product__instock

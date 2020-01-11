@@ -64,16 +64,20 @@
   .product__title {
     max-width: 25rem;
     font-size: 1.4rem;
+    height: 5.9rem;
   }
 
   .product__price {
     white-space: normal;
     line-height: 1.2;
     margin: 0;
+    height: auto;
+    overflow: visible;
   }
 
   .product__old-price {
     display: block;
+    float: none;
   }
 
   .product__add {

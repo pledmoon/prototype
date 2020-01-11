@@ -1,7 +1,6 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function() {
-
   /* ------------ Choices Selects ------------ */
   if (document.querySelector('.js-select-default')) {
     let choices = new Choices('.js-select-default', {
@@ -214,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.add('is-modal-win-opened');
   */
       /* Carousel Inside Modal */
-  /*    if (document.querySelector('[data-modal-win="' + modalWinId + '"]').querySelector('.swiper-container')) {
+      /*if (document.querySelector('[data-modal-win="' + modalWinId + '"]').querySelector('.swiper-container')) {
         initProductGallery(
           document.querySelector('[data-modal-win="' + modalWinId + '"] .product-main-promo__main .swiper-container'), 
           document.querySelector('[data-modal-win="' + modalWinId + '"] .product-main-promo__thumbs .swiper-container'),
@@ -873,7 +872,11 @@ document.addEventListener('DOMContentLoaded', function() {
   let stickyElement = document.querySelector('.js-sticky');
 
   if (stickyElement) {
-    let elemPosition = stickyElement.getBoundingClientRect().top + window.pageYOffset;
+    let sliderGapValue = 0;
+    let sliderGap = document.querySelector('.promo-carousel--offset');
+    if (sliderGap) sliderGapValue = sliderGap.offsetHeight;
+
+    let elemPosition = stickyElement.getBoundingClientRect().top + window.pageYOffset + sliderGapValue;
     let endStickyPosition = document.querySelector('.footer').getBoundingClientRect().top + window.pageYOffset;
 
     checkSticky(stickyElement, elemPosition, endStickyPosition);
@@ -894,7 +897,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* Opened Catalog */
-  let isCatalogOpened = document.querySelector('.promo-carousel').classList.contains('promo-carousel--offset');
+  let isCatalogOpened = '';
+  if ( document.querySelector('.promo-carousel') ) {
+    isCatalogOpened = document.querySelector('.promo-carousel').classList.contains('promo-carousel--offset');
+  }
 
   function isOpenedAndFixedCatalog() {
     if (!isCatalogOpened) return;
@@ -912,6 +918,20 @@ document.addEventListener('DOMContentLoaded', function() {
   isOpenedAndFixedCatalog();
   /* Opened Catalog */
   /* ------------ Sticky! ------------ */
+
+  /* ------------ Continue Trigger! ------------ */
+  document.addEventListener('click', function(e) {
+    let continuBtn = e.target.closest('.product-added__continue');
+
+    if (!continuBtn) return;
+
+    let closeBtn = continuBtn.closest('.modal-win').querySelector('.modal-win__close');
+    console.log(closeBtn);
+    closeBtn.click();
+
+    e.preventDefault();
+  });
+  /* ------------ Continue Trigger! ------------ */
 });
 
 svg4everybody({});
