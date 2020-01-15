@@ -13,8 +13,155 @@ block content
     include layouts/carousels/promo-carousel-offset
     include layouts/items-section/items-section-1
     include layouts/service-cards-section
+
+    .product-main-header
+      .h2 Популярные категории
+    
+    // catalog-section
+    .catalog-section
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Электроника
+              .catalog-section-main__count 22 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Обувь
+              .catalog-section-main__count 4 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Бижутерия и ювелирные изделия
+              .catalog-section-main__count 11 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Товары для дома
+              .catalog-section-main__count 176 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Электроника
+              .catalog-section-main__count 22 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Обувь
+              .catalog-section-main__count 4 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Бижутерия и ювелирные изделия
+              .catalog-section-main__count 11 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Товары для дома
+              .catalog-section-main__count 176 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Бижутерия и ювелирные изделия
+              .catalog-section-main__count 11 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Товары для дома
+              .catalog-section-main__count 176 товара
+    // /catalog-section
+
     include layouts/tabs-section
     include layouts/items-section/items-section-2
     include layouts/news-section
+
+    .brands-section
+
+      .brands-section__heading.h2 Бренды
+
+      .brands-carousel-wrap
+
+        .swiper-container.brands-carousel.js-brands-carousel
+
+          .swiper-wrapper
+
+            .swiper-slide
+              a.brand(href="#")
+                figure.brand__main
+                  .brand__img-wrap
+                    img.brand__img.img-responsive(src="https://max-demo.ru/upload/iblock/d66/d6677bd4f71d56b4730747764a11aa56.png" alt="")
+                  figcaption.brand__heading Vega
+
+            .swiper-slide
+              a.brand(href="#")
+                figure.brand__main
+                  .brand__img-wrap
+                    img.brand__img.img-responsive(src="https://library.kissclipart.com/20180915/kwq/kissclipart-samsung-logo-transparent-clipart-logo-samsung-gala-1909bb35dc5e9319.jpg" alt="")
+                  figcaption.brand__heading Samsung
+
+            .swiper-slide
+              a.brand(href="#")
+                figure.brand__main
+                  .brand__img-wrap
+                    img.brand__img.img-responsive(src="https://d2ph5fj80uercy.cloudfront.net/06/cat1996.jpg" alt="")
+                  figcaption.brand__heading Kitty
+
+            .swiper-slide
+              a.brand(href="#")
+                figure.brand__main
+                  .brand__img-wrap
+                    img.brand__img.img-responsive(src="https://p7.hiclipart.com/preview/675/344/955/lg-g5-lg-electronics-lg-corp-lg-logo-png.jpg" alt="")
+                  figcaption.brand__heading LG
+
+            .swiper-slide
+              a.brand(href="#")
+                figure.brand__main
+                  .brand__img-wrap
+                    img.brand__img.img-responsive(src="https://p1.hiclipart.com/preview/1017/255/720/mac-bar-v1-apple-logo-png-clipart.jpg" alt="")
+                  figcaption.brand__heading Apple
+
+            .swiper-slide
+              a.brand(href="#")
+                figure.brand__main
+                  .brand__img-wrap
+                    img.brand__img.img-responsive(src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Acer_2011.svg/1280px-Acer_2011.svg.png" alt="")
+                  figcaption.brand__heading Acer
+
+          .brands-carousel__pagination
+
+        .brands-carousel__prev
+          +icon('chevron-left', 'brands-carousel__prev-icon')
+        .brands-carousel__next
+          +icon('chevron-right', 'brands-carousel__next-icon')
 
   include layouts/footers/footer

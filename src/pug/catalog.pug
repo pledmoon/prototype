@@ -10,6 +10,46 @@ block sidebar
   include components/category-nav
   include components/filter
 
+  figure.subscribe-widget.d-none.d-md-block
+    +icon('paper-plane', 'subscribe-widget__icon')
+    figcaption.subscribe-widget__footer
+      p.subscribe-widget__desc Будьте в курсе наших акций и новостей
+      a.subscribe-widget__btn.btn.btn--reverse.btn--radius(href="#") Подписаться
+
+  ul.subscribe-helpers.d-none.d-md-block
+    li.subscribe-helpers__helper
+      a.subscribe-helpers__link(href="#")
+        +icon('phone-call', 'subscribe-helpers__icon')
+        span.subscribe-helpers__text Заказать звонок
+    li.subscribe-helpers__helper
+      a.subscribe-helpers__link(href="#")
+        +icon('email', 'subscribe-helpers__icon')
+        span.subscribe-helpers__text Задать вопрос
+    li.subscribe-helpers__helper
+      a.subscribe-helpers__link(href="#")
+        +icon('eye', 'subscribe-helpers__icon')
+        span.subscribe-helpers__text Оставить отзыв
+  
+
+  .news-widget.d-none.d-md-block
+    .news-widget__heading.h3 Новости
+    ul.news-widget__list
+      li.news-widget__news
+        time.news-widget__date(datetime="2019-08-24") 
+          +icon('calendar-alt', 'news-widget__date-icon')
+          | 12 Ноября 2019
+        p.news-widget__excerpt #[a(href="3") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga fugit quos obcaecati dolorem, cumque dignissimos.]
+      li.news-widget__news
+        time.news-widget__date(datetime="2019-08-24") 
+          +icon('calendar-alt', 'news-widget__date-icon')
+          | 12 Апреля 2019
+        p.news-widget__excerpt #[a(href="3") Lfugit quos obcaecati dolorem, cumqu obcaecati dolorem, cumque dignissimos.]
+      li.news-widget__news
+        time.news-widget__date(datetime="2019-08-24") 
+          +icon('calendar-alt', 'news-widget__date-icon')
+          | 12 Сентября 2019
+        p.news-widget__excerpt #[a(href="3") Lorem ipsum dolorbcaecati dolorem, cumque dignissimos.]
+
 block main
   h1.main-title #{pageHeading}
   include layouts/catalog-header-controls

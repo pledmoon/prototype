@@ -125,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
         992: {},
         1200: {}
     }
-
   });
   /* ------------ Main Carousel ------------ */
 
@@ -436,18 +435,18 @@ document.addEventListener('DOMContentLoaded', function() {
     },
 
     breakpoints: {
-        480: {
-          slidesPerView: 2
-        },
-        768: {
-          slidesPerView: 3
-        },
-        992: {
-          slidesPerView: 4
-        },
-        1200: {
-          slidesPerView: 5
-        }
+      480: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      },
+      992: {
+        slidesPerView: 3
+      },
+      1200: {
+        slidesPerView: 4
+      }
     }
   };
 
@@ -467,18 +466,18 @@ document.addEventListener('DOMContentLoaded', function() {
     },
 
     breakpoints: {
-        480: {
-          slidesPerView: 2
-        },
-        768: {
-          slidesPerView: 3
-        },
-        992: {
-          slidesPerView: 4
-        },
-        1200: {
-          slidesPerView: 5
-        }
+      480: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      },
+      992: {
+        slidesPerView: 4
+      },
+      1200: {
+        slidesPerView: 5
+      }
     }
   };
 
@@ -932,6 +931,58 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
   });
   /* ------------ Continue Trigger! ------------ */
+
+  /* ------------ Vertical Carousel ------------ */
+  if ( document.querySelector('.js-vertical-carousel') ) {
+    const verticalCarousel = new Swiper('.js-vertical-carousel', {
+      direction: 'vertical',
+      slidesPerView: 2,
+      loop: true,
+      spaceBetween: 5,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+
+      navigation: {
+          prevEl: '.vertical-carousel__th-prev',
+          nextEl: '.vertical-carousel__th-next'
+      }
+    });
+  }
+  /* ------------ Vertical Carousel ------------ */
+
+  /* ------------ Brands Carousel ------------ */
+  let brandsCarousel = new Swiper('.js-brands-carousel', {
+    loop: true,
+    slidesPerView: 2,
+    spaceBetween: 25,
+
+    pagination: {
+      el: '.brands-carousel__pagination',
+      clickable: true
+    },
+
+    navigation: {
+      prevEl: '.brands-carousel__prev',
+      nextEl: '.brands-carousel__next'
+    },
+
+    breakpoints: {
+        480: {
+          slidesPerView: 3
+        },
+        576: {
+          slidesPerView: 4
+        },
+        768: {
+          slidesPerView: 5
+        },
+        992: {
+          slidesPerView: 6
+        },
+        //1200: {}
+    }
+  });
+  /* ------------ Brands Carousel ------------ */
 });
 
 svg4everybody({});

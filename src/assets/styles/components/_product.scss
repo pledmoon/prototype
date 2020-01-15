@@ -179,6 +179,24 @@
     margin-top: .3rem;
   }
 
+  &__discount {
+    border: 1px solid $gray--medium;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+
+    &-value {
+      border-right: 1px solid $gray--medium;
+      padding: .5rem 1rem;
+      font-weight: 500;
+      background: $gray--thin;
+    }
+
+    &-total {
+      padding: .5rem 1rem;
+    }
+  }
+
   &__add {
     width: 100%;
     margin-bottom: 1rem;

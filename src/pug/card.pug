@@ -31,7 +31,28 @@ block content
           .product-tools__tooltip Добавить в избранное
 
     include layouts/product-main
-    include layouts/product-main-tabs
+
+    .row
+      .col-md-9
+        include layouts/product-main-tabs
+      .col-md-3
+        // vertical-carousel
+        .vertical-carousel-wrap.d-none.d-md-block
+          .swiper-container.vertical-carousel.js-vertical-carousel
+            .swiper-wrapper
+              .swiper-slide
+                include components/products/product-1
+              .swiper-slide
+                include components/products/product-2
+              .swiper-slide
+                include components/products/product-3
+              .swiper-slide
+                include components/products/product-4
+          .vertical-carousel__th-prev
+            +icon('chevron-up', 'vertical-carousel__th-prev-icon')
+          .vertical-carousel__th-next
+            +icon('chevron-down', 'vertical-carousel__th-next-icon')
+        // /vertical-carousel
     
     .h2 Похожие товары
     include layouts/carousels/items-carousel-2

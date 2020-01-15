@@ -18,7 +18,7 @@
   &__title {
     font-size: 1.4rem;
     color: $primary-color;
-    padding: 2rem 2rem 2rem 0;
+    padding: 1rem 2rem 1rem 0;
     cursor: pointer;
     position: relative;
     white-space: nowrap;
@@ -29,7 +29,7 @@
       content: "\f078";
       position: absolute;
       right: 0;
-      top: 2rem;
+      top: 1rem;
       font-family: fa;
       font-size: 1.4rem;
       transition: all .3s;
@@ -45,7 +45,8 @@
   }
 
   &__body {
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
 
     > *:not(:last-child) {
       padding: 0 0 1.5rem;
@@ -148,6 +149,7 @@
       left: 0;
       visibility: visible;
       opacity: 1;
+      margin-bottom: 0;
     }
 
     &__main {

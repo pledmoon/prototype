@@ -16,6 +16,9 @@ article.product
     .product__body
       .product__title #[a.product__title-link(href="#") Заголовок товара длинный]
       .product__price 3 300 р. #[small.product__old-price 5 000 р.]
+      .product__discount
+        .product__discount-value -15%
+        .product__discount-total Экономия 1 220 р.
       .product__add.btn.btn--primary(data-modal-win-trigger="add249")
         +icon('shopping-cart', 'product__add-icon')
         | Купить

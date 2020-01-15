@@ -1,0 +1,67 @@
+.vertical-carousel-wrap {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.vertical-carousel {
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+  position: relative;
+
+  // max-height: 110rem;
+  max-height: 74rem;
+  overflow: hidden;
+
+  &.swiper-container-initialized {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__th-prev,
+  &__th-next {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: all .3s;
+    cursor: pointer;
+    outline: none;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    &:hover &-icon {
+      fill: $primary-color;
+    }
+
+    &-icon {
+      width: 3rem;
+      height: 3rem;
+      fill: $dark;
+      transition: all .3s;
+    }
+  }
+
+  &__th-prev {
+    top: 0;
+  }
+
+  &__th-next {
+    bottom: 0;
+  }
+
+  .product {
+    height: 36rem;
+    margin: 0 auto;
+
+    &__wrap {
+      height: 100%;
+    }
+
+    &__discount,
+    .btn--reverse,
+    &__footer {
+      display: none;
+    }
+  }
+}
