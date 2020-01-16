@@ -4,7 +4,7 @@
     
     a.header-utility__link(href="#")
       .header-utility__link-helper
-        +icon('graph-compare', 'header-utility__icon')
+        +icon('compare-thin', 'header-utility__icon')
         span.header-utility__count 5
 
     .header-utility__dropdown
@@ -13,5 +13,7 @@
         .header-utility__dropdown-close
           +icon('close', 'header-utility__close-icon')
       .header-utility__dropdown-body
-        p lorem ipsum dolor sit avet
+        include ../dropdown-basket-list
+
       .header-utility__dropdown-footer
+        a.btn.btn--primary(href="#") Перейти в сравнение

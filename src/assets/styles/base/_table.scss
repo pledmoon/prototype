@@ -4,7 +4,7 @@ table {
   font-size: 1.4rem;
 
   th {
-    font-weight: 6s00;
+    font-weight: 600;
     padding: 1rem 1.5rem;
     border-bottom: 1px solid $gray--medium;
     font-size: 1.6rem;
@@ -39,7 +39,7 @@ table {
     }
 
     strong {
-      font-weight: 6s00;
+      font-weight: 600;
     }
 
     svg {
@@ -50,14 +50,9 @@ table {
 
   tr:hover td {
     background: $gray--thin;
-    color: $primary-color;
 
     &::before {
       background: $primary-color;
     }
-  }
-
-  tr:hover svg {
-    fill: $primary-color;
   }
 }

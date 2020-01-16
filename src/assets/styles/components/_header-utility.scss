@@ -95,21 +95,37 @@
     background: $white;
     top: 100%;
     min-width: 50rem;
-    padding: 1rem;
+    padding: 1.5rem;
     z-index: 3;
-    box-shadow: 1px 3px 5px rgba($black, .25)
-  }
+    box-shadow: 1px 3px 5px rgba($black, .25);
 
-  /* interactie */
-  .is-opened &__dropdown {
-    visibility: visible;
-    left: auto;
-    right: 0;
-    opacity: 1;
-    animation: .2s fadeInUp;
-    animation-fill-mode: forwards;
+    &-title {
+      font-size: 2rem;
+      padding-right: 2rem;
+      font-weight: 600;
+    }
+
+    &-header {}
+
+    &-body {
+      max-height: 33.5rem;
+      overflow-y: auto;
+      margin: 1.5rem 0;
+    }
+
+    &-footer {}
+
+    /* interactive */
+    #{$self}__main.is-opened & {
+      visibility: visible;
+      left: auto;
+      right: 0;
+      opacity: 1;
+      animation: .2s fadeInUp;
+      animation-fill-mode: forwards;
+    }
+    /* interactive */
   }
-  /* interactie */
 
   &__dropdown-header {}
 

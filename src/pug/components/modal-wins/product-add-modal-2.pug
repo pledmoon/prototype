@@ -4,22 +4,22 @@
     
 //-     button.modal-win__close
 //-       +icon('close', 'modal-win__close-icon')
-    
-    .product-added(data-modal-win="add267")
 
-      .h3.product-added__heading Товар добавлен в корзину
+.product-added(data-modal-win="add267")
 
-      article.product
+  .h3.product-added__heading Товар добавлен в корзину
 
-        header.product__header
-          a.product__img-wrap(href="#")
-            img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="Product Img")
+  article.product
 
-        .product__body
-          .product__title #[a.product__title-link(href="#") Заголовок товара длинный]
-          .product__price 125 000 р
-          include ../../components/counter
+    header.product__header
+      a.product__img-wrap(href="#")
+        img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="Product Img")
 
-      footer.product-added__footer
-        a.btn.btn--reverse(href="#") Продолжить покупки
-        a.btn.btn--primary(href="#") Перейти в корзину
+    .product__body
+      .product__title #[a.product__title-link(href="#") Заголовок товара длинный]
+      .product__price 125 000 р
+      include ../../components/counter
+
+  footer.product-added__footer
+    a.product-added__continue.btn.btn--reverse(href="#") Продолжить покупки
+    a.btn.btn--primary(href="#") Перейти в корзину
