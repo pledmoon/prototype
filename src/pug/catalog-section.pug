@@ -1,0 +1,182 @@
+extends templates/main
+
+block variables
+  - let title = 'Каталог';
+  - let pageClass = 'section-page';
+
+block content
+
+  include layouts/headers/header-inner
+  include components/navbars/main-nav
+
+  .container-fluid
+    include components/breadcrumbs
+    
+    .product-main-header
+      h1.product-heading Каталог
+    
+    // catalog-section
+    .catalog-section
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Электроника
+              .catalog-section-main__count 22 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Обувь
+              .catalog-section-main__count 4 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Бижутерия и ювелирные изделия
+              .catalog-section-main__count 11 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Товары для дома
+              .catalog-section-main__count 176 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Электроника
+              .catalog-section-main__count 22 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Обувь
+              .catalog-section-main__count 4 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Бижутерия и ювелирные изделия
+              .catalog-section-main__count 11 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Товары для дома
+              .catalog-section-main__count 176 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Бижутерия и ювелирные изделия
+              .catalog-section-main__count 11 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Товары для дома
+              .catalog-section-main__count 176 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Электроника
+              .catalog-section-main__count 22 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Обувь
+              .catalog-section-main__count 4 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Бижутерия и ювелирные изделия
+              .catalog-section-main__count 11 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Товары для дома
+              .catalog-section-main__count 176 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Электроника
+              .catalog-section-main__count 22 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Обувь
+              .catalog-section-main__count 4 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Бижутерия и ювелирные изделия
+              .catalog-section-main__count 11 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Товары для дома
+              .catalog-section-main__count 176 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Бижутерия и ювелирные изделия
+              .catalog-section-main__count 11 товара
+      .catalog-section__item
+        a.catalog-section-main(href="#")
+          figure.catalog-section-main__figure
+            .catalog-section-main__img-wrap
+              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+            figcaption.catalog-section-main__figcaption
+              .catalog-section-main__heading Товары для дома
+              .catalog-section-main__count 176 товара
+    // /catalog-section
+
+  include layouts/footers/footer
