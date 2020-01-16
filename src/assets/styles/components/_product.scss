@@ -39,6 +39,19 @@
     // padding-top: 62.5%;
     height: 17rem;
     position: relative;
+
+    .product__controls {
+      position: absolute;
+      display: block;
+      right: 1rem;
+      bottom: 0;
+
+      .product__control {
+        .icon {
+          margin: 0;
+        }
+      }
+    }
   }
   
   &__body {}
@@ -48,6 +61,7 @@
   /* Header Elements */
   &__img-wrap {
     display: block;
+    height: 100%;
   }
 
   &__img {
@@ -85,11 +99,10 @@
     display: inline-block;
     vertical-align: top;
     padding: .3rem .5rem;
+    vertical-align: middle;
     font-size: 1.2rem;
-
-    &:not(:first-child) {
-      margin-left: .5rem;
-    }
+    margin-right: .5rem;
+    margin-bottom: .5rem;
 
     &--new {
       background: #900;
@@ -97,7 +110,17 @@
     }
 
     &--hot {
-      background: $primary-color;
+      background: #8cb400;
+      color: $white;
+    }
+
+    &--sale {
+      background: purple;
+      color: $white;
+    }
+
+    &--recom {
+      background: tomato;
       color: $white;
     }
   }
@@ -143,12 +166,35 @@
     margin-bottom: 1.5rem;
     font-weight: 600;
     white-space: nowrap;
+
+    height: 3rem;
+    overflow: hidden;
   }
 
   &__old-price {
     color: $dark--medium;
     text-decoration: line-through;
     font-weight: 300;
+    float: right;
+    margin-top: .3rem;
+  }
+
+  &__discount {
+    border: 1px solid $gray--medium;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+
+    &-value {
+      border-right: 1px solid $gray--medium;
+      padding: .5rem 1rem;
+      font-weight: 500;
+      background: $gray--thin;
+    }
+
+    &-total {
+      padding: .5rem 1rem;
+    }
   }
 
   &__add {
@@ -173,7 +219,7 @@
 
   &__param-property {
     float: left;
-    font-weight: 600;
+    font-weight: 500;
     margin-right: 1rem;
   }
 
@@ -202,7 +248,7 @@
     transition: all .3s;
 
     &-icon {
-      fill: $dark;
+      fill: $gray;
       margin-right: .5rem;
       width: 1.5rem;
       height: 1.5rem;
@@ -210,11 +256,11 @@
     }
 
     &:hover {
-      color: $tertiary-color;
+      color: $dark;
     }
 
     &:hover &-icon {
-      fill: $tertiary-color;
+      fill: $dark--medium;
     }
   }
 
@@ -230,16 +276,16 @@
       width: 1.5rem;
       height: 1.5rem;
       margin-right: .5rem;
-      fill: $dark;
+      fill: $gray;
       transition: all .3s;
     }
 
     &:hover {
-      color: $tertiary-color;
+      color: $dark;
     }
 
     &:hover &-icon {
-      fill: $tertiary-color;
+      fill: $dark--medium;
     }
   }
 
@@ -251,16 +297,16 @@
       width: 1.5rem;
       height: 1.5rem;
       margin-right: .5rem;
-      fill: $dark;
+      fill: $gray;
       transition: all .3s;
     }
 
     &:hover {
-      color: $tertiary-color;
+      color: $dark;
     }
 
     &:hover &-icon {
-      fill: $tertiary-color;
+      fill: $dark--medium;
     }
   }
 

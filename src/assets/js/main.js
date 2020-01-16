@@ -1,7 +1,6 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function() {
-
   /* ------------ Choices Selects ------------ */
   if (document.querySelector('.js-select-default')) {
     let choices = new Choices('.js-select-default', {
@@ -126,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
         992: {},
         1200: {}
     }
-
   });
   /* ------------ Main Carousel ------------ */
 
@@ -214,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.add('is-modal-win-opened');
   */
       /* Carousel Inside Modal */
-  /*    if (document.querySelector('[data-modal-win="' + modalWinId + '"]').querySelector('.swiper-container')) {
+      /*if (document.querySelector('[data-modal-win="' + modalWinId + '"]').querySelector('.swiper-container')) {
         initProductGallery(
           document.querySelector('[data-modal-win="' + modalWinId + '"] .product-main-promo__main .swiper-container'), 
           document.querySelector('[data-modal-win="' + modalWinId + '"] .product-main-promo__thumbs .swiper-container'),
@@ -261,54 +259,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.removeEventListener('click', clickOutsideModalWin);
   }
   */
-
-  /* ------------------- MWin inside Modal Win ---------------------*/
-  /*if ( document.body.classList.contains('is-modal-opened') ) {
-
-
-    let modalWinId;
-
-    document.addEventListener('click', function(e) {
-      let trigger = e.target.closest('[data-modal-win-trigger]');
-
-      if ( !trigger ) return;
-
-      modalWinId = trigger.dataset.modalWinTrigger;
-
-      document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.add('is-modal-win-opened');
-
-      setTimeout(function() {
-        document.addEventListener('click', clickOutsideModalWin);
-      });
-
-      e.preventDefault();
-    });
-
-    document.querySelectorAll('.modal-win__close').forEach(function(item) {
-      item.addEventListener('click', function(e) {
-        let target = e.target.closest('.modal-win__close');
-
-        if ( !target ) return;
-
-        document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.remove('is-modal-win-opened');
-
-        document.removeEventListener('click', clickOutsideModalWin);
-      });
-    });
-
-    function clickOutsideModalWin(e) {
-      let target = e.target.closest('.modal-win__body');
-
-      if (target) return;
-
-      document.querySelector('[data-modal-win="' + modalWinId + '"] .modal-win__main').classList.remove('is-modal-win-opened');
-
-      document.removeEventListener('click', clickOutsideModalWin);
-    }
-
-
-  }*/
-  /* ------------------- MWin inside Modal Win ---------------------*/
   /* ------------ Modal-Win ------------ */ 
 
   /* ------------ Footer Collapse ------------ */
@@ -485,18 +435,18 @@ document.addEventListener('DOMContentLoaded', function() {
     },
 
     breakpoints: {
-        480: {
-          slidesPerView: 2
-        },
-        768: {
-          slidesPerView: 3
-        },
-        992: {
-          slidesPerView: 4
-        },
-        1200: {
-          slidesPerView: 5
-        }
+      480: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      },
+      992: {
+        slidesPerView: 3
+      },
+      1200: {
+        slidesPerView: 4
+      }
     }
   };
 
@@ -516,18 +466,18 @@ document.addEventListener('DOMContentLoaded', function() {
     },
 
     breakpoints: {
-        480: {
-          slidesPerView: 2
-        },
-        768: {
-          slidesPerView: 3
-        },
-        992: {
-          slidesPerView: 4
-        },
-        1200: {
-          slidesPerView: 5
-        }
+      480: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      },
+      992: {
+        slidesPerView: 4
+      },
+      1200: {
+        slidesPerView: 5
+      }
     }
   };
 
@@ -921,13 +871,19 @@ document.addEventListener('DOMContentLoaded', function() {
   let stickyElement = document.querySelector('.js-sticky');
 
   if (stickyElement) {
-    let elemPosition = stickyElement.getBoundingClientRect().top + window.pageYOffset;
+    let sliderGapValue = 0;
+    let sliderGap = document.querySelector('.promo-carousel--offset');
+    if (sliderGap) sliderGapValue = sliderGap.offsetHeight;
+
+    let elemPosition = stickyElement.getBoundingClientRect().top + window.pageYOffset + sliderGapValue;
     let endStickyPosition = document.querySelector('.footer').getBoundingClientRect().top + window.pageYOffset;
 
     checkSticky(stickyElement, elemPosition, endStickyPosition);
 
     window.onscroll = function() {
       checkSticky(stickyElement, elemPosition, endStickyPosition);
+
+      isOpenedAndFixedCatalog();
     }
   }
 
@@ -938,7 +894,95 @@ document.addEventListener('DOMContentLoaded', function() {
       :
     el.classList.add('is-sticky');
   }
+
+  /* Opened Catalog */
+  let isCatalogOpened = '';
+  if ( document.querySelector('.promo-carousel') ) {
+    isCatalogOpened = document.querySelector('.promo-carousel').classList.contains('promo-carousel--offset');
+  }
+
+  function isOpenedAndFixedCatalog() {
+    if (!isCatalogOpened) return;
+
+    let opened = document.querySelector('.main-nav').classList.contains('is-sticky'),
+        catalog = document.querySelector('.main-nav__item--catalog');
+
+    if (opened) {
+      catalog.classList.remove('is-catalog-opened');
+    } else {
+      catalog.classList.add('is-catalog-opened');
+    }
+  }
+
+  isOpenedAndFixedCatalog();
+  /* Opened Catalog */
   /* ------------ Sticky! ------------ */
+
+  /* ------------ Continue Trigger! ------------ */
+  document.addEventListener('click', function(e) {
+    let continuBtn = e.target.closest('.product-added__continue');
+
+    if (!continuBtn) return;
+
+    let closeBtn = continuBtn.closest('.modal-win').querySelector('.modal-win__close');
+    console.log(closeBtn);
+    closeBtn.click();
+
+    e.preventDefault();
+  });
+  /* ------------ Continue Trigger! ------------ */
+
+  /* ------------ Vertical Carousel ------------ */
+  if ( document.querySelector('.js-vertical-carousel') ) {
+    const verticalCarousel = new Swiper('.js-vertical-carousel', {
+      direction: 'vertical',
+      slidesPerView: 2,
+      loop: true,
+      spaceBetween: 5,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+
+      navigation: {
+          prevEl: '.vertical-carousel__th-prev',
+          nextEl: '.vertical-carousel__th-next'
+      }
+    });
+  }
+  /* ------------ Vertical Carousel ------------ */
+
+  /* ------------ Brands Carousel ------------ */
+  let brandsCarousel = new Swiper('.js-brands-carousel', {
+    loop: true,
+    slidesPerView: 2,
+    spaceBetween: 25,
+
+    pagination: {
+      el: '.brands-carousel__pagination',
+      clickable: true
+    },
+
+    navigation: {
+      prevEl: '.brands-carousel__prev',
+      nextEl: '.brands-carousel__next'
+    },
+
+    breakpoints: {
+        480: {
+          slidesPerView: 3
+        },
+        576: {
+          slidesPerView: 4
+        },
+        768: {
+          slidesPerView: 5
+        },
+        992: {
+          slidesPerView: 6
+        },
+        //1200: {}
+    }
+  });
+  /* ------------ Brands Carousel ------------ */
 });
 
 svg4everybody({});
