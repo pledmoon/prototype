@@ -20,7 +20,8 @@ article.product
 
     .product__body
       .product__title #[a.product__title-link(href="#") Товарный заголовок]
-      .product__price 1 003 300 р. #[small.product__old-price 300 000 р.]
+      .product__price-wrap
+        .product__price 1 003 300 р. #[small.product__old-price 300 000 р.]
       .product__add.btn.btn--primary(data-modal-win-trigger="add856")
         +icon('shopping-cart', 'product__add-icon')
         | Купить
@@ -51,3 +52,32 @@ article.product
           .product__instock
             +icon('tick', 'product__instock-icon')
             | В наличии
+      .product__offers
+        .product__offer-type
+          .product__offer-heading Тип (серый)
+          ul.product__offer-list
+            li.product__offer-item.is-active(style="background-image: url(https://max-demo.ru/upload/uf/514/514039d742bf793df904206e82352b23.jpg);" title="Серый")
+              span.product__offer-txt
+            li.product__offer-item(style="background-image: url('https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png')" title="Желтый")
+              span.product__offer-txt
+        .product__offer-type
+          .product__offer-heading Размер (34)
+          ul.product__offer-list
+            li.product__offer-item.is-active
+              span.product__offer-txt 34
+            li.product__offer-item
+              span.product__offer-txt 36
+            li.product__offer-item
+              span.product__offer-txt 38
+            li.product__offer-item
+              span.product__offer-txt 40
+            li.product__offer-item
+              span.product__offer-txt 42
+            li.product__offer-item
+              span.product__offer-txt 44
+            li.product__offer-item
+              span.product__offer-txt 46
+            li.product__offer-item
+              span.product__offer-txt 48
+            li.product__offer-item
+              span.product__offer-txt 50

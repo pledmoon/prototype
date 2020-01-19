@@ -17,7 +17,8 @@ article.product
 
     .product__body
       .product__title #[a.product__title-link(href="#") Заголовок товара]
-      .product__price 125 000 р. #[small.product__old-price 99 000 р.]
+      .product__price-wrap
+        .product__price 125 000 р. #[small.product__old-price 99 000 р.]
       .product__add.btn.btn--primary(data-modal-win-trigger="add267")
         +icon('shopping-cart', 'product__add-icon')
         | Купить
@@ -48,3 +49,20 @@ article.product
           .product__instock
             +icon('tick', 'product__instock-icon')
             | В наличии
+      .product__offers
+        .product__offer-type
+          .product__offer-heading Цвет (синий)
+          ul.product__offer-list
+            li.product__offer-item.is-active(style="background-image: url('https://max-demo.ru/upload/uf/502/50211eb0ef5bc634087e39c61ebdba34.png');" title="Синий")
+              span.product__offer-txt
+            li.product__offer-item(style="background-image: url('https://max-demo.ru/upload/uf/4c0/4c0eab68ac6bb1c060ec942c55592d25.png')" title="Фиолетовый")
+              span.product__offer-txt
+        .product__offer-type
+          .product__offer-heading Размер (xxl)
+          ul.product__offer-list
+            li.product__offer-item.is-active
+              span.product__offer-txt xxl
+            li.product__offer-item
+              span.product__offer-txt xs
+            li.product__offer-item
+              span.product__offer-txt sm

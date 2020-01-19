@@ -2,12 +2,12 @@
   $self: &;
 
   position: relative;
-  height: 34.7rem;
+  height: 37.7rem;
   overflow: hidden;
   border-bottom: 1px solid $gray--medium;
 
   @media (min-width: $md) {
-    height: 28.5rem;
+    height: 31.5rem;
   }
 
   &:hover {
@@ -161,14 +161,17 @@
     }
   }
 
+  &__price-wrap {
+    margin-bottom: 1.5rem;
+    height: 5.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   &__price {
     font-size: 1.8rem;
-    margin-bottom: 1.5rem;
     font-weight: 600;
-    white-space: nowrap;
-
-    height: 3rem;
-    overflow: hidden;
   }
 
   &__old-price {
@@ -187,13 +190,13 @@
 
     &-value {
       border-right: 1px solid $gray--medium;
-      padding: .5rem 1rem;
+      padding: .3rem .5rem;
       font-weight: 500;
       background: $gray--thin;
     }
 
     &-total {
-      padding: .5rem 1rem;
+      padding: .3rem .5rem;
     }
   }
 
@@ -235,6 +238,7 @@
     display: flex;
     flex-wrap: wrap;
     font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 
   &__control {
@@ -320,5 +324,56 @@
       margin-right: .5rem;
     }
   }
+
+  &__offers {}
+
+  &__offer-type {
+    margin-bottom: .5rem;
+  }
+
+  &__offer-heading {
+    font-size: 1.2rem;
+    color: $dark--medium;
+    margin-bottom: 1rem;
+  }
+
+  &__offer-list {}
+
+  &__offer-item {
+    cursor: pointer;
+    border: 1px solid $gray--medium;
+    border-radius: 2px;
+    width: 3rem;
+    height: 3rem;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 2.8rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    vertical-align: middle;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    margin-bottom: .5rem;
+
+    &:not(:last-child) {
+      margin-right: .2rem;
+    }
+
+    &.is-active {
+      background-color: $gray--medium;
+      cursor: default;
+      border-color: $white;
+      border-radius: 1px;
+      box-shadow: 0 0 0 2px $gray--medium;
+    }
+
+    &:not(.is-active):hover {
+      background-color: #fafafa;
+    }
+  }
+
+  &__offer-txt {}
   /* Footer Elements */
 }

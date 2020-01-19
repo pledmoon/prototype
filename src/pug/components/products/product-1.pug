@@ -18,10 +18,11 @@ article.product
 
     .product__body
       .product__title #[a.product__title-link(href="#") Заголовок товара длинный, более чем в одну строку, прям на все случаи жизни]
-      .product__price 125 000 р. #[small.product__old-price 99 000 р.]
-      .product__discount
-        .product__discount-value -25%
-        .product__discount-total Экономия 3 450 р.
+      .product__price-wrap
+        .product__price 125 000 р. #[small.product__old-price 99 000 р.]
+        .product__discount
+          .product__discount-value -25%
+          .product__discount-total Экономия 3 450 р.
       .product__add.btn.btn--primary(data-modal-win-trigger="add465")
         +icon('shopping-cart', 'product__add-icon')
         | Купить
@@ -52,3 +53,40 @@ article.product
           .product__instock
             +icon('tick', 'product__instock-icon')
             | В наличии
+      .product__offers
+        .product__offer-type
+          .product__offer-heading Тип (серый)
+          .product__offer-list
+            select.js-select-default
+              option(value="opt-1") Сборка-1
+              option(value="opt-2") Сборка-2
+              option(value="opt-3") Сборка-3
+              option(value="opt-4") Сборка-4 (с каким-то длинным названием)
+              option(value="opt-5") Сборка-5
+              option(value="opt-6") Сборка-6
+              option(value="opt-7") Сборка-7
+              option(value="opt-8") Сборка-8
+              option(value="opt-9") Сборка-9
+              option(value="opt-10") Сборка-10
+              option(value="opt-11") Сборка-11
+        .product__offer-type
+          .product__offer-heading Размер (34)
+          ul.product__offer-list
+            li.product__offer-item.is-active
+              span.product__offer-txt 34
+            li.product__offer-item
+              span.product__offer-txt 36
+            li.product__offer-item
+              span.product__offer-txt 38
+            li.product__offer-item
+              span.product__offer-txt 40
+            li.product__offer-item
+              span.product__offer-txt 42
+            li.product__offer-item
+              span.product__offer-txt 44
+            li.product__offer-item
+              span.product__offer-txt 46
+            li.product__offer-item
+              span.product__offer-txt 48
+            li.product__offer-item
+              span.product__offer-txt 50

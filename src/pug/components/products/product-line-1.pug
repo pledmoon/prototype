@@ -24,7 +24,11 @@ article.product-line
       dd.product__param-value &gt; 55 шт.
 
   footer.product-line__footer
-    .product__price 125 000 р. #[small.product__old-price 99 000 р.]
+    .product__price-wrap
+      .product__price 125 000 р. #[small.product__old-price 99 000 р.]
+      .product__discount
+        .product__discount-value -25%
+        .product__discount-total Экономия 3 450 р.
     .product__add.btn.btn--primary(data-modal-win-trigger="add465")
       +icon('shopping-cart', 'product__add-icon')
       | Купить
