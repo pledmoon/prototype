@@ -22,10 +22,10 @@ article.product
       .product__title #[a.product__title-link(href="#") Товарный заголовок]
       .product__price-wrap
         .product__price 1 003 300 р. #[small.product__old-price 300 000 р.]
-      .product__add.btn.btn--primary(data-modal-win-trigger="add856")
+      a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add856")
         +icon('shopping-cart', 'product__add-icon')
         | Купить
-      .product__add.btn.btn--reverse Купить в 1 клик
+      a.product__fast-buy-btn.btn.btn--reverse(href="#") Купить в 1 клик
 
     footer.product__footer
       dl.product__params

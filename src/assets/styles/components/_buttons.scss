@@ -12,11 +12,12 @@
   vertical-align: middle;
   user-select: none;
   white-space: nowrap;
+  border-radius: $btn-radius;
   
   /* --- Radius Buttons --- */
-  &--radius {
-    border-radius: $btn-radius;
-  }
+  // &--radius {
+  //   border-radius: $btn-radius;
+  // }
   /* --- Radius Buttons --- */
 
   /* --- Buttons Types --- */

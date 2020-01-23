@@ -23,10 +23,10 @@ article.product
         .product__discount
           .product__discount-value -25%
           .product__discount-total Экономия 3 450 р.
-      .product__add.btn.btn--primary(data-modal-win-trigger="add465")
+      a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add465")
         +icon('shopping-cart', 'product__add-icon')
         | Купить
-      .product__add.btn.btn--reverse Купить в 1 клик
+      a.product__fast-buy-btn.btn.btn--reverse(href="#") Купить в 1 клик
 
     footer.product__footer
       dl.product__params
