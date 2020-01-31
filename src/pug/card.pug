@@ -33,12 +33,12 @@ block content
     include layouts/product-main
 
     .row
-      .col-md-9
+      .col-lg-9
         include layouts/product-main-tabs
-      .col-md-3
+      .d-none.d-lg-block.col-lg-3
         // vertical-carousel
-        .vertical-carousel-wrap.d-none.d-md-block
-          .swiper-container.vertical-carousel.js-vertical-carousel
+        .vertical-carousel-wrap
+          .swiper-container.vertical-carousel.js-vertical-carousel-1.products-vertical-carousel
             .swiper-wrapper
               .swiper-slide
                 include components/products/product-1
@@ -48,9 +48,55 @@ block content
                 include components/products/product-3
               .swiper-slide
                 include components/products/product-4
-          .vertical-carousel__th-prev
+          .vertical-carousel__th-prev.vertical-carousel__th-prev-1
             +icon('chevron-up', 'vertical-carousel__th-prev-icon')
-          .vertical-carousel__th-next
+          .vertical-carousel__th-next.vertical-carousel__th-next-1
+            +icon('chevron-down', 'vertical-carousel__th-next-icon')
+        // /vertical-carousel
+
+        // vertical-carousel
+        .vertical-carousel-wrap
+          .swiper-container.vertical-carousel.js-vertical-carousel-2.products-preview-vertical-carousel
+            .swiper-wrapper
+              .swiper-slide
+                article.product-preview
+                  .product-preview__header
+                    a.product-preview__img-wrap(href="#")
+                      img.product-preview__img(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
+                  .product-preview__main
+                    .product-preview__heading
+                      a.product-preview__heading-link(href="#") Заголовок товара
+                    .product-preview__price 125 765 р.
+              .swiper-slide
+                article.product-preview
+                  .product-preview__header
+                    a.product-preview__img-wrap(href="#")
+                      img.product-preview__img(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
+                  .product-preview__main
+                    .product-preview__heading
+                      a.product-preview__heading-link(href="#") Заголовок товара длинный очень
+                    .product-preview__price 125 765 р.
+              .swiper-slide
+                article.product-preview
+                  .product-preview__header
+                    a.product-preview__img-wrap(href="#")
+                      img.product-preview__img(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+                  .product-preview__main
+                    .product-preview__heading
+                      a.product-preview__heading-link(href="#") Заголовок товара
+                    .product-preview__price 125 765 р.
+              .swiper-slide
+                article.product-preview
+                  .product-preview__header
+                    a.product-preview__img-wrap(href="#")
+                      img.product-preview__img(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+                  .product-preview__main
+                    .product-preview__heading
+                      a.product-preview__heading-link(href="#") Заголовок товара
+                    .product-preview__price 125 765 р.
+          .vertical-carousel__th-prev.vertical-carousel__th-prev-2
+            +icon('chevron-up', 'vertical-carousel__th-prev-icon')
+          .vertical-carousel__th-next.vertical-carousel__th-next-2
             +icon('chevron-down', 'vertical-carousel__th-next-icon')
         // /vertical-carousel
     

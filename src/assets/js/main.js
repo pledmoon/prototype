@@ -537,6 +537,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
     }
+
+    if ( root.querySelector('.tabs__tab-pane:nth-child(' + (i+1) + ')').querySelector('.items-carousel') ) {
+      if ( instanceTwo.length ) {
+        instanceOne.update();
+      }
+    }
     /* Update Carousel Inside Tabs */
   }
 
@@ -933,8 +939,8 @@ document.addEventListener('DOMContentLoaded', function() {
   /* ------------ Continue Trigger! ------------ */
 
   /* ------------ Vertical Carousel ------------ */
-  if ( document.querySelector('.js-vertical-carousel') ) {
-    const verticalCarousel = new Swiper('.js-vertical-carousel', {
+  if ( document.querySelector('.js-vertical-carousel-1') ) {
+    const verticalCarousel = new Swiper('.js-vertical-carousel-1', {
       direction: 'vertical',
       slidesPerView: 2,
       loop: true,
@@ -943,8 +949,24 @@ document.addEventListener('DOMContentLoaded', function() {
       watchSlidesProgress: true,
 
       navigation: {
-          prevEl: '.vertical-carousel__th-prev',
-          nextEl: '.vertical-carousel__th-next'
+          prevEl: '.vertical-carousel__th-prev-1',
+          nextEl: '.vertical-carousel__th-next-1'
+      }
+    });
+  }
+
+  if ( document.querySelector('.js-vertical-carousel-2') ) {
+    const verticalCarousel = new Swiper('.js-vertical-carousel-2', {
+      direction: 'vertical',
+      slidesPerView: 4,
+      loop: true,
+      spaceBetween: 5,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+
+      navigation: {
+          prevEl: '.vertical-carousel__th-prev-2',
+          nextEl: '.vertical-carousel__th-next-2'
       }
     });
   }

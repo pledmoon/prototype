@@ -8,10 +8,10 @@
   visibility: hidden;
   transition: all .3s;
   position: relative;
-
+  
   // max-height: 110rem;
-  max-height: 74rem;
-  overflow: hidden;
+  // max-height: 74rem;
+  // overflow: hidden;
 
   &.swiper-container-initialized {
     opacity: 1;
@@ -51,8 +51,12 @@
   }
 
   .product {
-    height: 36rem;
+    // height: 44rem;
     margin: 0 auto;
+
+    &:hover {
+      overflow: hidden;
+    }
 
     &__wrap {
       height: 100%;
@@ -64,4 +68,17 @@
       display: none;
     }
   }
+}
+
+
+
+
+
+
+.products-vertical-carousel {
+  max-height: 64rem;
+}
+
+.products-preview-vertical-carousel {
+  max-height: 54.8rem;
 }
