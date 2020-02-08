@@ -419,8 +419,28 @@ document.addEventListener('DOMContentLoaded', function() {
   /* ------------ Counter ------------ */
 
   /* ------------ Items Carousels ------------ */
+  /*
+  let loopInstanceOne = false;
+  let loopInstanceTwo = false;
+
+  if ( document.querySelectorAll('.js-instance-1 .swiper-slide').length > 4 ) {
+    loopInstanceOne = true
+  } else {
+    if ( document.querySelector('.js-instance-1') ) {
+      document.querySelector('.js-instance-1').classList.add('disabled');
+    }
+  }
+
+  if ( document.querySelectorAll('.js-instance-2 .swiper-slide').length > 4 ) {
+    loopInstanceTwo = true
+  } else {
+    if ( document.querySelector('.js-instance-2') ) {
+      document.querySelector('.js-instance-2').classList.add('disabled');
+    }
+  }
+
   let opts1 = {
-    loop: true,
+    loop: loopInstanceOne,
     slidesPerView: 1,
     spaceBetween: 10,
 
@@ -451,7 +471,7 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   let opts2 = {
-    loop: true,
+    loop: loopInstanceTwo,
     slidesPerView: 1,
     // spaceBetween: 10,
 
@@ -483,6 +503,114 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let instanceOne = new Swiper('.js-instance-1', opts1);
   let instanceTwo = new Swiper('.js-instance-2', opts2);
+  */
+
+  let instancesOne = [];
+
+  document.querySelectorAll('.js-instance-1').forEach(function(instance) {
+    let loopInstance = false;
+    let prev = instance.parentNode.querySelector('.default-carousel-prev');
+    let next = instance.parentNode.querySelector('.default-carousel-next');
+    let space = 10;
+
+    if ( instance.parentNode.classList.contains('items-carousel-wrap--no-gutter') ) {
+      space = 0;
+    }
+
+    if ( instance.querySelectorAll('.swiper-slide').length > 4 ) {
+      loopInstance = true
+    } else {
+      instance.classList.add('disabled');
+    }
+
+    let opts = {
+      loop: loopInstance,
+      slidesPerView: 1,
+      spaceBetween: space,
+
+      pagination: {
+        el: '.default-pagination',
+        clickable: true
+      },
+
+      navigation: {
+        prevEl: prev,
+        nextEl: next
+      },
+
+      breakpoints: {
+        480: {
+          slidesPerView: 2
+        },
+        768: {
+          slidesPerView: 3
+        },
+        992: {
+          slidesPerView: 3
+        },
+        1200: {
+          slidesPerView: 4
+        }
+      }
+    };
+
+    instancesOne.push( new Swiper(instance, opts) );
+  });
+
+  let instancesTwo = [];
+
+  document.querySelectorAll('.js-instance-2').forEach(function(instance) {
+    let loopInstance = false;
+    let prev = instance.parentNode.querySelector('.default-carousel-prev');
+    let next = instance.parentNode.querySelector('.default-carousel-next');
+    let space = 10;
+
+    if ( instance.parentNode.classList.contains('items-carousel-wrap--no-gutter') ) {
+      space = 0;
+    }
+
+    if ( instance.querySelectorAll('.swiper-slide').length > 4 ) {
+      loopInstance = true
+    } else {
+      instance.classList.add('disabled');
+    }
+
+    let opts = {
+      loop: loopInstance,
+      slidesPerView: 1,
+      spaceBetween: space,
+
+      pagination: {
+        el: '.default-pagination',
+        clickable: true
+      },
+
+      navigation: {
+        prevEl: prev,
+        nextEl: next
+      },
+
+      breakpoints: {
+        480: {
+          slidesPerView: 2
+        },
+        768: {
+          slidesPerView: 3
+        },
+        992: {
+          slidesPerView: 4
+        },
+        1200: {
+          slidesPerView: 5
+        }
+      }
+    };
+
+    instancesTwo.push( new Swiper(instance, opts) );
+  });
+
+  console.log(instancesOne);
+  console.log(instancesTwo);
   /* ------------ Items Carousels ------------ */
 
   /* ------------ Tabs ------------ */
@@ -524,25 +652,17 @@ document.addEventListener('DOMContentLoaded', function() {
     /* Update Carousel Inside Tabs */
     if ( root.querySelector('.tabs__tab-pane:nth-child(' + (i+1) + ')').querySelector('.items-carousel') ) {
       
-      /*if ( instanceOne.length ) {
-        instanceOne[0].update();
-      } else {
-        instanceOne.update();
-      }*/
-
-      if ( instanceTwo.length ) {
-        instanceTwo[0].update();
-      } else {
-        instanceTwo.update();
+      if ( instancesOne[0] ) {
+        instancesOne[0].update();
       }
 
     }
 
-    if ( root.querySelector('.tabs__tab-pane:nth-child(' + (i+1) + ')').querySelector('.items-carousel') ) {
+    /*if ( root.querySelector('.tabs__tab-pane:nth-child(' + (i+1) + ')').querySelector('.items-carousel') ) {
       if ( instanceTwo.length ) {
         instanceOne.update();
       }
-    }
+    }*/
     /* Update Carousel Inside Tabs */
   }
 

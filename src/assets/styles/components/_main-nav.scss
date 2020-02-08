@@ -211,7 +211,7 @@
     }
 
     &__catalog-link {
-      padding: 0 1rem;
+      padding: 0 2rem 0 1rem;
       color: $first-level-text-color;
       display: flex;
       align-items: center;
@@ -249,7 +249,7 @@
     }
 
     &__subcatalog-link {
-      padding: 1rem 1rem;
+      padding: 1rem 2rem 1rem 1rem;
       color: $second-level-text-color;
       position: relative;
       transition: all .3s;
@@ -517,7 +517,7 @@
 
     &__cols-link {
       display: block;
-      padding: 1.5rem 1rem;
+      padding: 1.5rem 2rem 1.5rem 1rem;
       color: $black;
       position: relative;
     }

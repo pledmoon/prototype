@@ -139,7 +139,7 @@
 
   &:hover {
     box-shadow: 0 1rem 2rem 0 rgba($black, .1);
-    transform: translateY(-1px) scale(1.01);
+    transform: translateY(-1px);
   }
 
   &__figure {}
@@ -296,7 +296,7 @@
   visibility: hidden;
   transition: all .3s;
 
-  margin: 0 3rem;
+  margin: 0 3rem 2rem;
 
   &.swiper-container-initialized {
     opacity: 1;
@@ -368,13 +368,6 @@
   margin: 0 auto;
   display: block;
 
-  &:hover {
-    #{$self}__img {
-      filter: grayscale(0%);
-      opacity: 1;
-    }
-  }
-
   &__main {}
 
   &__img-wrap {
@@ -385,9 +378,7 @@
 
   &__img {
     max-height: 100%;
-    filter: grayscale(100%);
     transition: all .5s ease-in-out;
-    opacity: .5;
 
     @include absolute-center;
   }
@@ -396,6 +387,18 @@
     font-weight: 500;
     font-size: 1.4rem;
     color: $black;
+  }
+}
+
+.grayscale {
+  img {
+    filter: grayscale(100%);
+    opacity: .5;
+
+    &:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
   }
 }
 
