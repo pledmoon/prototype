@@ -1125,6 +1125,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   /* ------------ Brands Carousel ------------ */
+
+  /* ------------ Custom Scroll ------------ */
+  const customScrolls = document.querySelectorAll('.js-custom-scroll');
+
+  if (customScrolls) {
+    customScrolls.forEach(function(el) {
+      new SimpleBar(el, {
+        autoHide: false,
+        scrollbarMinSize: 4
+      });
+    });
+  }
+  /* ------------ Custom Scroll ------------ */
+
+  lightGallery(document.querySelector('.gallery'), {
+    selector: ".js-gallery"
+  });
 });
 
 svg4everybody({});

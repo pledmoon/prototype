@@ -14,7 +14,8 @@ module.exports = function () {
                 'node_modules/lightgallery.js/dist/js/lightgallery.min.js',
                 'node_modules/choices.js/public/assets/scripts/choices.min.js',
                 'node_modules/nouislider/distribute/nouislider.min.js',
-                'node_modules/drift-zoom/dist/Drift.min.js'
+                'node_modules/drift-zoom/dist/Drift.min.js',
+                'node_modules/simplebar/dist/simplebar.min.js'
             ])
             .pipe(concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.ouput));
@@ -27,7 +28,8 @@ module.exports = function () {
                 'node_modules/lightgallery.js/dist/js/lightgallery.min.js',
                 'node_modules/choices.js/public/assets/scripts/choices.min.js',
                 'node_modules/nouislider/distribute/nouislider.min.js',
-                'node_modules/drift-zoom/dist/Drift.min.js'
+                'node_modules/drift-zoom/dist/Drift.min.js',
+                'node_modules/simplebar/dist/simplebar.min.js'
             ])
             /*.pipe(babel({
                 presets: ['@babel/env']

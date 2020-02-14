@@ -1,7 +1,8 @@
 .price-range {
   &__values {
     display: flex;
-    margin: 0 -1rem 2rem;
+    // margin: 0 -1rem 2rem;
+    margin: 0 -1rem 1.5rem;
     align-items: center;
   }
 
@@ -14,6 +15,8 @@
     border-radius: 3px;
     padding-left: .5rem;
     padding-right: .5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
   }
 
   &__separator {

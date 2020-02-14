@@ -43,8 +43,10 @@
     .product__controls {
       position: absolute;
       display: block;
+      /*right: 1rem;
+      bottom: 0;*/
       right: 1rem;
-      bottom: 0;
+      top: 0;
 
       .product__control {
         .icon {
@@ -89,11 +91,11 @@
     font-size: 1.2rem;
     padding-top: .7rem;
     padding-bottom: .7rem;
-    background: rgba(0,0,0, .7);
+    background: rgba(0,0,0, .4);
     color: #fff;
 
     &:hover {
-      background: rgba(0,0,0, .9);
+      background: rgba(0,0,0, .7);
     }
 
     &:active {
@@ -195,16 +197,16 @@
   }
 
   &__discount {
-    border: 1px solid $gray--medium;
+    // border: 1px solid $gray--medium;
     font-size: 1.2rem;
     margin-bottom: 1rem;
     display: flex;
 
     &-value {
-      border-right: 1px solid $gray--medium;
+      border: 1px solid $gray--medium;
       padding: .3rem .5rem;
       font-weight: 500;
-      background: $gray--thin;
+      // background: $gray--thin;
     }
 
     &-total {
@@ -299,8 +301,10 @@
     transition: all .3s;
 
     &-icon {
-      width: 1.5rem;
-      height: 1.5rem;
+      //width: 1.5rem;
+      //height: 1.5rem;
+      width: 2rem;
+      height: 2rem;
       margin-right: .5rem;
       fill: $gray;
       transition: all .3s;
@@ -320,8 +324,10 @@
     transition: all .3s;
 
     &-icon {
-      width: 1.5rem;
-      height: 1.5rem;
+      //width: 1.5rem;
+      //height: 1.5rem;
+      width: 2rem;
+      height: 2rem;
       margin-right: .5rem;
       fill: $gray;
       transition: all .3s;

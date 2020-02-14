@@ -31,6 +31,8 @@
   }
 
   .logo {
+    max-height: 4.5rem;
+
     @media (max-width: $sm) {
       display: none;
     }
@@ -68,7 +70,7 @@
   }
 
   &__header-contacts {
-    padding: 1rem 0;
+    //padding: 1rem 0;
   }
 
   .btn {

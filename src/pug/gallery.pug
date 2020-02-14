@@ -1,0 +1,68 @@
+extends templates/main
+
+block variables
+  - let title = 'Галерея';
+  - let pageClass = 'gallery-page';
+
+block content
+
+  include layouts/headers/header-inner
+  include components/navbars/main-nav
+
+  .container-fluid
+    include components/breadcrumbs
+
+    .h1 Галерея
+
+    .gallery
+      .row
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/984/984f004ac3e8b4c4453f6359fb8c9364.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/984/984f004ac3e8b4c4453f6359fb8c9364.jpg" alt="")
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/283/2839a90a29ed8f7df7fa8331b557c175.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/283/2839a90a29ed8f7df7fa8331b557c175.jpg" alt="")
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/705/7057806502bdcabdb1a6cc9c1cfdab30.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/705/7057806502bdcabdb1a6cc9c1cfdab30.jpg" alt="")
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/283/2839a90a29ed8f7df7fa8331b557c175.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/283/2839a90a29ed8f7df7fa8331b557c175.jpg" alt="")
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/705/7057806502bdcabdb1a6cc9c1cfdab30.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/705/7057806502bdcabdb1a6cc9c1cfdab30.jpg" alt="")
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/984/984f004ac3e8b4c4453f6359fb8c9364.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/984/984f004ac3e8b4c4453f6359fb8c9364.jpg" alt="")
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/984/984f004ac3e8b4c4453f6359fb8c9364.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/984/984f004ac3e8b4c4453f6359fb8c9364.jpg" alt="")
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/283/2839a90a29ed8f7df7fa8331b557c175.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/283/2839a90a29ed8f7df7fa8331b557c175.jpg" alt="")
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/705/7057806502bdcabdb1a6cc9c1cfdab30.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/705/7057806502bdcabdb1a6cc9c1cfdab30.jpg" alt="")
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/283/2839a90a29ed8f7df7fa8331b557c175.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/283/2839a90a29ed8f7df7fa8331b557c175.jpg" alt="")
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/705/7057806502bdcabdb1a6cc9c1cfdab30.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/705/7057806502bdcabdb1a6cc9c1cfdab30.jpg" alt="")
+        .col-6.col-sm-4
+          .gallery-item
+            a.gallery-item__link.js-gallery(href="http://dinoricci-opt.ru/upload/iblock/984/984f004ac3e8b4c4453f6359fb8c9364.jpg")
+              img.gallery-item__img.img-responsive(src="http://dinoricci-opt.ru/upload/iblock/984/984f004ac3e8b4c4453f6359fb8c9364.jpg" alt="")
+
+  include layouts/footers/footer

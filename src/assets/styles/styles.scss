@@ -567,3 +567,46 @@
     white-space: nowrap;
   }
 }
+
+
+.gallery {
+  > .row > [class*="col-"] {
+    margin-bottom: 3rem;
+  }
+}
+
+.gallery-item {
+  &__link {
+    overflow: hidden;
+    display: block;
+    position: relative;
+
+    &::after {
+      content: "";
+      color: $white;
+      opacity: 0;
+      font-size: 3rem;
+      transition: all .5s;
+
+      @include absolute-center;
+    }
+
+    &:hover {
+      &::after {
+        content: "+";
+        transform: scale(1.5) translate(-50%, -50%);
+        opacity: .7;
+      }
+
+      img {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__img {
+    transition: all .4s ease-in-out;
+    opacity: .8;
+  }
+}
