@@ -116,9 +116,13 @@
     &-header {}
 
     &-body {
-      max-height: 33.5rem;
-      overflow-y: auto;
       margin: 1.5rem 0;
+
+      &.js-custom-scroll {
+        max-height: 40rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
     }
 
     &-footer {}

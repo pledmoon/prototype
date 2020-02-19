@@ -68,3 +68,31 @@ table {
   right: 0;
   bottom: 0;
 }
+
+.simplebar-scrollbar {
+  background: $black;
+  border-radius: 5px;
+}
+
+.simplebar-track {
+  background: #d3d3d3;
+  border-radius: 5px;
+}
+
+.simplebar-vertical {
+  width: 4px !important;  
+}
+
+.simplebar-horizontal {
+  height: 4px !important;  
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  top: 0;
+  height: 100%;
+}
+
+.js-custom-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
