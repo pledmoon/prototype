@@ -608,9 +608,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     instancesTwo.push( new Swiper(instance, opts) );
   });
-
-  console.log(instancesOne);
-  console.log(instancesTwo);
   /* ------------ Items Carousels ------------ */
 
   /* ------------ Tabs ------------ */
@@ -1139,9 +1136,21 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   /* ------------ Custom Scroll ------------ */
 
+  /* ------------ lGallery ------------ */
   lightGallery(document.querySelector('.gallery'), {
     selector: ".js-gallery"
   });
+
+  lightGallery(document.querySelector('.js-video-gallery'), {
+    selector: "a",
+    youtubePlayerParams: {
+      modestbranding: 1,
+      showinfo: 0,
+      rel: 0,
+      controls: 1
+    }
+  });
+  /* ------------ lGallery ------------ */
 });
 
 svg4everybody({});
