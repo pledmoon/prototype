@@ -539,17 +539,17 @@ document.addEventListener('DOMContentLoaded', function() {
       },
 
       breakpoints: {
-        480: {
+        340: {
           slidesPerView: 2
         },
-        768: {
+        576: {
           slidesPerView: 3
         },
         992: {
-          slidesPerView: 3
+          slidesPerView: 4
         },
         1200: {
-          slidesPerView: 4
+          slidesPerView: 5
         }
       }
     };
@@ -591,10 +591,10 @@ document.addEventListener('DOMContentLoaded', function() {
       },
 
       breakpoints: {
-        480: {
+        340: {
           slidesPerView: 2
         },
-        768: {
+        576: {
           slidesPerView: 3
         },
         992: {

@@ -29,12 +29,20 @@
 
     .default-carousel-prev {
       left: 0;
-      transform: translate(-50%, -50%);
+      transform: translate(1rem, -50%);
+
+      @media (min-width: 1300px) {
+        transform: translate(-50%, -50%);
+      }
     }
 
     .default-carousel-next {
       right: 0;
-      transform: translate(50%, -50%);
+      transform: translate(-1rem, -50%);
+
+      @media (min-width: 1300px) {
+        transform: translate(50%, -50%);
+      }
     }
   }
 }

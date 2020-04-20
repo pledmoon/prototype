@@ -2,6 +2,11 @@
   display: flex;
   align-self: stretch;
   margin-left: auto;
+  padding-right: 0;
+
+  @media (min-width: $md) {
+    padding-right: 1.5rem;
+  }
 }
 
 .header-utility {
@@ -21,7 +26,10 @@
     display: flex;
     height: 100%;
     align-items: center;
-    position: relative;
+
+    @media (min-width: $md) {
+      position: relative;
+    }
   }
 
   &__link {
@@ -135,6 +143,12 @@
       opacity: 1;
       animation: .2s fadeInUp;
       animation-fill-mode: forwards;
+
+      @media (max-width: $md--mw) {
+        width: 100%;
+        left: 0;
+        min-width: 0;
+      }
     }
     /* interactive */
   }
