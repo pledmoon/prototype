@@ -124,7 +124,20 @@ document.addEventListener('DOMContentLoaded', function() {
         768: {},
         992: {},
         1200: {}
-    }
+    },
+
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false
+    },
+
+    speed: 2000,
+
+    effect: 'coverflow',
+    coverflowEffect: {
+      rotate: 30,
+      slideShadows: false,
+    },
   });
   /* ------------ Main Carousel ------------ */
 
@@ -1090,36 +1103,51 @@ document.addEventListener('DOMContentLoaded', function() {
   /* ------------ Vertical Carousel ------------ */
 
   /* ------------ Brands Carousel ------------ */
-  let brandsCarousel = new Swiper('.js-brands-carousel', {
-    loop: true,
-    slidesPerView: 2,
-    spaceBetween: 25,
+  document.querySelectorAll('.js-brands-carousel').forEach(function(instance) {
+    let loopInstance = false;
+    let prev = instance.parentNode.querySelector('.brands-carousel__prev');
+    let next = instance.parentNode.querySelector('.brands-carousel__next');
+    let space = 25;
 
-    pagination: {
-      el: '.brands-carousel__pagination',
-      clickable: true
-    },
-
-    navigation: {
-      prevEl: '.brands-carousel__prev',
-      nextEl: '.brands-carousel__next'
-    },
-
-    breakpoints: {
-        480: {
-          slidesPerView: 3
-        },
-        576: {
-          slidesPerView: 4
-        },
-        768: {
-          slidesPerView: 5
-        },
-        992: {
-          slidesPerView: 6
-        },
-        //1200: {}
+    if ( instance.querySelectorAll('.swiper-slide').length > 4 ) {
+      loopInstance = true
+    } else {
+      instance.classList.add('disabled');
     }
+
+    let opts = {
+      loop: loopInstance,
+      slidesPerView: 2,
+      spaceBetween: space,
+
+      pagination: {
+        el: '.brands-carousel__pagination',
+        clickable: true
+      },
+
+      navigation: {
+        prevEl: prev,
+        nextEl: next
+      },
+
+      breakpoints: {
+          480: {
+            slidesPerView: 3
+          },
+          576: {
+            slidesPerView: 4
+          },
+          768: {
+            slidesPerView: 5
+          },
+          992: {
+            slidesPerView: 6
+          },
+          //1200: {}
+      }
+    }
+
+    new Swiper(instance, opts);
   });
   /* ------------ Brands Carousel ------------ */
 

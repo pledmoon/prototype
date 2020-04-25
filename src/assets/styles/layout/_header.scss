@@ -33,8 +33,12 @@
   .logo {
     max-height: 4.5rem;
 
-    @media (max-width: $sm) {
-      display: none;
+    img {
+      max-height: 4.5rem;
+    }
+
+    @media (max-width: $sm--mw) {
+      padding: 0;
     }
   }
 

@@ -14,12 +14,14 @@
 
   align-self: stretch;
 
-  &:not(:first-child) {
-    border-left: 1px solid $gray--medium;
-  }
-
   &:hover #{$self}__link {
     background: $gray--light;
+  }
+  
+  @media (min-width: $sm) {
+    &:not(:first-child) {
+      border-left: 1px solid $gray--medium;
+    }
   }
 
   &__main {
@@ -33,18 +35,18 @@
   }
 
   &__link {
-    padding: 2rem 2rem;
+    padding: 2rem .8rem;
     display: flex;
     height: 100%;
     align-items: center;
     color: $header-utility-color;
 
-    @media (min-width: $md) {
-      padding: .7rem 2rem;
+    @media (min-width: $sm) {
+      padding: 2rem 2rem;
     }
 
-    @media (max-width: 379px) {
-      padding: 2rem 1.3rem;
+    @media (min-width: $md) {
+      padding: .7rem 2rem;
     }
 
     &-helper {
@@ -55,7 +57,11 @@
   &__icon {
     fill: $header-utility-icon-color;
 
-    @include size(2rem);
+    @include size(1.6rem);
+
+    @media (min-width: $sm) {
+      @include size(2rem);      
+    }
 
     @media (min-width: $md) {
       //width: 2.5rem;

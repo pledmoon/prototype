@@ -747,6 +747,10 @@
 
       &-icon {
         fill: $dark;
+
+        @media (max-width: $sm--mw) {
+          @include size(1.8rem);
+        }
       }
     }
 

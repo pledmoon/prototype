@@ -204,6 +204,37 @@ block content
         .brands-carousel__next
           +icon('chevron-right', 'brands-carousel__next-icon')
 
+    .brands-section
+
+      .brands-section__heading.h2 Бренды
+
+      .brands-carousel-wrap.grayscale
+
+        .swiper-container.brands-carousel.js-brands-carousel
+
+          .swiper-wrapper
+
+            .swiper-slide
+              a.brand(href="#")
+                figure.brand__main
+                  .brand__img-wrap
+                    img.brand__img.img-responsive(src="https://max-demo.ru/upload/iblock/d66/d6677bd4f71d56b4730747764a11aa56.png" alt="")
+                  figcaption.brand__heading Vega
+
+            .swiper-slide
+              a.brand(href="#")
+                figure.brand__main
+                  .brand__img-wrap
+                    img.brand__img.img-responsive(src="https://library.kissclipart.com/20180915/kwq/kissclipart-samsung-logo-transparent-clipart-logo-samsung-gala-1909bb35dc5e9319.jpg" alt="")
+                  figcaption.brand__heading Samsung
+
+          .brands-carousel__pagination
+
+        .brands-carousel__prev
+          +icon('chevron-left', 'brands-carousel__prev-icon')
+        .brands-carousel__next
+          +icon('chevron-right', 'brands-carousel__next-icon')
+
     // Video-Gallery
     .js-video-gallery.video-gallery.mb-medium
 
