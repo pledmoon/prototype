@@ -1,0 +1,104 @@
+.sort-by-window {
+  border-bottom: 3px solid $primary-color;
+  position: fixed;
+  right: -150%;
+  top: 0;
+  z-index: $overlayAboveZIndex;
+  background: $white;
+  min-width: 32rem;
+  transition: all .3s;
+
+  &__header {
+    background: #fafafa;
+    border-bottom: 1px dotted #e6e6e6;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  &__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: $primary-color;
+    margin-right: 1rem;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: middle;
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  &__close {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &-icon {
+      width: 1.4rem;
+      height: 1.4rem;
+      fill: #1a1a1a;
+    }
+  }
+
+  &__body {}
+
+  &__option {
+    &:not(:first-child) {
+      border-top: 1px dotted #e6e6e6;
+    }
+
+    .radio-label__main {
+      color: #333;
+      font-size: 1.4rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding: 2rem 1.5rem 2rem 4.5rem;
+
+      &::before {
+        top: 50%;
+        left: 1.5rem;
+        transform: translateY(-50%);
+      }
+    }
+
+    .radio-label__input:checked + .radio-label__main {
+      background-color: $primary-color;
+      color: $white;
+
+      &::before {
+        border-color: $white;
+        border-width: 1px;
+        background: transparent;
+      }
+
+      &::after {
+        content: "";
+        width: .8rem;
+        height: .8rem;
+        border-radius: 50%;
+        left: 1.9rem;
+        background: $white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: -1px;
+      }
+    }
+  }
+
+  &__header-control {
+    padding: 1rem 1rem;
+  }
+}
+
+.is-sort-buy-opened {
+  overflow: hidden;
+
+  .sort-by-window {
+    right: 0;
+  }
+}

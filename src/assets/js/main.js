@@ -1179,6 +1179,58 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   /* ------------ lGallery ------------ */
+
+  /* ------------ Sort-By Toggle Mobile ------------ */
+  const sortByToggle = document.querySelector('.js-sort-by-toggle');
+
+  if (sortByToggle) {
+    sortByToggle.addEventListener('click', function(e) {
+      let body = document.body;
+
+      if ( !body.classList.contains('is-sort-buy-opened') ) {
+        addOverlay();
+        body.classList.add('is-sort-buy-opened');
+        body.style.paddingRight = scrollWidth() + 'px';
+
+        setTimeout(function() {
+          document.addEventListener('click', clickOutsideSortBy);
+        });
+      }
+
+      e.preventDefault();
+    });
+  }
+
+  const sortByClose = document.querySelector('.sort-by-window__close');
+
+  if (sortByClose) {
+
+    sortByClose.addEventListener('click', function(e) {
+      let target = e.target.closest('.sort-by-window');
+
+      if ( !target ) return;
+
+      removeOverlay();
+      document.body.classList.remove('is-sort-buy-opened');
+      document.body.style.paddingRight = '';
+
+      document.removeEventListener('click', clickOutsideSortBy);
+    });
+
+  }
+
+  function clickOutsideSortBy(e) {
+    let target = e.target.closest('.sort-by-window');
+
+    if (target) return;
+
+    removeOverlay();
+    document.body.classList.remove('is-sort-buy-opened');
+    document.body.style.paddingRight = '';
+
+    document.removeEventListener('click', clickOutsideSortBy);
+  }
+  /* ------------ Sort-By Toggle Mobile ------------ */
 });
 
 svg4everybody({});

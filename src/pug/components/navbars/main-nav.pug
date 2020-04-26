@@ -10,7 +10,9 @@ nav.main-nav
   ul.main-nav__container
     
     li.main-nav__item.main-nav__item--catalog
-      a.main-nav__link(href="#") Каталог товаров
+      a.main-nav__link(href="#")
+        +icon('menu', 'main-nav__item-icon-menu')
+        | Каталог товаров
         +icon('chevron-down', 'main-nav__item-icon')
       ul.main-nav__catalog-list
         li.main-nav__catalog-item

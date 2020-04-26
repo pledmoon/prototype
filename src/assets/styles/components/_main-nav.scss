@@ -189,8 +189,9 @@
     }
 
     &__catalog-item {
-      flex: auto;
-      height: calc(100% / 11);
+      //flex: auto;
+      //height: calc(100% / 11);
+      //min-height: 4rem;
 
       &:not(:first-child) {
         border-top: 1px solid $gray--light;
@@ -212,7 +213,8 @@
     }
 
     &__catalog-link {
-      padding: 0 2rem 0 1rem;
+      //padding: 0 2rem 0 1rem;
+      padding: 1rem 2rem 1rem 1rem;
       color: $first-level-text-color;
       display: flex;
       align-items: center;

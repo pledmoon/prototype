@@ -36,6 +36,37 @@
       | Фильтры
 
   .header-control
-    a.sort-by(href="#") 
+    a.sort-by.js-sort-by-toggle(href="#") 
       +icon('sort', 'sort-by__icon')
       | Сортировка
+
+    .sort-by-window.d-md-none
+      .sort-by-window__header
+        +icon('sort', 'sort-by-window__icon')
+        span.sort-by-window__text Сортировка
+        .sort-by-window__close
+          +icon('close', 'sort-by-window__close-icon')
+      .sort-by-window__body
+
+        .sort-by-window__header-control.header-control
+          label.header-control__title(for="show-by-select-drop") Показывать
+          select.js-select-default#show-by-select-drop
+            option(value="12") 12
+            option(value="24") 24
+            option(value="36") 36
+
+        .sort-by-window__option.radio-label
+          input.radio-label__input(type="radio" value="sort-type-1" name="sort-type" id="sort-type-1")
+          label.radio-label__main(for="sort-type-1") По алфавиту
+        .sort-by-window__option.radio-label
+          input.radio-label__input(type="radio" value="sort-type-2" name="sort-type" id="sort-type-2")
+          label.radio-label__main(for="sort-type-2") Подороже
+        .sort-by-window__option.radio-label
+          input.radio-label__input(type="radio" value="sort-type-3" name="sort-type" id="sort-type-3")
+          label.radio-label__main(for="sort-type-3") Подешевле
+        .sort-by-window__option.radio-label
+          input.radio-label__input(type="radio" value="sort-type-4" name="sort-type" id="sort-type-4")
+          label.radio-label__main(for="sort-type-4") Новинки
+        .sort-by-window__option.radio-label
+          input.radio-label__input(type="radio" value="sort-type-5" name="sort-type" id="sort-type-5")
+          label.radio-label__main(for="sort-type-5") По рейтингу
