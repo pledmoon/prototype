@@ -629,3 +629,14 @@
     transform: none;
   }
 }
+
+/* clear tabs */
+.tabs__link {
+  background: transparent;
+  border: none;
+}
+
+.tabs__panes {
+  border: none;
+}
+/* clear tabs */

@@ -662,8 +662,16 @@ document.addEventListener('DOMContentLoaded', function() {
     /* Update Carousel Inside Tabs */
     if ( root.querySelector('.tabs__tab-pane:nth-child(' + (i+1) + ')').querySelector('.items-carousel') ) {
       
-      if ( instancesOne[0] ) {
-        instancesOne[0].update();
+      if ( instancesOne ) {
+        instancesOne.forEach(carousel => {
+          carousel.update();
+        })
+      }
+
+      if ( instancesTwo ) {
+        instancesTwo.forEach(carousel => {
+          carousel.update();
+        })
       }
 
     }
@@ -705,6 +713,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       /* Update Carousel Inside Tabs */
       if ( parent.querySelector('.items-carousel') ) {
+        console.log('lol');
 
         /*if ( instanceOne.length ) {
           instanceOne[0].update();
@@ -712,10 +721,22 @@ document.addEventListener('DOMContentLoaded', function() {
           instanceOne.update();
         }*/
 
-        if ( instanceTwo.length ) {
+        /*if ( instanceTwo.length ) {
           instanceTwo[0].update();
         } else {
           instanceTwo.update();
+        }*/
+
+        if ( instancesOne ) {
+          instancesOne.forEach(carousel => {
+            carousel.update();
+          })
+        }
+
+        if ( instancesTwo ) {
+          instancesTwo.forEach(carousel => {
+            carousel.update();
+          })
         }
         
       }
