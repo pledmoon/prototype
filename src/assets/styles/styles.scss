@@ -640,3 +640,21 @@
   border: none;
 }
 /* clear tabs */
+
+.lg-backdrop {
+  background: #fff;
+}
+
+@media (max-width: 575px) {
+  .bx-filter-popup-result {
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    transform: translateY(100%);
+
+    .arrow {
+      display: none;
+    }
+  }
+}
