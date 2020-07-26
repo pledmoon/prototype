@@ -1,92 +1,30 @@
 article.product
-  .product__wrap
 
-    header.product__header
-      a.product__img-wrap(href="#")
-        img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="Product Img")
-      a.product__view-btn.btn.btn--primary(href="#" data-modal-win-trigger="465") Быстрый просмотр
-      ul.product__stickers
-        li.product__sticker.product__sticker--new Новинка
-        li.product__sticker.product__sticker--hot Акция
-      .product__controls
-        .product__control 
-          a.product__add-favourite(href="#")
-            +icon('heart-thin', 'product__add-favourite-icon')
-        .product__control 
-          a.product__action-compare(href="#")
-            +icon('compare-thin', 'product__action-compare-icon')
+  header.product__header
+    a.product__img-wrap(href="#")
+      img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="Product Img")
+    a.product__view-btn(href="#" data-modal-win-trigger="465")
+      +icon('search', 'product__view-icon')
+    ul.product__stickers
+      li.product__sticker.product__sticker--new New
+    .product__controls
+      .product__control 
+        a.product__add-favourite(href="#")
+          +icon('heart-thin', 'product__add-favourite-icon')
+      .product__control 
+        a.product__action-compare(href="#")
+          +icon('compare-thin', 'product__action-compare-icon')
 
-    .product__body
-      .product__title #[a.product__title-link(href="#") Заголовок товара длинный, более чем в одну строку, прям на все случаи жизни]
+  .product__body
+    .product__title #[a.product__title-link(href="#") Валенки турецкие]
+    .product__price-main
+      .product__price-helper
+        small.product__price-helper-caption Розничная цена
+        .product__price-helper-tooltip-wrap
+          +icon('question', 'product__price-helper-tooltip-icon')
+          .product__price-helper-tooltip Цена указана без скидок, узнай оптовую цену после регистрации
       .product__price-wrap
-        .product__price 125 000 р. #[small.product__old-price 99 000 р.]
-        .product__discount
-          .product__discount-value -25%
-          .product__discount-total Экономия 3 450 р.
-      a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add465")
-        +icon('shopping-cart', 'product__add-icon')
-        | Купить
-      a.product__fast-buy-btn.btn.btn--reverse(href="#") Купить в 1 клик
-
-    footer.product__footer
-      dl.product__params
-        dt.product__param-property Артикул:
-        dd.product__param-value 225-856-kg3
-        dt.product__param-property Вес:
-        dd.product__param-value 25 кг.
-        dt.product__param-property Количество:
-        dd.product__param-value &gt; 55 шт.
-      .product__controls
-        .product__control 
-          a.product__fast-buy(href="#") 
-            +icon('shopping-cart', 'product__fast-buy-icon')
-            | В 1 клик
-        .product__control 
-          a.product__add-favourite(href="#")
-            +icon('heart-thin', 'product__add-favourite-icon')
-            | В избранное
-        .product__control 
-          a.product__action-compare(href="#")
-            +icon('compare-thin', 'product__action-compare-icon')
-            | Сравнить
-        .product__control
-          .product__instock
-            +icon('tick', 'product__instock-icon')
-            | В наличии
-      .product__offers
-        .product__offer-type
-          .product__offer-heading Тип (серый)
-          .product__offer-list
-            select.js-select-default
-              option(value="opt-1") Сборка-1
-              option(value="opt-2") Сборка-2
-              option(value="opt-3") Сборка-3
-              option(value="opt-4") Сборка-4 (с каким-то длинным названием)
-              option(value="opt-5") Сборка-5
-              option(value="opt-6") Сборка-6
-              option(value="opt-7") Сборка-7
-              option(value="opt-8") Сборка-8
-              option(value="opt-9") Сборка-9
-              option(value="opt-10") Сборка-10
-              option(value="opt-11") Сборка-11
-        .product__offer-type
-          .product__offer-heading Размер (34)
-          ul.product__offer-list
-            li.product__offer-item.is-active
-              span.product__offer-txt 34
-            li.product__offer-item
-              span.product__offer-txt 36
-            li.product__offer-item
-              span.product__offer-txt 38
-            li.product__offer-item
-              span.product__offer-txt 40
-            li.product__offer-item
-              span.product__offer-txt 42
-            li.product__offer-item
-              span.product__offer-txt 44
-            li.product__offer-item
-              span.product__offer-txt 46
-            li.product__offer-item
-              span.product__offer-txt 48
-            li.product__offer-item
-              span.product__offer-txt 50
+        small.product__old-price 12 000 р.
+        .product__price 14 000 р.
+    a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add465")
+      | Узнать оптовую цену

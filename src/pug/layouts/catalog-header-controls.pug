@@ -9,21 +9,11 @@
       option(value="48") 48
 
   .header-control
-    label.header-control__title(for="show-by-select") Сортировать:
-    select.js-select-default#show-by-select
+    label.header-control__title(for="sort-by-select") Сортировать:
+    select.js-select-default#sort-by-select
       option(value="s-name") Название
       option(value="s-price") Цена
       option(value="s-instock") Наличие
-
-  .header-control
-    span.header-control__title Сортировать по: 
-    ul.header-control__list
-      li.header-control__item
-        a.header-control__current(href="#") Название
-      li.header-control__item
-        a.header-control__link(href="#") Цена
-      li.header-control__item.link--high
-        a.header-control__link(href="#") Наличие
 
   .header-control
     include ../components/view-modes

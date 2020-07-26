@@ -7,6 +7,7 @@
   cursor: pointer;
   color: $btn-color;
   transition: all .3s;
+  font-weight: 500;
   background: transparent;
   outline: none;
   vertical-align: middle;
@@ -24,9 +25,11 @@
   &--primary {
     color: $btn-primary-color;
     background: $btn-primary-bg;
+    border: 1px solid #d7d7d7;
 
     &:hover {
-      background: darken($btn-primary-bg, 15%);
+      background: $primary-color;
+      color: $white;
     }
   }
 

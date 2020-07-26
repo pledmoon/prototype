@@ -285,26 +285,28 @@ document.addEventListener('DOMContentLoaded', function() {
   /* ------------ Footer Collapse ------------ */
 
   /* =============== Header-Dropdowns =============== */
-  let dropdownsContainer = document.querySelector('.header-utilities');
+  let dropdownsContainers = document.querySelectorAll('.header-utilities');
 
-  dropdownsContainer.querySelectorAll('.header-utility__main').forEach(function(item) {
-    item.addEventListener('mouseenter', function(e) {
-      this.classList.add('is-opened');
+  dropdownsContainers.forEach(dropdownsContainer => {
+    dropdownsContainer.querySelectorAll('.header-utility__main').forEach(function(item) {
+      item.addEventListener('mouseenter', function(e) {
+        this.classList.add('is-opened');
+      });
     });
-  });
 
-  dropdownsContainer.querySelectorAll('.header-utility__main').forEach(function(item) {
-    item.addEventListener('mouseleave', function(e) {
-      this.classList.remove('is-opened');
+    dropdownsContainer.querySelectorAll('.header-utility__main').forEach(function(item) {
+      item.addEventListener('mouseleave', function(e) {
+        this.classList.remove('is-opened');
+      });
     });
-  });
 
-  dropdownsContainer.addEventListener('click', function(e) {
-    let target = e.target.closest('.header-utility__dropdown-close');
+    dropdownsContainer.addEventListener('click', function(e) {
+      let target = e.target.closest('.header-utility__dropdown-close');
 
-    if (!target) return;
+      if (!target) return;
 
-    target.closest('.header-utility__main').classList.remove('is-opened');
+      target.closest('.header-utility__main').classList.remove('is-opened');
+    });
   });
   /* =============== Header-Dropdowns =============== */
 

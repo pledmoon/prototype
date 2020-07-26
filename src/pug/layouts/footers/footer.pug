@@ -11,16 +11,31 @@ footer.footer.js-footer-collapse
         .col-md-3
           include ../../components/footer-collapse
         .col-md-3
-          include ../../components/footer-collapse
+          .footer-collapse.is-toggled
+            .footer-collapse__title Контакты
+            .footer-collapse__body
+              .footer-contacts
+                a.footer-contacts__phone(href="tel:+74951184294") 
+                  +icon('phone-call', 'footer-contacts__icon')
+                  span +7 (495)-118-42-94 
+              a.footer__callback(data-modal-win-trigger="callback" href="#") Заказать звонок
         .col-md-3
-          include ../../components/footer-collapse
+          .footer-collapse.is-toggled
+            .footer-collapse__title Присоединяйтесь
+            .footer-collapse__body
+              include ../../components/soc
+          .footer-collapse.is-toggled
+            .footer-collapse__title Принимаем к оплате
+            .footer-collapse__body
+              img.img-responsive(src="assets/images/media/payment-options.jpg" alt="")
 
-    .footer__bottom
+  .footer__bottom
 
-      include ../../components/logo
-      include ../../components/soc
+    .container-fluid
 
-      small.copy &copy; Wireframe 2019
+      //-include ../../components/logo
+
+      small.copy &copy; 2020 BASTOM GROUP
 
 include ../../components/modal-wins/modal-win
 include ../../components/modal-wins/terms-of-use-modal

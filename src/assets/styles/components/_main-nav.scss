@@ -5,10 +5,6 @@
  */
 .main-nav {
   $self: &;
-
-  background: $main-nav-bg;
-  border-top: 1px solid $gray--medium;
-  border-bottom: 1px solid $gray--medium;
   
   /* --- Desktop Navbar --- */
   @media (min-width: $md) {
@@ -27,11 +23,11 @@
       font-size: $main-nav-font-size;
       position: relative;
       flex: auto;
+      font-size: 1.2rem;
       text-align: center;
 
       &:hover #{$self}__link {
-        background: darken($main-nav-bg, 15%);
-        color: $white;
+        color: $primary-color;
       }
 
       &:hover #{$self}__item-icon {
@@ -50,22 +46,23 @@
     &__link {
       color: $main-nav-text-color;
       //padding: 1.5rem 1.5rem;
-      padding: 1rem 1.5rem;
+      padding: 1rem .8rem;
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100%;
       transition: all .3s;
+      text-transform: uppercase;
       position: relative;
 
-      #{$self}__item:not(:first-child) &::before {
-        width: 1px;
-        height: 60%;
-        background: $gray--medium;
-        content: "";
+      //#{$self}__item:not(:first-child) &::before {
+      //  width: 1px;
+      //  height: 60%;
+      //  background: $gray--medium;
+      //  content: "";
 
-        @include absolute-vertical;
-      }
+      //  @include absolute-vertical;
+      //}
     }
     // --- /First-Level
 
@@ -750,8 +747,10 @@
       &-icon {
         fill: $dark;
 
-        @media (max-width: $sm--mw) {
-          @include size(1.8rem);
+        @include size(1.8rem);
+
+        @media (min-width: $sm) {
+          @include size(2rem);
         }
       }
     }

@@ -3,12 +3,33 @@ extends templates/inner
 block variables
   - let title = 'Каталог';
   - let pageClass = 'catalog-page';
-  - let pageHeading = 'Каталог товаров';
+  - let pageHeading = 'Мужская обувь';
   - let breadcrumbs = true;
 
 block sidebar
-  include components/category-nav
-  include components/filter
+  .sidebar-area__main
+    include components/category-nav
+    include components/filter
+
+  ul.partners-list.d-none.d-md-block
+    li.partners-list__item
+      a.partners-list__link(href="#")
+        img.partners-list__img(src="assets/images/media/partner-logo-1.png" alt="")
+    li.partners-list__item
+      a.partners-list__link(href="#")
+        img.partners-list__img(src="assets/images/media/partner-logo-2.png" alt="")
+    li.partners-list__item
+      a.partners-list__link(href="#")
+        img.partners-list__img(src="assets/images/media/partner-logo-3.png" alt="")
+    li.partners-list__item
+      a.partners-list__link(href="#")
+        img.partners-list__img(src="assets/images/media/partner-logo-4.png" alt="")
+    li.partners-list__item
+      a.partners-list__link(href="#")
+        img.partners-list__img(src="assets/images/media/partner-logo-5.png" alt="")
+    li.partners-list__item
+      a.partners-list__link(href="#")
+        img.partners-list__img(src="assets/images/media/partner-logo-6.png" alt="")
 
   figure.subscribe-widget.d-none.d-md-block
     +icon('paper-plane', 'subscribe-widget__icon')
@@ -50,8 +71,15 @@ block sidebar
         p.news-widget__excerpt #[a(href="3") Lorem ipsum dolorbcaecati dolorem, cumque dignissimos.]
 
 block main
-  h1.main-title #{pageHeading}
+
   include layouts/catalog-header-controls
+
+  .section-banner.mb-small
+    a.section-banner__wrap(href="#")
+      img.img-responsive.section-banner__img(src="assets/images/media/catalog-banner.jpg")
+    span.section-banner__close
+      +icon('close', 'section-banner__close-icon')
+
   include layouts/catalog-list-main
   include components/pagination
 

@@ -1,52 +1,27 @@
 article.product
-  .product__wrap
 
-    header.product__header
-      a.product__img-wrap(href="#")
-        img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="Product Img")
-      a.product__view-btn.btn.btn--primary(href="#" data-modal-win-trigger="249") Быстрый просмотр
-      .product__controls
-        .product__control 
-          a.product__add-favourite(href="#")
-            +icon('heart-thin', 'product__add-favourite-icon')
-        .product__control 
-          a.product__action-compare(href="#")
-            +icon('compare-thin', 'product__action-compare-icon')
+  header.product__header
+    a.product__img-wrap(href="#")
+      img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="Product Img")
+    a.product__view-btn(href="#" data-modal-win-trigger="249")
+      +icon('search', 'product__view-icon')
+    .product__controls
+      .product__control 
+        a.product__add-favourite(href="#")
+          +icon('heart-thin', 'product__add-favourite-icon')
+      .product__control 
+        a.product__action-compare(href="#")
+          +icon('compare-thin', 'product__action-compare-icon')
 
-    .product__body
-      .product__title #[a.product__title-link(href="#") Заголовок товара длинный]
+  .product__body
+    .product__title #[a.product__title-link(href="#") Туфли "Суонси"]
+    .product__price-main
+      .product__price-helper
+        small.product__price-helper-caption Розничная цена
+        .product__price-helper-tooltip-wrap
+          +icon('question', 'product__price-helper-tooltip-icon')
+          .product__price-helper-tooltip Цена указана без скидок, узнай оптовую цену после регистрации
       .product__price-wrap
-        .product__price 3 300 р. #[small.product__old-price 5 000 р.]
-        .product__discount
-          .product__discount-value -15%
-          .product__discount-total Экономия 1 220 р.
-      a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add249")
-        +icon('shopping-cart', 'product__add-icon')
-        | Купить
-      a.product__fast-buy-btn.btn.btn--reverse(href="#") Купить в 1 клик
-
-    footer.product__footer
-      dl.product__params
-        dt.product__param-property Артикул:
-        dd.product__param-value 945-354-sвр
-        dt.product__param-property Вес:
-        dd.product__param-value 12 кг.
-        dt.product__param-property Количество:
-        dd.product__param-value 35 шт.
-      .product__controls
-        .product__control 
-          a.product__fast-buy(href="#") 
-            +icon('shopping-cart', 'product__fast-buy-icon')
-            | В 1 клик
-        .product__control 
-          a.product__add-favourite(href="#")
-            +icon('heart-thin', 'product__add-favourite-icon')
-            | В избранное
-        .product__control 
-          a.product__action-compare(href="#")
-            +icon('compare-thin', 'product__action-compare-icon')
-            | Сравнить
-        .product__control
-          .product__instock
-            +icon('tick', 'product__instock-icon')
-            | В наличии
+        .product__price 1100 р.
+    a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add249")
+      | Узнать оптовую цену

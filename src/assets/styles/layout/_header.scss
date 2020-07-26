@@ -1,10 +1,11 @@
 /* Header Top Area */
 .header-top-area {
   background: $header-top-area-bg;
-  border-bottom: 1px solid $gray;
+  //border-bottom: 1px solid $gray;
 
   &__main {
     display: flex;
+    min-height: 3rem;
   }
 
   .top-header-nav {
@@ -17,24 +18,30 @@
 .header {
   $self: &;
 
-  display: flex;
-  align-items: center;
-  margin: 0 -1rem;
-  position: relative;
+  border-bottom: 1px solid #ddd;
 
-  @media (max-width: $md--mw) {
-    border-bottom: 1px solid $gray;
-  }
+  &__main {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 -1rem;
 
-  > * {
-    padding: 0 1.5rem;
+    @media (min-width: $md) {
+      justify-content: space-between;
+    }
+
+    > * {
+      padding: 0 1.5rem;
+    }
   }
 
   .logo {
-    max-height: 4.5rem;
-
     img {
-      max-height: 4.5rem;
+      max-height: 4rem;
+
+      @media (min-width: $md) {
+        max-height: 6rem;
+      }
     }
 
     @media (max-width: $sm--mw) {
@@ -43,45 +50,32 @@
   }
 
   &__company-motto {
-    max-width: 16rem;
-    flex-basis: 16rem;
+    line-height: 1.1;
 
     &-desc {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
+      text-transform: uppercase;
     }
   }
 
   &__search-form {
     flex: auto;
 
-    @media (max-width: $md--mw) {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 100%;
-      z-index: 3;
-      background: $white;
-      padding: 1.5rem 1rem;
-      border-top: 1px solid $gray--medium;
-      border-bottom: 1px solid $gray--medium;
-      box-shadow: 0 .5rem 1rem rgba($black, .1);
-      display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 3;
+    background: $white;
+    padding: 1.5rem 1rem;
+    border-top: 1px solid $gray--medium;
+    border-bottom: 1px solid $gray--medium;
+    box-shadow: 0 .5rem 1rem rgba($black, .1);
+    display: none;
 
-      #{$self}.is-searchbar-opened & {
-        display: block;
-      }
+    #{$self}.is-searchbar-opened & {
+      display: block;
     }
-  }
-
-  &__header-contacts {
-    //padding: 1rem 0;
-  }
-
-  .btn {
-    font-size: 1.4rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    white-space: nowrap;
   }
 }
 /* Header Main Area */

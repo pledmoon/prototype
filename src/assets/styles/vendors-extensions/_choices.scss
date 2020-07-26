@@ -4,12 +4,12 @@
   &[data-type*="select-one"] {
     height: 100%;
     font-size: 1.4rem;
-    color: $font-base-color;
+    color: #a6abab;
     margin: 0;
     position: relative;
     padding-right: 2.8rem;
     background: $white;
-    border: 1px solid $gray;
+    border: 1px solid #d7d7d7;
     border-radius: 3px;
 
     &.is-open {
@@ -20,8 +20,8 @@
     &::after {
       content: "\f078";
       font-family: fa;
-      font-size: 1.4rem;
-      color: $primary-color;
+      font-size: 1.2rem;
+      color: $font-base-color;
 
       border: none;
       right: 1rem;
@@ -47,6 +47,7 @@
     height: 100%;
     white-space: nowrap;
     padding-right: 0;
+    padding-left: 1.5rem;
     border: none;
   }
 

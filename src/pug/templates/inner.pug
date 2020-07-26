@@ -16,17 +16,21 @@ html(lang="ru-RU")
     link(rel="icon" href="images/favicon.ico")
 
     link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800&display=swap&subset=cyrillic" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet")
+
     link(rel="stylesheet" type="text/css" href="assets/css/styles.min.css")
 
   body(class=pageClass)
 
     include ../layouts/headers/header-inner
-    include ../components/navbars/main-nav
+    //- include ../components/navbars/main-nav
 
     .container-fluid
 
       if breadcrumbs
         include ../components/breadcrumbs
+
+      h1.main-title #{pageHeading}
 
       .primary-content
 

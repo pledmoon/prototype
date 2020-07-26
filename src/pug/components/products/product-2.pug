@@ -1,68 +1,30 @@
 article.product
-  .product__wrap
 
-    header.product__header
-      a.product__img-wrap(href="#")
-        img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="Product Img")
-      a.product__view-btn.btn.btn--primary(href="#" data-modal-win-trigger="267") Быстрый просмотр
-      ul.product__stickers
-        li.product__sticker.product__sticker--hot Акция
-      .product__controls
-        .product__control 
-          a.product__add-favourite(href="#")
-            +icon('heart-thin', 'product__add-favourite-icon')
-        .product__control 
-          a.product__action-compare(href="#")
-            +icon('compare-thin', 'product__action-compare-icon')
+  header.product__header
+    a.product__img-wrap(href="#")
+      img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="Product Img")
+    a.product__view-btn(href="#" data-modal-win-trigger="267")
+      +icon('search', 'product__view-icon')
+    ul.product__stickers
+      li.product__sticker.product__sticker--hot -25%
+    .product__controls
+      .product__control 
+        a.product__add-favourite(href="#")
+          +icon('heart-thin', 'product__add-favourite-icon')
+      .product__control 
+        a.product__action-compare(href="#")
+          +icon('compare-thin', 'product__action-compare-icon')
 
-    .product__body
-      .product__title #[a.product__title-link(href="#") Заголовок товара]
+  .product__body
+    .product__title #[a.product__title-link(href="#") BastoM / Кроссовки 12345678 ]
+    .product__price-main
+      .product__price-helper
+        small.product__price-helper-caption Розничная цена
+        .product__price-helper-tooltip-wrap
+          +icon('question', 'product__price-helper-tooltip-icon')
+          .product__price-helper-tooltip Цена указана без скидок, узнай оптовую цену после регистрации
       .product__price-wrap
-        .product__price 125 000 р. #[small.product__old-price 99 000 р.]
-      a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add267")
-        +icon('shopping-cart', 'product__add-icon')
-        | Купить
-      a.product__fast-buy-btn.btn.btn--reverse(href="#") Купить в 1 клик
-
-    footer.product__footer
-      dl.product__params
-        dt.product__param-property Артикул:
-        dd.product__param-value 564-234-sh9
-        dt.product__param-property Вес:
-        dd.product__param-value 5 кг.
-        dt.product__param-property Количество:
-        dd.product__param-value 5 шт.
-      .product__controls
-        .product__control 
-          a.product__fast-buy(href="#") 
-            +icon('shopping-cart', 'product__fast-buy-icon')
-            | В 1 клик
-        .product__control 
-          a.product__add-favourite(href="#")
-            +icon('heart-thin', 'product__add-favourite-icon')
-            | В избранное
-        .product__control 
-          a.product__action-compare(href="#")
-            +icon('compare-thin', 'product__action-compare-icon')
-            | Сравнить
-        .product__control
-          .product__instock
-            +icon('tick', 'product__instock-icon')
-            | В наличии
-      .product__offers
-        .product__offer-type
-          .product__offer-heading Цвет (синий)
-          ul.product__offer-list
-            li.product__offer-item.is-active(style="background-image: url('https://max-demo.ru/upload/uf/502/50211eb0ef5bc634087e39c61ebdba34.png');" title="Синий")
-              span.product__offer-txt
-            li.product__offer-item(style="background-image: url('https://max-demo.ru/upload/uf/4c0/4c0eab68ac6bb1c060ec942c55592d25.png')" title="Фиолетовый")
-              span.product__offer-txt
-        .product__offer-type
-          .product__offer-heading Размер (xxl)
-          ul.product__offer-list
-            li.product__offer-item.is-active
-              span.product__offer-txt xxl
-            li.product__offer-item
-              span.product__offer-txt xs
-            li.product__offer-item
-              span.product__offer-txt sm
+        small.product__old-price 99 000 р.
+        .product__price 125 000 р.
+    a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add267")
+      | Узнать оптовую цену

@@ -15,7 +15,7 @@
 
     &:hover #{$self}__icon,
     &.active #{$self}__icon {
-      fill: $black;
+      fill: #f8700d;
     }
     &.active #{$self}__icon {
       cursor: default;
@@ -24,8 +24,8 @@
 
   &__link {
     display: block;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 
   &__icon {

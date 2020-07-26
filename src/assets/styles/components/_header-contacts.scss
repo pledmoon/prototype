@@ -1,32 +1,46 @@
 .header-contacts {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   vertical-align: middle;
-  line-height: 1.2;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  @media (min-width: $sm) {
+    font-size: 1.6rem;
+  }
 
   &__tel {
-    color: $black;
-    font-weight: 600;
+    color: $white;
     transition: all .3s;
     white-space: nowrap;
 
     &:hover {
-      color: $primary-color;
+      text-decoration: underline;
     }
 
     &-icon {
-      width: 1.8rem;
-      height: 1.8rem;
+      width: 2rem;
+      height: 2rem;
       margin-right: .5rem;
+      fill: $white;
+    }
+
+    span {
+      vertical-align: middle;
     }
   }
 
   &__request-wrap {}
 
   &__request {
-    font-size: 1.4rem;
-    color: $primary-color;
-    border-bottom: 1px dotted $primary-color;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: $white;
+    border-bottom: 1px dotted $white;
     margin-left: 2.5rem;
+    top: -.1rem;
+    position: relative;
 
     &:hover {
       border-bottom-color: transparent;

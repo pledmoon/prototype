@@ -9,16 +9,13 @@
 
   &__item {
     border-bottom: 1px solid $gray--medium;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     position: relative;
-
-    &:first-child {
-      border-top: 1px solid $gray--medium;
-    }
+    text-transform: uppercase;
   }
 
   &__link {
-    color: $black;
+    color: #666163;
     display: block;
     padding: 1rem 3rem 1rem 1.5rem;
     transition: all .3s;
@@ -26,7 +23,6 @@
 
     #{$self}__item &:hover,
     #{$self}__item.active & {
-      background: $gray--thin;
       text-decoration: none;
       color: $black;
     }

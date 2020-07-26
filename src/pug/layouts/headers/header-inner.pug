@@ -4,27 +4,33 @@
 
     .header-top-area__main
       include ../../components/navbars/top-header-nav
-      include ../../components/select-lang
+      .header-top-area__contacts
+        include ../../components/header-contacts
 
-.container-fluid
+header.header
 
-  header.header
+  .container-fluid
 
-    button.main-nav-trigger
-      +icon('menu', 'main-nav-trigger-icon')
+    .header__main
 
-    include ../../components/logo-2
+      button.main-nav-trigger
+        +icon('menu', 'main-nav-trigger-icon')
 
-    .header__search-form
-      include ../../components/search-form
-    .header__choose__location.d-none.d-md-block
-      include ../../components/choose-location
-    .header__header-contacts.d-none.d-md-block
-      include ../../components/header-contacts
+      include ../../components/logo-2
 
-    .header-utilities
-      include ../../components/header-utility/header-utility-0
-      include ../../components/header-utility/header-utility-1
-      include ../../components/header-utility/header-utility-2
-      include ../../components/header-utility/header-utility-3
-      include ../../components/header-utility/header-utility-4
+      .header__company-motto.d-none.d-xl-block
+        .header__company-motto-desc Обувь оптом
+
+      .header__search-form
+        include ../../components/search-form
+
+      include ../../components/navbars/main-nav
+      
+      .header-utilities-wrap
+        .header-utilities
+          include ../../components/header-utility/header-utility-0
+          include ../../components/header-utility/header-utility-1
+        .header-utilities
+          include ../../components/header-utility/header-utility-2
+          include ../../components/header-utility/header-utility-3
+          include ../../components/header-utility/header-utility-4

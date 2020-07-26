@@ -50,7 +50,7 @@
 // 5.Components
 @import "components/buttons";
 @import "components/top-header-nav";
-@import "components/select-lang";
+//@import "components/select-lang";
 @import "components/logo";
 @import "components/search-form";
 @import "components/choose-location";
@@ -656,5 +656,85 @@
     .arrow {
       display: none;
     }
+  }
+}
+
+/* Banner */
+.section-banner {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.section-banner:hover .section-banner__close {
+  opacity: 1;
+}
+
+.section-banner__wrap {
+  display: block;
+}
+
+.section-banner__img {}
+
+.section-banner__close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  cursor: pointer;
+}
+
+.section-banner__close:hover .section-banner__close-icon {
+  fill: #000;
+}
+
+.section-banner__close-icon {
+  fill: #999;
+  transition: fill .3s ease-in-out;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+/* Banner */
+
+/* Partners-Logo */
+.partners-list {
+  &__item {
+    &:not(:first-child) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    border: 1px solid $primary-color;
+    border-radius: 3px;
+    height: 7rem;
+    overflow: hidden;
+
+    &:hover {
+      img {
+        transform: scale(1.02) translateX(-50%) translateY(-50%);
+      }
+    }
+  }
+
+  &__img {
+    @include absolute-center;
+    transition: all .3s;
+    max-width: 100%;
+    height: auto;
+  }
+}
+/* Partners-Logo */
+
+.product-banner {
+  &__link {
+    display: block;
+  }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
   }
 }

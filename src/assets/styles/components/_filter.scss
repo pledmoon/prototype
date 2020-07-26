@@ -11,33 +11,35 @@
   &__main {}
 
   &__section {
-    border-top: 1px solid $gray--medium;
     font-size: 1.4rem;
+
+    &:not(:first-child) {
+      border-top: 1px solid $gray--medium;
+    }
   }
 
   &__title {
-    font-size: 1.4rem;
-    color: $primary-color;
-    // padding: 1rem 2rem 1rem 0;
-    padding: .5rem 2rem .5rem 0;
+    font-size: 1.2rem;
+    padding: 1.3rem 2rem 1.3rem 1.5rem;
     cursor: pointer;
     position: relative;
     white-space: nowrap;
+    text-transform: uppercase;
     text-overflow: ellipsis;
     overflow: hidden;
 
     &::after {
       content: "\f078";
       position: absolute;
-      right: 0;
-      top: .5rem;
+      right: 1rem;
+      top: 1rem;
       font-family: fa;
       font-size: 1.4rem;
       transition: all .3s;
     }
 
     .is-hidden &::after {
-      transform: rotate(180deg);
+      transform: rotate(-90deg);
     }
 
     & span {
@@ -48,6 +50,8 @@
   &__body {
     padding-bottom: 1.5rem;
     padding-top: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 
     > *:not(:last-child) {
       padding: 0 0 1.5rem;
@@ -74,6 +78,7 @@
 
     .checkbox-label__main::before {
       margin-top: -1px;
+      background: $white;
     }
 
     .checkbox-label__amount,
@@ -97,8 +102,7 @@
   }
 
   &__footer {
-    padding: 2rem 0;
-    border-top: 1px solid $gray--medium;
+    padding: 3rem 1.5rem 2.5rem;
   }
 
   &__btns {
@@ -114,7 +118,22 @@
     white-space: nowrap;
     position: relative;
     padding: .6rem .5rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  &__btn-accept {
+    color: $font-base-color;
+    font-weight: 300;
+
+    &:hover {
+      span {
+        border-bottom-color: transparent;
+      }
+    }
+
+    span {
+      border-bottom: 1px dotted;
+    }
   }
 
   &__btn-icon {
@@ -228,7 +247,7 @@
       padding-bottom: 1rem;
 
       &__main {
-        background: $gray--thin;
+        background: $white;
         border: 1px solid $gray--medium;
         border-radius: 3px;
         padding: .75rem 4rem .75rem 1rem;

@@ -1,7 +1,7 @@
 // ************************
 // | Template main colors |
 // ************************
-$primary-color: #bebebe !default;
+$primary-color: #1b7deb !default;
 $secondary-color: lighten($primary-color, 10%) !default;
 $tertiary-color: lighten($primary-color, 20%);
 
@@ -22,9 +22,9 @@ $body-bg: #ffffff !default;
 $layout-max-width: 1280px !default;
 
 $font-base-weight: 400 !default;
-$font-base-stack: 'Open Sans', Arial, sans-serif !default;
+$font-base-stack: Montserrat, Arial, sans-serif !default;
 $font-base-size: 1.6rem !default;
-$font-base-color: #333333 !default;
+$font-base-color: #666163 !default;
 $base-line-height: 1.5 !default;
 
 $baseZIndex: 3 !default;
@@ -58,9 +58,9 @@ $xlg--mw: 1199px;
 // | Typography |
 // **************
 // Headings
-$headings-weight: 600 !default;
-$headings-fonts-stack: 'Open Sans', Arial, sans-serif !default;
-$headings-color: #333333 !default;
+$headings-weight: 500 !default;
+$headings-fonts-stack: Montserrat, Arial, sans-serif !default;
+$headings-color: #666163 !default;
 $headings-line-height: 1.1 !default;
 
 // ***********
@@ -68,8 +68,8 @@ $headings-line-height: 1.1 !default;
 // ***********
 $btn-color: $dark--medium !default;
 
-$btn-primary-color: $white !default;
-$btn-primary-bg: mix(black, $primary-color, 5%) !default;
+$btn-primary-color: $primary-color !default;
+$btn-primary-bg: $white !default;
 $btn-secondary-color: $white !default;
 $btn-secondary-bg: $secondary-color !default;
 $btn-tertiary-color: $white !default;
@@ -78,7 +78,7 @@ $btn-reverse-color: $primary-color !default;
 $btn-reverse-bg: transparent !default;
 $btn-reverse-border: $primary-color;
 
-$btn-radius: 3px !default;
+$btn-radius: 0 !default;
 
 $btn-icon-fill-color: #ffffff !default;
 
@@ -91,8 +91,8 @@ $header-utility-icon-color: $dark !default;
 // **********
 // | Footer |
 // **********
-$header-top-area-bg: $gray--light !default;
-$header-top-area-text-color: $gray--light !default;
+$header-top-area-bg: $primary-color !default;
+$header-top-area-text-color: $white !default;
 
 $footer-bg: #444444 !default;
 $footer-text-color: #ffffff !default;

@@ -1,7 +1,7 @@
 .footer {
-  background: $footer-bg;
   margin-top: 3rem;
   color: $footer-text-color;
+  border-top: 1px solid #ececec;
 
   @media (min-width: $sm) {
     margin-top: 5rem;
@@ -9,7 +9,7 @@
 
   @media (min-width: $md) {
     margin-top: 6rem;
-    padding: 4rem 0 2rem;
+    padding: 4rem 0 0;
   }
 
   @media (min-width: $lg) {
@@ -19,59 +19,65 @@
   &__main {
     @media (min-width: $md) {
       padding-bottom: 4rem;
-      border-bottom: 1px solid $footer-border-color;
     }
   }
 
   &__bottom {
-    color: $gray;
+    color: #4b4b4b;
+    font-size: 1.4rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background: #ececec;
     text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     
     @media (min-width: $md) {
-      padding-bottom: 0;
+      text-align: left;
     }
-  }
 
-  .logo {
-    margin: 0 auto 1rem;
-  }
-
-  .footer-collapse__body {
-    .footer-about {
-      margin-bottom: 2rem;
+    .copy {
       font-size: 1.4rem;
     }
+  }
 
-    .logo {
-      margin: 0 0 2rem;
+  &__callback {
+    color: $font-base-color;
+    border-bottom: 1px dotted;
+    transition: all .3s;
+    font-size: 1.2rem;
+
+    &:hover {
+      border-bottom-color: transparent;
     }
-
-    .footer-contacts__tel {
-      color: $gray--medium;
-
-      &-icon {
-        fill: $gray--medium;
-        margin: -3px 1rem 0 0;
+  }
+  
+  @media (min-width: $md) {
+    .footer-collapse {
+      &:not(:first-child) {
+        margin-top: 4rem;
       }
     }
+  }
+}
 
-    .footer-contacts__request-wrap {
-      margin: 2rem 0 0;
+.footer-contacts {
+  margin-bottom: 1.5rem;
+
+  &__phone {
+    color: #4b4b4b;
+    font-size: 1.6rem;
+    transition: all .3s;
+
+    &:hover {
+      color: $primary-color;
     }
 
-    .footer-contacts__request {
-      font-size: 1.4rem;
-      padding: .5rem 1rem;
-    }
-
-    .footer-contacts {
-      margin-bottom: 2rem;
+    span {
+      display: inline-block;
+      vertical-align: middle;
     }
   }
 
-  .soc {
-    margin-bottom: 2rem;
+  &__icon {
+    fill: $primary-color;
   }
 }

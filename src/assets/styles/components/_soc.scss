@@ -4,7 +4,7 @@
 
   &__item {
     display: inline-block;
-    margin-left: .5rem;
+    margin-left: 1rem;
     vertical-align: top;
 
     &:first-child {
@@ -13,8 +13,6 @@
   }
   
   &__link {
-    border: 1px solid $gray;
-    border-radius: 50%;
     width: 3rem;
     height: 3rem;
     display: block;
@@ -27,38 +25,64 @@
     }
 
     &--fb:hover {
-      background: #3b5998;
+      svg {
+        fill: #3b5998;
+      }
     }
 
     &--tw:hover {
-      background: #00aced;
+      svg {
+        fill: #00aced;
+      }
     }
 
     &--vk:hover {
-      background: #5d84ae;
+      svg {
+        fill: #5d84ae;
+      }
     }
 
     &--gg:hover {
-      background: #DD4B39;
+      svg {
+        fill: #DD4B39;
+      }
     }
 
     &--yt:hover {
-      background: #c4302b;
+      svg {
+        fill: #c4302b;
+      }
     }
 
     &--ok:hover {
-      background: #ff9933;
+      svg {
+        fill: #ff9933;
+      }
     }
 
-    &:hover #{$self}__icon {
-      fill: $white;
+    &--skype:hover {
+      svg {
+        fill: #00AFF0;
+      }
+    }
+
+    &--whatsapp:hover {
+      svg {
+        fill: #4AC959;
+      }
+    }
+
+    &--viber:hover {
+      svg {
+        fill: #665CAC;
+      }
     }
   }
 
   &__icon {
-    fill: $gray;
-    width: 1.6rem;
-    height: 1.6rem;
+    fill: #deebf1;
+    width: 100%;
+    height: 100%;
     transition: all .3s;
     position: absolute;
     left: 50%;

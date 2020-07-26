@@ -2,55 +2,37 @@
   $self: &;
 
   position: relative;
-  height: 37.7rem;
-  overflow: hidden;
-  border-bottom: 1px solid $gray--medium;
-
-  @media (min-width: $md) {
-    height: 31.5rem;
-  }
+  transition: all .3s ease-in-out;
+  padding: 2rem;
 
   &:hover {
     overflow: visible;
-
-    #{$self}__wrap {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      z-index: 3;
-    }
-
-    #{$self}__view-btn {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  &__wrap {
-    background: $white;
-    box-shadow: 0 0 15px rgba($black, .15);
-    transition: all .3s ease-in-out;
-    border: 1px solid $gray--medium;
-    padding: 1rem;
+    box-shadow: 0 0 1.5rem rgba($black, .15);
   }
 
   &__header {
     // padding-top: 62.5%;
     height: 17rem;
     position: relative;
+    margin-bottom: 2rem;
 
     .product__controls {
       position: absolute;
       display: block;
-      /*right: 1rem;
-      bottom: 0;*/
-      right: 1rem;
+      right: 0;
       top: 0;
+      z-index: 2;
 
       .product__control {
+        a:hover svg {
+          fill: $primary-color;
+        }
+
         .icon {
           margin: 0;
+          width: 1.5rem;
+          height: 1.5rem;
+          fill: #332f30;
         }
       }
     }
@@ -78,77 +60,109 @@
     max-height: 100%;
   }
 
-  &__view-btn {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transition: all .3s;
-    max-width: 80%;
-    font-size: 1.2rem;
-    padding-top: .7rem;
-    padding-bottom: .7rem;
-    background: rgba(0,0,0, .4);
-    color: #fff;
-
-    &:hover {
-      background: rgba(0,0,0, .7);
-    }
-
-    &:active {
-      transform: translate(-50%, -50%);
-    }
-  }
-
   &__stickers {
     position: absolute;
+    right: 0;
     left: 0;
+    padding: 0 3rem;
     top: 0;
+    text-align: right;
   }
 
   &__sticker {
     display: inline-block;
     vertical-align: top;
-    padding: .3rem .5rem;
+    padding: .3rem 1rem;
     vertical-align: middle;
-    font-size: 1.2rem;
-    margin-right: .5rem;
+    font-size: .9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: .2rem;
+    margin-left: .2rem;
     margin-bottom: .5rem;
+    border-radius: 2.5rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-width: .6rem 1.5rem 0 0;
+      border-color: transparent transparent transparent transparent;
+      border-style: solid solid none none;
+      position: absolute;
+      left: 1rem;
+      top: 100%;
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    }
 
     &--new {
-      background: #900;
+      background: #92cb55;
       color: $white;
+
+      &::after {
+        border-top-color: #92cb55;
+      }
     }
 
     &--hot {
-      background: #8cb400;
+      background: #ff0000;
       color: $white;
+
+      &::after {
+        border-top-color: #ff0000;
+      }
     }
 
     &--sale {
-      background: purple;
+      background: #1b7deb;
       color: $white;
+
+      &::after {
+        border-top-color: #1b7deb;
+      }
     }
 
     &--recom {
-      background: tomato;
+      background: #f8700d;
       color: $white;
+
+      &::after {
+        border-top-color: #f8700d;
+      }
     }
+  }
+
+  &__view-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+
+    &:hover {
+      svg {
+        fill: #777;
+      }
+    }
+  }
+
+  &__view-icon {
+    width: 1.7rem;
+    height: 1.7rem;
+    fill: #cfcfcf;
+    pointer-events: none;
+    transition: all .3s;
   }
   /* Header Elements */
 
   /* Body Elements */
   &__title {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.1;
-    height: 5rem;
+    height: 1.5rem;
     overflow: hidden;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 300;
+    margin-bottom: 2rem;
+    text-align: center;
 
     // display: flex;
     // flex-direction: column;
@@ -164,7 +178,7 @@
 
     &-link {
       transition: all .3s;
-      color: $black;
+      color: #4b4b4b;
 
       display: inline-block;
       vertical-align: middle;
@@ -176,24 +190,26 @@
   }
 
   &__price-wrap {
-    margin-bottom: 1.5rem;
-    height: 5.5rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-weight: 300;
+    display: flex;
+    align-items: flex-end;
+    line-height: 1;
+    flex-wrap: wrap;
+  }
+
+  &__old-price {
+    color: #a5a5a5;
+    text-decoration: line-through;
+    font-size: 1.4rem;
+    margin-right: .5rem;
   }
 
   &__price {
     font-size: 1.8rem;
-    font-weight: 600;
-  }
-
-  &__old-price {
-    color: $dark--medium;
-    text-decoration: line-through;
-    font-weight: 300;
-    float: right;
-    margin-top: .3rem;
+    color: #4b4b4b;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   &__discount {
@@ -217,6 +233,14 @@
   &__add {
     width: 100%;
     margin-bottom: 1rem;
+    font-size: 1rem;
+    color: $font-base-color;
+    padding-left: .5rem;
+    padding-right: .5rem;
+
+    @media (min-width: $sm) {
+      font-size: 1.2rem;
+    }
 
     &-icon {
       fill: $white;
@@ -226,9 +250,80 @@
     }
   }
 
-  &__fast-buy-btn {
-    width: 100%;
-    margin-bottom: 1rem;
+  &__price-main {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    height: 4rem;
+    line-height: 1;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+  }
+
+  &__price-helper {
+    white-space: nowrap;
+
+    @media (min-width: $xlg) {
+      position: relative;
+    }
+
+    &-caption {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    &-tooltip-wrap {
+      display: inline-block;
+
+      &:hover .product__price-helper-tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-tooltip-icon {
+      fill: $primary-color;
+      cursor: pointer;
+    }
+
+    &-tooltip {
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 100%;
+      transform: translate(0, -1rem);
+      background: $white;
+      padding: .5rem;
+      width: 100%;
+      box-shadow: 0 .5rem 3rem rgba($black, 0.18);
+      color: $primary-color;
+      white-space: normal;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s;
+      font-size: 1rem;
+      font-weight: 300;
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-width: 1rem 2rem 0 0;
+        border-color: $white transparent transparent transparent;
+        border-style: solid solid none none;
+        position: absolute;
+        left: 1rem;
+        top: 100%;
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      @media (min-width: 1400px) {
+        left: 50%;
+        right: auto;
+        width: 19rem;
+      }
+    }
   }
   /* Body Elements */
 

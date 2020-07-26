@@ -1,32 +1,57 @@
 .breadcrumbs {
   padding: 1rem 0;
-  border-bottom: 1px solid $gray--medium;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   list-style: none;
+
+  white-space: nowrap;
+  overflow-x: auto;
 
   /*@media (min-width: $md) {
     margin-bottom: 3rem;
   }*/
 
   &__item {
-    color: $dark--medium;
     font-size: 1.2rem;
     display: inline-block;
+    position: relative;
+    color: #bebebe;
 
-    &:not(:first-child)::before {
-      content: "\f054";
-      font-family: fa;
-      margin: 0 1rem;
-      font-size: .8rem;
+    &:not(:first-child) {
+      padding-left: 2rem;
+
+      &::before {
+        content: "";
+        background-size: contain;
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        left: .4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjgyLjI2NiAyODIuMjY2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyODIuMjY2IDI4Mi4yNjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cG9seWdvbiBwb2ludHM9IjE0Mi4wMDIsMjM3LjI4MiAyODIuMjY2LDE0MS4xMjggMTQyLjAwMiw0NC45ODMgMTQyLjAwMiw5NS41MzIgMCw5NS41MzIgMCwxODYuNzI5IDE0Mi4wMDIsMTg2LjcyOSAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiM5Nzk3OTciIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+CjwvZz48c3R5bGUgaWQ9InN0eWxpc2gtNTAiIGNsYXNzPSJzdHlsaXNoIGFjdGl2ZS1wYXRoIiB0eXBlPSJ0ZXh0L2NzcyIgc3R5bGU9IiI+Lm9yZGVyLWZvb3RlciB7IHBhZGRpbmc6IDFyZW0gMCAycmVtOyB9Ci5vcmRlci1tb2ItZm9vdGVyX19jb250cm9scyB7IHBhZGRpbmctYm90dG9tOiAxNXB4OyB9Ci5kZWxpdmVyeS1zZXR0aW5nc19fY29udHJvbCB7IG1pbi13aWR0aDogMDsgfQouZGVsaXZlcnktc2V0dGluZ3MgLmNob2ljZXNfX2xpc3QtLXNpbmdsZSAuY2hvaWNlc19faXRlbSB7IHdoaXRlLXNwYWNlOiBub3dyYXA7IG92ZXJmbG93OiBoaWRkZW47IHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzOyB9PC9zdHlsZT48L2c+IDwvc3ZnPg==);
+      }
     }
   }
 
   &__link {
-    color: $black;
+    color: #bebebe;
+    transition: all .3s;
 
     &:hover {
       text-decoration: underline;
       color: $black;
+
+      svg {
+        fill: $black;
+      }
+    }
+
+    &-icon {
+      transition: all .3s;
+      fill: #bebebe;
+      width: 1.5rem;
+      height: 1.5rem;
+      transform: translateY(-1px);
     }
   }
 }

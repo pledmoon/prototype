@@ -1,13 +1,7 @@
 .header-controls {
-  margin: 0 0 3rem;
-  padding-bottom: 3rem;
+  margin: 0 0 2rem;
   align-items: center;
   display: flex;
-  border-bottom: 1px solid $gray--medium;
-
-  @media (min-width: $lg) {
-    margin: 0 0 3rem;
-  }
 }
 
 .header-control {
@@ -31,11 +25,13 @@
   }
 
   &__title {
-    color: $dark--medium;
     display: inline-block;
     vertical-align: middle;
     margin: 0 1rem 0 0;
     white-space: nowrap;
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 1px;
   }
 
   &__list {
