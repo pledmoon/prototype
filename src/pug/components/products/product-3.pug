@@ -1,27 +1,29 @@
 article.product
 
-  header.product__header
-    a.product__img-wrap(href="#")
-      img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="Product Img")
-    a.product__view-btn(href="#" data-modal-win-trigger="249")
-      +icon('search', 'product__view-icon')
-    .product__controls
-      .product__control 
-        a.product__add-favourite(href="#")
-          +icon('heart-thin', 'product__add-favourite-icon')
-      .product__control 
-        a.product__action-compare(href="#")
-          +icon('compare-thin', 'product__action-compare-icon')
+  .product__wrap
 
-  .product__body
-    .product__title #[a.product__title-link(href="#") Туфли "Суонси"]
-    .product__price-main
-      .product__price-helper
-        small.product__price-helper-caption Розничная цена
-        .product__price-helper-tooltip-wrap
-          +icon('question', 'product__price-helper-tooltip-icon')
-          .product__price-helper-tooltip Цена указана без скидок, узнай оптовую цену после регистрации
-      .product__price-wrap
-        .product__price 1100 р.
-    a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add249")
-      | Узнать оптовую цену
+    header.product__header
+      a.product__img-wrap(href="#")
+        img.product__img.img-responsive(src="http://bastom-opt.ru/upload/resize_cache/iblock/415/250_250_1/415dd0248379a77057a241d7f9882df7.JPG" alt="Product Img")
+      a.product__view-btn(href="#" data-modal-win-trigger="249")
+        +icon('search', 'product__view-icon')
+      .product__controls
+        .product__control 
+          a.product__add-favourite(href="#")
+            +icon('heart-thin', 'product__add-favourite-icon')
+        .product__control 
+          a.product__action-compare(href="#")
+            +icon('compare-thin', 'product__action-compare-icon')
+
+    .product__body
+      .product__title #[a.product__title-link(href="#") Туфли "Суонси"]
+      .product__price-main
+        .product__price-helper
+          small.product__price-helper-caption Розничная цена
+          .product__price-helper-tooltip-wrap
+            +icon('question', 'product__price-helper-tooltip-icon')
+            .product__price-helper-tooltip Цена указана без скидок, узнай оптовую цену после регистрации
+        .product__price-wrap
+          .product__price 1100 р.
+      a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add249")
+        | Узнать оптовую цену

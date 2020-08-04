@@ -3,11 +3,33 @@
 
   position: relative;
   transition: all .3s ease-in-out;
-  padding: 2rem;
 
-  &:hover {
-    overflow: visible;
-    box-shadow: 0 0 1.5rem rgba($black, .15);
+  //height: 35rem;
+  overflow: hidden;
+
+  @media (min-width: $md) {
+    height: 35rem;
+  }
+
+  @media (min-width: $md) {
+    &:hover {
+      overflow: visible;
+
+      #{$self}__wrap {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 3;
+        box-shadow: 0 0 1.5rem rgba($black, .15);
+      }
+    }
+  }
+
+  &__wrap {
+    background: $white;
+    transition: all .3s ease-in-out;
+    padding: 2rem;
   }
 
   &__header {
@@ -250,6 +272,19 @@
     }
   }
 
+  &__buy {
+    background: $primary-color;
+    border-color: $primary-color;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+
+    svg {
+      fill: $white;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
   &__price-main {
     display: flex;
     align-items: center;
@@ -330,25 +365,25 @@
   /* Footer Elements */
   &__params {
     color: $dark--medium;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
-    display: flex;
-    flex-wrap: wrap;
     line-height: 1.3rem;
+    color: #4b4b4b;
+  }
+
+  &__param {
+    display: flex;
   }
 
   &__param-property {
-    font-weight: 500;
+    font-weight: 300;
     padding:.5rem;
     color: $dark;
-    max-width: 50%;
-    flex-basis: 50%;
   }
 
   &__param-value {
+    font-weight: 500;
     padding:.5rem;
-    max-width: 50%;
-    flex-basis: 50%;
   }
 
   &__desc {
@@ -359,14 +394,14 @@
 
   &__controls {
     display: flex;
-    flex-wrap: wrap;
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 300;
   }
 
   &__control {
-    flex-basis: 50%;
-    max-width: 50%;
     padding: .5rem 0;
   }
 
@@ -438,12 +473,12 @@
   }
 
   &__instock {
-    color: green;
+    color: #7db343;
 
     &-icon {
-      width: 1.5rem;
-      height: 1.5rem;
-      fill: green;
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: #7db343;
       margin-right: .5rem;
     }
   }
@@ -462,37 +497,29 @@
     margin-bottom: 1rem;
   }
 
-  &__offer-list {}
+  &__offer-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   &__offer-item {
     cursor: pointer;
     border: 1px solid $gray--medium;
-    border-radius: 2px;
-    min-width: 3rem;
+    width: 16.666%;
     height: 3rem;
     white-space: nowrap;
     text-align: center;
     line-height: 2.8rem;
-    display: inline-block;
     font-size: 1.4rem;
-    vertical-align: middle;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-    margin-bottom: .5rem;
     padding: 0 .5rem;
-
-    &:not(:last-child) {
-      margin-right: .2rem;
-    }
 
     &.is-active {
       background-color: $gray--medium;
       cursor: default;
-      border-color: $white;
-      border-radius: 1px;
-      box-shadow: 0 0 0 2px $gray--medium;
     }
 
     &:not(.is-active):hover {
@@ -501,5 +528,134 @@
   }
 
   &__offer-txt {}
+
+  &__extra {
+    text-align: center;
+    font-weight: 300;
+
+    &-link {
+      display: inline-block;
+      margin-bottom: .5rem;
+      border-bottom: 1px dotted;
+      color: #666163;
+      font-size: 1.1rem;
+      white-space: nowrap;
+
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+
+    &-type {
+      display: block;
+      color: $primary-color;
+      font-size: 1.1rem;
+    }
+  }
   /* Footer Elements */
+
+  &__price-detail {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    height: 4rem;
+
+    &-value {
+      color: $primary-color;
+      font-size: 1.6rem;
+    }
+
+    &-desc {
+      color: #4b4b4b;
+      font-size: 1.4rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+  }
+
+  /* Offers Carousel */
+  &__offer-carousel {
+    position: absolute;
+    left: -.5rem;
+    top: 2rem;
+    padding: 2rem 0;
+    transition: all .3s;
+    display: none;
+
+    @media (min-width: $md) {
+      opacity: 0;
+      display: block;
+
+      @at-root .product:hover {
+        .product__offer-carousel {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-container {
+      height: 12rem;
+
+      opacity: 0;
+      visibility: hidden;
+
+      &.swiper-container-initialized {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-img-wrap {
+      width: 3.5rem;
+      height: 3.5rem;
+      cursor: pointer;
+      position: relative;
+      border: 1px solid #ddd;
+      background: $white;
+    }
+
+    &-img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      max-height: 96%;
+    }
+
+    &-prev {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      cursor: pointer;
+      line-height: 1;
+      outline: none;
+
+      &-icon {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    &-next {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      cursor: pointer;
+      line-height: 1;
+      outline: none;
+
+      &-icon {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+  /* Offers Carousel */
 }
+
+//pav
+//dMsKn_2014

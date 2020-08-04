@@ -1,30 +1,80 @@
 article.product
 
-  header.product__header
-    a.product__img-wrap(href="#")
-      img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="Product Img")
-    a.product__view-btn(href="#" data-modal-win-trigger="465")
-      +icon('search', 'product__view-icon')
-    ul.product__stickers
-      li.product__sticker.product__sticker--new New
-    .product__controls
-      .product__control 
-        a.product__add-favourite(href="#")
-          +icon('heart-thin', 'product__add-favourite-icon')
-      .product__control 
-        a.product__action-compare(href="#")
-          +icon('compare-thin', 'product__action-compare-icon')
+  .product__wrap
 
-  .product__body
-    .product__title #[a.product__title-link(href="#") Валенки турецкие]
-    .product__price-main
-      .product__price-helper
-        small.product__price-helper-caption Розничная цена
-        .product__price-helper-tooltip-wrap
-          +icon('question', 'product__price-helper-tooltip-icon')
-          .product__price-helper-tooltip Цена указана без скидок, узнай оптовую цену после регистрации
-      .product__price-wrap
-        small.product__old-price 12 000 р.
-        .product__price 14 000 р.
-    a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add465")
-      | Узнать оптовую цену
+    header.product__header
+      a.product__img-wrap(href="#")
+        img.product__img.img-responsive(src="http://bastom-opt.ru/upload/resize_cache/iblock/d2c/250_250_1/d2c558fd83d35c6ebbca1b11759455d7.jpg" alt="Product Img")
+      
+      .product__offer-carousel
+        .product__offer-carousel-container.swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              .product__offer-carousel-img-wrap
+                img.product__offer-carousel-img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="Product Img")
+            .swiper-slide
+              .product__offer-carousel-img-wrap
+                img.product__offer-carousel-img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="Product Img")
+            .swiper-slide
+              .product__offer-carousel-img-wrap
+                img.product__offer-carousel-img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="Product Img")
+            .swiper-slide
+              .product__offer-carousel-img-wrap
+                img.product__offer-carousel-img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="Product Img")
+        .product__offer-carousel-prev
+          +icon('chevron-up', 'product__offer-carousel-prev-icon')
+        .product__offer-carousel-next
+          +icon('chevron-down', 'product__offer-carousel-next-icon')
+
+      a.product__view-btn(href="#" data-modal-win-trigger="465")
+        +icon('search', 'product__view-icon')
+      ul.product__stickers
+        li.product__sticker.product__sticker--new New
+      .product__controls
+        .product__control 
+          a.product__add-favourite(href="#")
+            +icon('heart-thin', 'product__add-favourite-icon')
+        .product__control 
+          a.product__action-compare(href="#")
+            +icon('compare-thin', 'product__action-compare-icon')
+
+    .product__body
+      .product__title #[a.product__title-link(href="#") Валенки турецкие]
+      .product__price-detail
+        .product__price-detail-value 3 500 р. за пару
+        small.product__price-detail-desc За коробку: 15 000 р. / 8 пар
+
+      .product__controls
+        .product__control
+          .product__instock
+            +icon('tick', 'product__instock-icon')
+            | Заказная позиция
+        a.product__buy.btn.btn--primary(href="#" data-modal-win-trigger="add465")
+          +icon('shopping-cart', '')
+
+    .product__footer
+      .product__offers
+        .product__offer-type
+          //-.product__offer-heading Размер (34)
+          ul.product__offer-list
+            li.product__offer-item.is-active
+              span.product__offer-txt 34
+            li.product__offer-item
+              span.product__offer-txt 36
+            li.product__offer-item
+              span.product__offer-txt 38
+            li.product__offer-item
+              span.product__offer-txt 40
+            li.product__offer-item
+              span.product__offer-txt 42
+            li.product__offer-item
+              span.product__offer-txt 44
+            li.product__offer-item
+              span.product__offer-txt 46
+            li.product__offer-item
+              span.product__offer-txt 48
+            li.product__offer-item
+              span.product__offer-txt 50
+      .product__extra
+        a.product__extra-link(href="#") Индивидуальная разметная сетка
+        small.product__extra-type Сетка великаны

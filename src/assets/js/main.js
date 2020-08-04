@@ -1254,6 +1254,43 @@ document.addEventListener('DOMContentLoaded', function() {
     document.removeEventListener('click', clickOutsideSortBy);
   }
   /* ------------ Sort-By Toggle Mobile ------------ */
+
+  /* ------------ Product Carousel ------------ */
+  document.querySelectorAll('.product__offer-carousel-container').forEach(instance => {
+    const prev = instance.parentNode.querySelector('.product__offer-carousel-prev');
+    const next = instance.parentNode.querySelector('.product__offer-carousel-next');
+
+    let offerCarousel = new Swiper(instance, {
+      direction: 'vertical',
+      slidesPerView: 3,
+      spaceBetween: 5,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+
+      navigation: {
+        prevEl: prev,
+        nextEl: next
+      }
+    });
+  });
+
+  function processOfferImg(e) {
+    const thumb = e.target.closest('.product__offer-carousel-img-wrap');
+
+    if (!thumb) return;
+
+    const mainImg = thumb.closest('.product__header').querySelector('.product__img');
+    
+    const src = thumb.querySelector('img').src;
+
+    if (src) {
+      mainImg.src = src;
+    }
+  }
+
+  document.addEventListener('mouseover', processOfferImg);
+  document.addEventListener('click', processOfferImg);
+  /* ------------ Product Carousel ------------ */
 });
 
 svg4everybody({});

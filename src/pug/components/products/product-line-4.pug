@@ -1,43 +1,58 @@
 article.product-line
 
-  header.product-line__header
+  header.product__header
     a.product__img-wrap(href="#")
-      img.product__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="Product Img")
-    a.product__view-btn.btn.btn--primary(href="#" data-modal-win-trigger="856") Быстрый просмотр
+      img.product__img.img-responsive(src="http://bastom-opt.ru/upload/resize_cache/iblock/30a/250_250_1/30a52d5c44c4ee669f1d66b28fc6f4e9.jpg" alt="Product Img")
 
-  .product-line__body
-    .product__title #[a.product__title-link(href="#") Товарный заголовок]
-    p.product__desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium illum explicabo, dignissimos Laudantium illum explicabo, dignissimos quibusdam.
-    dl.product__params
-      dt.product__param-property Артикул:
-      dd.product__param-value 225-856-kg3
-      dt.product__param-property Артикул:
-      dd.product__param-value 225-856-kg3
+    a.product__view-btn(href="#" data-modal-win-trigger="856")
+      +icon('search', 'product__view-icon')
 
-  footer.product-line__footer
-    .product__price-wrap
-      .product__price 1 003 300 р. #[small.product__old-price 300 000 р.]
-      .product__discount
-        .product__discount-value -35%
-        .product__discount-total Экономия 6 450 р.
-    .product__add.btn.btn--primary(data-modal-win-trigger="add856")
-      +icon('shopping-cart', 'product__add-icon')
-      | Купить
-    include ../counter
+    ul.product__stickers
+      li.product__sticker.product__sticker--new New
     .product__controls
       .product__control 
-        a.product__fast-buy(href="#") 
-          +icon('shopping-cart', 'product__fast-buy-icon')
-          | В 1 клик
-      .product__control 
         a.product__add-favourite(href="#")
-          +icon('heart', 'product__add-favourite-icon')
-          | В избранное
+          +icon('heart-thin', 'product__add-favourite-icon')
       .product__control 
         a.product__action-compare(href="#")
-          +icon('compare', 'product__action-compare-icon')
-          | Сравнить
+          +icon('compare-thin', 'product__action-compare-icon')
+
+  .product__body
+    .product__title #[a.product__title-link(href="#") BastoM / Кроссовки 12345678]
+    .product__offers
+      .product__offer-type
+        ul.product__offer-list
+          li.product__offer-item.is-active
+            span.product__offer-txt 34
+          li.product__offer-item
+            span.product__offer-txt 36
+          li.product__offer-item
+            span.product__offer-txt 38
+          li.product__offer-item
+            span.product__offer-txt 40
+          li.product__offer-item
+            span.product__offer-txt 42
+          li.product__offer-item
+            span.product__offer-txt 44
+          li.product__offer-item
+            span.product__offer-txt 46
+          li.product__offer-item
+            span.product__offer-txt 48
+          li.product__offer-item
+            span.product__offer-txt 50
+      .product__extra
+        a.product__extra-link(href="#") Индивидуальная разметная сетка
+        small.product__extra-type Сетка великаны
+
+  footer.product__footer
+    .product__price-detail
+      .product__price-detail-value 3 500 р. за пару
+      small.product__price-detail-desc За коробку: 15 000 р. / 8 пар
+
+    .product__controls
       .product__control
         .product__instock
           +icon('tick', 'product__instock-icon')
-          | В наличии
+          | Заказная позиция
+      a.product__buy.btn.btn--primary(href="#" data-modal-win-trigger="add465")
+        +icon('shopping-cart', '')

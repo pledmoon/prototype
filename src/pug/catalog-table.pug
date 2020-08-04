@@ -11,10 +11,29 @@ block sidebar
   include components/filter
 
 block main
-  h1.main-title #{pageHeading}
+  //-h1.main-title #{pageHeading}
   include layouts/catalog-header-controls
+
+  .section-banner.mb-small
+    a.section-banner__wrap(href="#")
+      img.img-responsive.section-banner__img(src="assets/images/media/catalog-banner.jpg")
+    span.section-banner__close
+      +icon('close', 'section-banner__close-icon')
+      
   include layouts/catalog-list-table
   include components/pagination
 
 block footer
   include layouts/footers/footer
+  
+  //- Product Modals Fast View
+  include components/modal-wins/product-card-modal-1
+  include components/modal-wins/product-card-modal-2
+  include components/modal-wins/product-card-modal-3
+  include components/modal-wins/product-card-modal-4
+  
+  //- Product Modals Added
+  include components/modal-wins/product-add-modal-1
+  include components/modal-wins/product-add-modal-2
+  include components/modal-wins/product-add-modal-3
+  include components/modal-wins/product-add-modal-4

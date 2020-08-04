@@ -1,13 +1,27 @@
 .product-line {
   $self: &;
-  display: flex;
-  border: 1px solid $gray--medium;
-  flex-wrap: wrap;
 
-  &__header {
+  display: flex;
+  border-bottom: 1px solid $gray--medium;
+  flex-wrap: wrap;
+  padding: 3rem 1.5rem;
+  transition: all .3s;
+
+  &:hover {
+    box-shadow: 0 0 1.5rem rgba($black, .15);
+
+    @media (min-width: $md) {
+      .product__offer-carousel {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+
+  .product__header {
     position: relative;
-    padding: 1.5rem;
-    min-height: 15rem;
+    min-height: 18rem;
+    margin-bottom: 2rem;
 
     flex-basis: 100%;
     max-width: 100%;
@@ -15,24 +29,18 @@
     @media (min-width: $sm) {
       flex-basis: 30%;
       max-width: 30%;
+      margin: 0;
     }
 
     @media (min-width: $md) {
       flex-basis: 25%;
       max-width: 25%;
     }
-
-    &:hover {
-      .product__view-btn {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
   }
 
-  &__body {
+  .product__body {
     flex: none;
-    padding: 1.5rem;
+    margin: 0 0 2rem;
 
     flex-basis: 100%;
     max-width: 100%;
@@ -40,48 +48,93 @@
     @media (min-width: $sm) {
       flex-basis: 70%;
       max-width: 70%;
+      padding: 0 2rem;
+      margin: 0;
     }
 
     @media (min-width: $md) {
       flex-basis: 50%;
       max-width: 50%;
     }
+
+    @media (min-width: $xlg) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
   }
 
-  &__footer {
+  .product__footer {
     flex-basis: 100%;
     max-width: 100%;
-    border-left: 1px solid $gray--medium;
-    padding: 1.5rem;
 
     @media (min-width: $md) {
       flex-basis: 25%;
       max-width: 25%;
     }
 
-    .product__price-wrap {
-      height: auto;
+    @media (min-width: $sm) and (max-width: $md--mw) {
+      margin-top: 1.5rem;
     }
   }
 
-  /* Line Mods */
+  .product__view-btn {
+    @media (min-width: $md) {
+      left: 4.5rem;
+    }
+  }
+
+  .product__offer-carousel {
+    top: 0;
+    opacity: 1;
+    z-index: 3;
+
+    &-container {
+      height: 14rem;
+    }
+
+    .product__offer-carousel-img-wrap {
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+
   .product__title {
-    height: auto;
-    margin-top: 0;
-    font-weight: 600;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 1.5rem;
   }
 
-  .product__title-link:hover {
-    color: $primary-color;
+  .product__params {
+    margin: 0;
+    font-size: 1.3rem;
   }
 
-  .product__img {
-    max-height: 90%;
+  .product__param-property {
+    padding-left: 0;
   }
 
-  .counter {
-    height: 4rem;
-    margin-bottom: 2rem;
+  .product__offers {
+    margin: 0;
   }
-  /* Line Mods */
+
+  .product__offer-list {
+    max-width: 20rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .product__extra {
+    text-align: left;
+
+    .product__extra-link {
+      font-size: 1.2rem;
+    }
+  }
+
+  .product__price-detail {
+    text-align: left;
+  }
+
+  .product__price-main {
+    max-width: 22rem;
+  }
 }

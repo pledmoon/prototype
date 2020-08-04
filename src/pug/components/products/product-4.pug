@@ -1,32 +1,34 @@
 article.product
 
-  header.product__header
-    a.product__img-wrap(href="#")
-      img.product__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="Product Img")
-    a.product__view-btn(href="#" data-modal-win-trigger="856")
-      +icon('search', 'product__view-icon')
-    ul.product__stickers
-      li.product__sticker.product__sticker--new New
-      li.product__sticker.product__sticker--sale -10%
-      li.product__sticker.product__sticker--hot -5%
-      li.product__sticker.product__sticker--recom Sale
-    .product__controls
-      .product__control 
-        a.product__add-favourite(href="#")
-          +icon('heart-thin', 'product__add-favourite-icon')
-      .product__control 
-        a.product__action-compare(href="#")
-          +icon('compare-thin', 'product__action-compare-icon')
+  .product__wrap
 
-  .product__body
-    .product__title #[a.product__title-link(href="#") Детские босоножки]
-    .product__price-main
-      .product__price-helper
-        small.product__price-helper-caption Розничная цена
-        .product__price-helper-tooltip-wrap
-          +icon('question', 'product__price-helper-tooltip-icon')
-          .product__price-helper-tooltip Цена указана без скидок, узнай оптовую цену после регистрации
-      .product__price-wrap
-        .product__price 768 300 р.
-    a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add856")
-      | Узнать оптовую цену
+    header.product__header
+      a.product__img-wrap(href="#")
+        img.product__img.img-responsive(src="http://bastom-opt.ru/upload/resize_cache/iblock/127/250_250_1/12700fe1381cac09466775e66de6babe.jpg" alt="Product Img")
+      a.product__view-btn(href="#" data-modal-win-trigger="856")
+        +icon('search', 'product__view-icon')
+      ul.product__stickers
+        li.product__sticker.product__sticker--new New
+        li.product__sticker.product__sticker--sale -10%
+        li.product__sticker.product__sticker--hot -5%
+        li.product__sticker.product__sticker--recom Sale
+      .product__controls
+        .product__control 
+          a.product__add-favourite(href="#")
+            +icon('heart-thin', 'product__add-favourite-icon')
+        .product__control 
+          a.product__action-compare(href="#")
+            +icon('compare-thin', 'product__action-compare-icon')
+
+    .product__body
+      .product__title #[a.product__title-link(href="#") Детские босоножки]
+      .product__price-main
+        .product__price-helper
+          small.product__price-helper-caption Розничная цена
+          .product__price-helper-tooltip-wrap
+            +icon('question', 'product__price-helper-tooltip-icon')
+            .product__price-helper-tooltip Цена указана без скидок, узнай оптовую цену после регистрации
+        .product__price-wrap
+          .product__price 768 300 р.
+      a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add856")
+        | Узнать оптовую цену

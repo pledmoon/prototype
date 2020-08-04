@@ -1,30 +1,32 @@
 article.product
 
-  header.product__header
-    a.product__img-wrap(href="#")
-      img.product__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="Product Img")
-    a.product__view-btn(href="#" data-modal-win-trigger="267")
-      +icon('search', 'product__view-icon')
-    ul.product__stickers
-      li.product__sticker.product__sticker--hot -25%
-    .product__controls
-      .product__control 
-        a.product__add-favourite(href="#")
-          +icon('heart-thin', 'product__add-favourite-icon')
-      .product__control 
-        a.product__action-compare(href="#")
-          +icon('compare-thin', 'product__action-compare-icon')
+  .product__wrap
 
-  .product__body
-    .product__title #[a.product__title-link(href="#") BastoM / Кроссовки 12345678 ]
-    .product__price-main
-      .product__price-helper
-        small.product__price-helper-caption Розничная цена
-        .product__price-helper-tooltip-wrap
-          +icon('question', 'product__price-helper-tooltip-icon')
-          .product__price-helper-tooltip Цена указана без скидок, узнай оптовую цену после регистрации
-      .product__price-wrap
-        small.product__old-price 99 000 р.
-        .product__price 125 000 р.
-    a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add267")
-      | Узнать оптовую цену
+    header.product__header
+      a.product__img-wrap(href="#")
+        img.product__img.img-responsive(src="http://bastom-opt.ru/upload/resize_cache/iblock/b09/250_250_1/b09c000784b462344e821c22b98b865f.JPG" alt="Product Img")
+      a.product__view-btn(href="#" data-modal-win-trigger="267")
+        +icon('search', 'product__view-icon')
+      ul.product__stickers
+        li.product__sticker.product__sticker--hot -25%
+      .product__controls
+        .product__control 
+          a.product__add-favourite(href="#")
+            +icon('heart-thin', 'product__add-favourite-icon')
+        .product__control 
+          a.product__action-compare(href="#")
+            +icon('compare-thin', 'product__action-compare-icon')
+
+    .product__body
+      .product__title #[a.product__title-link(href="#") BastoM / Кроссовки 12345678 ]
+      .product__price-main
+        .product__price-helper
+          small.product__price-helper-caption Розничная цена
+          .product__price-helper-tooltip-wrap
+            +icon('question', 'product__price-helper-tooltip-icon')
+            .product__price-helper-tooltip Цена указана без скидок, узнай оптовую цену после регистрации
+        .product__price-wrap
+          small.product__old-price 99 000 р.
+          .product__price 125 000 р.
+      a.product__add.btn.btn--primary(href="#" data-modal-win-trigger="add267")
+        | Узнать оптовую цену
