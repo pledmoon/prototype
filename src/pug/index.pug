@@ -6,263 +6,313 @@ block variables
 
 block content
 
-  include layouts/headers/header
-  include components/navbars/main-nav-2
+  include layouts/headers/header-inner
 
   .container-fluid
-    include layouts/carousels/promo-carousel-offset
-    include layouts/items-section/items-section-1
-    include layouts/items-section/items-section-1
-    include layouts/service-cards-section
 
-    .product-main-header
-      .h2 Популярные категории
-    
-    // catalog-section
-    .catalog-section
-      .catalog-section__item
-        a.catalog-section-main(href="#")
-          figure.catalog-section-main__figure
-            .catalog-section-main__img-wrap
-              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="")
-            figcaption.catalog-section-main__figcaption
-              .catalog-section-main__heading Электроника
-              .catalog-section-main__count 22 товара
-      .catalog-section__item
-        a.catalog-section-main(href="#")
-          figure.catalog-section-main__figure
-            .catalog-section-main__img-wrap
-              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
-            figcaption.catalog-section-main__figcaption
-              .catalog-section-main__heading Обувь
-              .catalog-section-main__count 4 товара
-      .catalog-section__item
-        a.catalog-section-main(href="#")
-          figure.catalog-section-main__figure
-            .catalog-section-main__img-wrap
-              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
-            figcaption.catalog-section-main__figcaption
-              .catalog-section-main__heading Бижутерия и ювелирные изделия
-              .catalog-section-main__count 11 товара
-      .catalog-section__item
-        a.catalog-section-main(href="#")
-          figure.catalog-section-main__figure
-            .catalog-section-main__img-wrap
-              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
-            figcaption.catalog-section-main__figcaption
-              .catalog-section-main__heading Товары для дома
-              .catalog-section-main__count 176 товара
-      .catalog-section__item
-        a.catalog-section-main(href="#")
-          figure.catalog-section-main__figure
-            .catalog-section-main__img-wrap
-              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="")
-            figcaption.catalog-section-main__figcaption
-              .catalog-section-main__heading Электроника
-              .catalog-section-main__count 22 товара
-      .catalog-section__item
-        a.catalog-section-main(href="#")
-          figure.catalog-section-main__figure
-            .catalog-section-main__img-wrap
-              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
-            figcaption.catalog-section-main__figcaption
-              .catalog-section-main__heading Обувь
-              .catalog-section-main__count 4 товара
-      .catalog-section__item
-        a.catalog-section-main(href="#")
-          figure.catalog-section-main__figure
-            .catalog-section-main__img-wrap
-              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
-            figcaption.catalog-section-main__figcaption
-              .catalog-section-main__heading Бижутерия и ювелирные изделия
-              .catalog-section-main__count 11 товара
-      .catalog-section__item
-        a.catalog-section-main(href="#")
-          figure.catalog-section-main__figure
-            .catalog-section-main__img-wrap
-              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
-            figcaption.catalog-section-main__figcaption
-              .catalog-section-main__heading Товары для дома
-              .catalog-section-main__count 176 товара
-      .catalog-section__item
-        a.catalog-section-main(href="#")
-          figure.catalog-section-main__figure
-            .catalog-section-main__img-wrap
-              img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
-            figcaption.catalog-section-main__figcaption
-              .catalog-section-main__heading Бижутерия и ювелирные изделия
-              .catalog-section-main__count 11 товара
-      .catalog-section__item
-        a.catalog-section-main(href="#")
-          figure.catalog-section-main__figure
-            .catalog-section-main__img-wrap
-              img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
-            figcaption.catalog-section-main__figcaption
-              .catalog-section-main__heading Товары для дома
-              .catalog-section-main__count 176 товара
-    // /catalog-section
+    .promo-section.mb-medium
+      .row
+        .col-sm-8
+          .promo-section__item
+            img.promo-section__img(src="assets/images/media/banner-1.jpg" alt="")
+            .promo-section__reg
+              .promo-section__reg-heading Регистрируйтесь
+              .promo-section__reg-intro и зарабатывайте с нами
+              a.btn.btn--primary(href="#") Регистрация
+        .col-sm-4
+          a.promo-section__item.promo-section__item--half(href="#")
+            img.promo-section__img(src="assets/images/media/banner-2.jpg" alt="")
+            .promo-section__caption Бренды, #[br] в которые вы влюбитесь
+          a.promo-section__item.promo-section__item--half(href="#")
+            img.promo-section__img(src="assets/images/media/banner-3.jpg" alt="")
+            .promo-section__caption Новые поступления
 
-    include layouts/tabs-section
+    //- include layouts/carousels/promo-carousel-offset
+    //- include layouts/items-section/items-section-1
     include layouts/items-section/items-section-2
-    include layouts/news-section
+    //- include layouts/service-cards-section
+
+    //- .product-main-header
+    //-   .h2 Популярные категории
     
-    .items-promo-section.mb-medium
-      .row
-        .col-sm-6
-          .items-promo
-            .items-promo__main
-              small.items-promo__intro Коллекция 2019
-              div.items-promo__heading #[a.items-promo__heading-link(href="#") Стильный мужской бомбер]
-              p.items-promo__desc  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, sit magni!
-            .items-promo__preview
-              a.items-promo__img-wrap(href="#")
-                img.items-promo__img.img-responsive(src="https://max-demo.ru/upload/iblock/168/168b826f3cf83bc4c0553e1dbfbc8f59.png" alt="")
-        .col-sm-6
-          .items-promo
-            .items-promo__main
-              small.items-promo__intro Безупречный вкус
-              div.items-promo__heading #[a.items-promo__heading-link(href="#") Стильный мужской бомбер]
-              p.items-promo__desc  Lorem ipsum adipisicing elit. Ratione, sit magni!
-            .items-promo__preview
-              a.items-promo__img-wrap(href="#")
-                img.items-promo__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
-        .col-sm-6
-          .items-promo
-            .items-promo__main
-              small.items-promo__intro Чистый звук
-              div.items-promo__heading #[a.items-promo__heading-link(href="#") Стильный мужской бомбер]
-              p.items-promo__desc  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, sit magni!
-            .items-promo__preview
-              a.items-promo__img-wrap(href="#")
-                img.items-promo__img.img-responsive(src="https://max-demo.ru/upload/iblock/91a/91a3cf091f3bfdf9e746a7f7d5024341.png" alt="")
-        .col-sm-6
-          .items-promo
-            .items-promo__main
-              small.items-promo__intro Яркие эмоции
-              div.items-promo__heading #[a.items-promo__heading-link(href="#") Стильный мужской бомбер]
-              p.items-promo__desc  Lorem dipisicing elit. Ratione, sit magni!
-            .items-promo__preview
-              a.items-promo__img-wrap(href="#")
-                img.items-promo__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+    //- // catalog-section
+    //- .catalog-section
+    //-   .catalog-section__item
+    //-     a.catalog-section-main(href="#")
+    //-       figure.catalog-section-main__figure
+    //-         .catalog-section-main__img-wrap
+    //-           img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="")
+    //-         figcaption.catalog-section-main__figcaption
+    //-           .catalog-section-main__heading Электроника
+    //-           .catalog-section-main__count 22 товара
+    //-   .catalog-section__item
+    //-     a.catalog-section-main(href="#")
+    //-       figure.catalog-section-main__figure
+    //-         .catalog-section-main__img-wrap
+    //-           img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
+    //-         figcaption.catalog-section-main__figcaption
+    //-           .catalog-section-main__heading Обувь
+    //-           .catalog-section-main__count 4 товара
+    //-   .catalog-section__item
+    //-     a.catalog-section-main(href="#")
+    //-       figure.catalog-section-main__figure
+    //-         .catalog-section-main__img-wrap
+    //-           img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+    //-         figcaption.catalog-section-main__figcaption
+    //-           .catalog-section-main__heading Бижутерия и ювелирные изделия
+    //-           .catalog-section-main__count 11 товара
+    //-   .catalog-section__item
+    //-     a.catalog-section-main(href="#")
+    //-       figure.catalog-section-main__figure
+    //-         .catalog-section-main__img-wrap
+    //-           img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+    //-         figcaption.catalog-section-main__figcaption
+    //-           .catalog-section-main__heading Товары для дома
+    //-           .catalog-section-main__count 176 товара
+    //-   .catalog-section__item
+    //-     a.catalog-section-main(href="#")
+    //-       figure.catalog-section-main__figure
+    //-         .catalog-section-main__img-wrap
+    //-           img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/ba3/ipadpro105-cellular-pure-angles-space-gray-3.jpg/resize/307x224/" alt="")
+    //-         figcaption.catalog-section-main__figcaption
+    //-           .catalog-section-main__heading Электроника
+    //-           .catalog-section-main__count 22 товара
+    //-   .catalog-section__item
+    //-     a.catalog-section-main(href="#")
+    //-       figure.catalog-section-main__figure
+    //-         .catalog-section-main__img-wrap
+    //-           img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
+    //-         figcaption.catalog-section-main__figcaption
+    //-           .catalog-section-main__heading Обувь
+    //-           .catalog-section-main__count 4 товара
+    //-   .catalog-section__item
+    //-     a.catalog-section-main(href="#")
+    //-       figure.catalog-section-main__figure
+    //-         .catalog-section-main__img-wrap
+    //-           img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+    //-         figcaption.catalog-section-main__figcaption
+    //-           .catalog-section-main__heading Бижутерия и ювелирные изделия
+    //-           .catalog-section-main__count 11 товара
+    //-   .catalog-section__item
+    //-     a.catalog-section-main(href="#")
+    //-       figure.catalog-section-main__figure
+    //-         .catalog-section-main__img-wrap
+    //-           img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+    //-         figcaption.catalog-section-main__figcaption
+    //-           .catalog-section-main__heading Товары для дома
+    //-           .catalog-section-main__count 176 товара
+    //-   .catalog-section__item
+    //-     a.catalog-section-main(href="#")
+    //-       figure.catalog-section-main__figure
+    //-         .catalog-section-main__img-wrap
+    //-           img.catalog-section-main__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/8eb/limited-edition-death-stranding-ps4-pro-product-shot-02-ps4-us-20sep19.jpg/resize/870x725/hq/" alt="")
+    //-         figcaption.catalog-section-main__figcaption
+    //-           .catalog-section-main__heading Бижутерия и ювелирные изделия
+    //-           .catalog-section-main__count 11 товара
+    //-   .catalog-section__item
+    //-     a.catalog-section-main(href="#")
+    //-       figure.catalog-section-main__figure
+    //-         .catalog-section-main__img-wrap
+    //-           img.catalog-section-main__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
+    //-         figcaption.catalog-section-main__figcaption
+    //-           .catalog-section-main__heading Товары для дома
+    //-           .catalog-section-main__count 176 товара
+    //- // /catalog-section
 
-    .brands-section
+    //- include layouts/tabs-section
+    //- include layouts/items-section/items-section-2
+    //- include layouts/news-section
+    
+    //- .items-promo-section.mb-medium
+    //-   .row
+    //-     .col-sm-6
+    //-       .items-promo
+    //-         .items-promo__main
+    //-           small.items-promo__intro Коллекция 2019
+    //-           div.items-promo__heading #[a.items-promo__heading-link(href="#") Стильный мужской бомбер]
+    //-           p.items-promo__desc  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, sit magni!
+    //-         .items-promo__preview
+    //-           a.items-promo__img-wrap(href="#")
+    //-             img.items-promo__img.img-responsive(src="https://max-demo.ru/upload/iblock/168/168b826f3cf83bc4c0553e1dbfbc8f59.png" alt="")
+    //-     .col-sm-6
+    //-       .items-promo
+    //-         .items-promo__main
+    //-           small.items-promo__intro Безупречный вкус
+    //-           div.items-promo__heading #[a.items-promo__heading-link(href="#") Стильный мужской бомбер]
+    //-           p.items-promo__desc  Lorem ipsum adipisicing elit. Ratione, sit magni!
+    //-         .items-promo__preview
+    //-           a.items-promo__img-wrap(href="#")
+    //-             img.items-promo__img.img-responsive(src="https://static.svyaznoy.ru/upload/iblock/924628230ceba18b34af651795de6375/1.jpg/resize/483x483/hq/" alt="")
+    //-     .col-sm-6
+    //-       .items-promo
+    //-         .items-promo__main
+    //-           small.items-promo__intro Чистый звук
+    //-           div.items-promo__heading #[a.items-promo__heading-link(href="#") Стильный мужской бомбер]
+    //-           p.items-promo__desc  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, sit magni!
+    //-         .items-promo__preview
+    //-           a.items-promo__img-wrap(href="#")
+    //-             img.items-promo__img.img-responsive(src="https://max-demo.ru/upload/iblock/91a/91a3cf091f3bfdf9e746a7f7d5024341.png" alt="")
+    //-     .col-sm-6
+    //-       .items-promo
+    //-         .items-promo__main
+    //-           small.items-promo__intro Яркие эмоции
+    //-           div.items-promo__heading #[a.items-promo__heading-link(href="#") Стильный мужской бомбер]
+    //-           p.items-promo__desc  Lorem dipisicing elit. Ratione, sit magni!
+    //-         .items-promo__preview
+    //-           a.items-promo__img-wrap(href="#")
+    //-             img.items-promo__img.img-responsive(src="https://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/16x9/pc-upgrades/laptops-16x9.png.rendition.intel.web.480.270.png" alt="")
 
-      .brands-section__heading.h2 Бренды
+    .brands-section.mb-medium
 
-      .brands-carousel-wrap.grayscale
+      .brands-section__heading.h2.text-center Бренды Бастом груп
+
+      .brands-carousel-wrap.partners-list
 
         .swiper-container.brands-carousel.js-brands-carousel
 
           .swiper-wrapper
 
             .swiper-slide
-              a.brand(href="#")
-                figure.brand__main
-                  .brand__img-wrap
-                    img.brand__img.img-responsive(src="https://max-demo.ru/upload/iblock/d66/d6677bd4f71d56b4730747764a11aa56.png" alt="")
-                  figcaption.brand__heading Vega
+              a.partners-list__link(href="#")
+                img.partners-list__img(src="assets/images/media/partner-logo-1.png" alt="")
 
             .swiper-slide
-              a.brand(href="#")
-                figure.brand__main
-                  .brand__img-wrap
-                    img.brand__img.img-responsive(src="https://library.kissclipart.com/20180915/kwq/kissclipart-samsung-logo-transparent-clipart-logo-samsung-gala-1909bb35dc5e9319.jpg" alt="")
-                  figcaption.brand__heading Samsung
+              a.partners-list__link(href="#")
+                img.partners-list__img(src="assets/images/media/partner-logo-2.png" alt="")
 
             .swiper-slide
-              a.brand(href="#")
-                figure.brand__main
-                  .brand__img-wrap
-                    img.brand__img.img-responsive(src="https://d2ph5fj80uercy.cloudfront.net/06/cat1996.jpg" alt="")
-                  figcaption.brand__heading Kitty
+              a.partners-list__link(href="#")
+                img.partners-list__img(src="assets/images/media/partner-logo-3.png" alt="")
 
             .swiper-slide
-              a.brand(href="#")
-                figure.brand__main
-                  .brand__img-wrap
-                    img.brand__img.img-responsive(src="https://p7.hiclipart.com/preview/675/344/955/lg-g5-lg-electronics-lg-corp-lg-logo-png.jpg" alt="")
-                  figcaption.brand__heading LG
+              a.partners-list__link(href="#")
+                img.partners-list__img(src="assets/images/media/partner-logo-4.png" alt="")
 
             .swiper-slide
-              a.brand(href="#")
-                figure.brand__main
-                  .brand__img-wrap
-                    img.brand__img.img-responsive(src="https://p1.hiclipart.com/preview/1017/255/720/mac-bar-v1-apple-logo-png-clipart.jpg" alt="")
-                  figcaption.brand__heading Apple
+              a.partners-list__link(href="#")
+                img.partners-list__img(src="assets/images/media/partner-logo-5.png" alt="")
 
             .swiper-slide
-              a.brand(href="#")
-                figure.brand__main
-                  .brand__img-wrap
-                    img.brand__img.img-responsive(src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Acer_2011.svg/1280px-Acer_2011.svg.png" alt="")
-                  figcaption.brand__heading Acer
-
-          .brands-carousel__pagination
+              a.partners-list__link(href="#")
+                img.partners-list__img(src="assets/images/media/partner-logo-6.png" alt="")
 
         .brands-carousel__prev
           +icon('chevron-left', 'brands-carousel__prev-icon')
         .brands-carousel__next
           +icon('chevron-right', 'brands-carousel__next-icon')
 
-    .brands-section
-
-      .brands-section__heading.h2 Бренды
-
-      .brands-carousel-wrap.grayscale
-
-        .swiper-container.brands-carousel.js-brands-carousel
-
-          .swiper-wrapper
-
-            .swiper-slide
-              a.brand(href="#")
-                figure.brand__main
-                  .brand__img-wrap
-                    img.brand__img.img-responsive(src="https://max-demo.ru/upload/iblock/d66/d6677bd4f71d56b4730747764a11aa56.png" alt="")
-                  figcaption.brand__heading Vega
-
-            .swiper-slide
-              a.brand(href="#")
-                figure.brand__main
-                  .brand__img-wrap
-                    img.brand__img.img-responsive(src="https://library.kissclipart.com/20180915/kwq/kissclipart-samsung-logo-transparent-clipart-logo-samsung-gala-1909bb35dc5e9319.jpg" alt="")
-                  figcaption.brand__heading Samsung
-
-          .brands-carousel__pagination
-
-        .brands-carousel__prev
-          +icon('chevron-left', 'brands-carousel__prev-icon')
-        .brands-carousel__next
-          +icon('chevron-right', 'brands-carousel__next-icon')
-
-    // Video-Gallery
-    .js-video-gallery.video-gallery.mb-medium
-
-      .video-gallery__heading.h2 Мы в соцсетях
-
+    .departments.mb-medium
       .row
         .col-6.col-md-3
-
-          a.video-gallery__item(href="https://www.youtube.com/watch?v=lhYBX9aoIdY")
-            img.video-gallery__img(src="https://img.youtube.com/vi/lhYBX9aoIdY/hqdefault.jpg" alt="")
-            +icon('play', 'video-gallery__icon')
-
+          a.departments__item(href="#")
+            img.departments__img(src="assets/images/media/section-1.jpg" alt="")
+            .departments__caption.departments__caption--dark Новая коллекция
         .col-6.col-md-3
-
-          a.video-gallery__item(href="https://www.youtube.com/watch?v=_AtP7au_Q9w")
-            img.video-gallery__img(src="https://img.youtube.com/vi/_AtP7au_Q9w/hqdefault.jpg" alt="")
-            +icon('play', 'video-gallery__icon')
-
+          a.departments__item.departments__item--half(href="#")
+            img.departments__img(src="assets/images/media/section-2.jpg" alt="")
+            .departments__heading Товар дня
+          a.departments__item.departments__item--half(href="#")
+            img.departments__img(src="assets/images/media/section-3.jpg" alt="")
+            .departments__heading Товар дня
         .col-6.col-md-3
-
-          a.video-gallery__item(href="https://www.youtube.com/watch?v=lhYBX9aoIdY")
-            img.video-gallery__img(src="https://img.youtube.com/vi/lhYBX9aoIdY/hqdefault.jpg" alt="")
-            +icon('play', 'video-gallery__icon')
-
+          a.departments__item.departments__item--half(href="#")
+            img.departments__img(src="assets/images/media/section-4.jpg" alt="")
+            .departments__heading Товар дня
+          a.departments__item.departments__item--half(href="#")
+            img.departments__img(src="assets/images/media/section-5.jpg" alt="")
+            .departments__heading Товар дня
         .col-6.col-md-3
+          a.departments__item(href="#")
+            img.departments__img(src="assets/images/media/section-6.jpg" alt="")
+            .departments__caption Вы этого ждали! #[br] Скидка до 60%
 
-          a.video-gallery__item(href="https://www.youtube.com/watch?v=_AtP7au_Q9w")
-            img.video-gallery__img(src="https://img.youtube.com/vi/_AtP7au_Q9w/hqdefault.jpg" alt="")
-            +icon('play', 'video-gallery__icon')
+    .advantage-section.mb-medium
+
+      .advantage-section__heading.h2.text-center Преимущества
+
+      .advantage-section__list
+
+        figure.advantage-section__advantage.advantage
+          +icon('advantage-1', 'advantage__icon')
+          figcaption.advantage__desc Постоянная выгода
+        
+        figure.advantage-section__advantage.advantage
+          +icon('advantage-2', 'advantage__icon')
+          figcaption.advantage__desc Сертификаты качества
+        
+        figure.advantage-section__advantage.advantage
+          +icon('advantage-3', 'advantage__icon')
+          figcaption.advantage__desc Широкий ассортимент
+        
+        figure.advantage-section__advantage.advantage
+          +icon('advantage-4', 'advantage__icon')
+          figcaption.advantage__desc Простота шопинга
+        
+        figure.advantage-section__advantage.advantage
+          +icon('advantage-5', 'advantage__icon')
+          figcaption.advantage__desc Удобная доставка
+
+    p.summary-desc При оформлении покупки в нашем интернет-магазине с Вами по телефону обязательно свяжутся наши менеджеры и уточнят заказ. Если же у Вас есть вопросы или Вы не можете определиться с выбором, то наши консультанты всегда к Вашим услугам. За каждым оптовым клиентом закрепляется персональный менеджер, так что Вам не придётся ожидать свободного оператора. Каждый покупатель для нас особенный.
+
+    //- .brands-section
+
+    //-   .brands-section__heading.h2 Бренды
+
+    //-   .brands-carousel-wrap.grayscale
+
+    //-     .swiper-container.brands-carousel.js-brands-carousel
+
+    //-       .swiper-wrapper
+
+    //-         .swiper-slide
+    //-           a.brand(href="#")
+    //-             figure.brand__main
+    //-               .brand__img-wrap
+    //-                 img.brand__img.img-responsive(src="https://max-demo.ru/upload/iblock/d66/d6677bd4f71d56b4730747764a11aa56.png" alt="")
+    //-               figcaption.brand__heading Vega
+
+    //-         .swiper-slide
+    //-           a.brand(href="#")
+    //-             figure.brand__main
+    //-               .brand__img-wrap
+    //-                 img.brand__img.img-responsive(src="https://library.kissclipart.com/20180915/kwq/kissclipart-samsung-logo-transparent-clipart-logo-samsung-gala-1909bb35dc5e9319.jpg" alt="")
+    //-               figcaption.brand__heading Samsung
+
+    //-       .brands-carousel__pagination
+
+    //-     .brands-carousel__prev
+    //-       +icon('chevron-left', 'brands-carousel__prev-icon')
+    //-     .brands-carousel__next
+    //-       +icon('chevron-right', 'brands-carousel__next-icon')
+
+    //- // Video-Gallery
+    //- .js-video-gallery.video-gallery.mb-medium
+
+    //-   .video-gallery__heading.h2 Мы в соцсетях
+
+    //-   .row
+    //-     .col-6.col-md-3
+
+    //-       a.video-gallery__item(href="https://www.youtube.com/watch?v=lhYBX9aoIdY")
+    //-         img.video-gallery__img(src="https://img.youtube.com/vi/lhYBX9aoIdY/hqdefault.jpg" alt="")
+    //-         +icon('play', 'video-gallery__icon')
+
+    //-     .col-6.col-md-3
+
+    //-       a.video-gallery__item(href="https://www.youtube.com/watch?v=_AtP7au_Q9w")
+    //-         img.video-gallery__img(src="https://img.youtube.com/vi/_AtP7au_Q9w/hqdefault.jpg" alt="")
+    //-         +icon('play', 'video-gallery__icon')
+
+    //-     .col-6.col-md-3
+
+    //-       a.video-gallery__item(href="https://www.youtube.com/watch?v=lhYBX9aoIdY")
+    //-         img.video-gallery__img(src="https://img.youtube.com/vi/lhYBX9aoIdY/hqdefault.jpg" alt="")
+    //-         +icon('play', 'video-gallery__icon')
+
+    //-     .col-6.col-md-3
+
+    //-       a.video-gallery__item(href="https://www.youtube.com/watch?v=_AtP7au_Q9w")
+    //-         img.video-gallery__img(src="https://img.youtube.com/vi/_AtP7au_Q9w/hqdefault.jpg" alt="")
+    //-         +icon('play', 'video-gallery__icon')
 
   include layouts/footers/footer

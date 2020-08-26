@@ -343,7 +343,7 @@
     transform: translateY(-50%);
     cursor: pointer;
     outline: none;
-    margin-top: -3.5rem;
+    // margin-top: -3.5rem;
     z-index: 3;
 
     &-icon {
@@ -360,6 +360,10 @@
 
   &__next {
     right: 0;
+  }
+
+  img {
+    max-width: 90%;
   }
 }
 
@@ -736,5 +740,247 @@
   &__img {
     max-width: 100%;
     height: auto;
+  }
+}
+
+.summary-desc {
+  font-size: 1.2rem;
+}
+
+.advantage-section {
+  &__heading {}
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__advantage {
+    margin: 1.5rem;
+
+    @media (min-width: $sm) {
+      margin: 1.5rem 4rem;
+    }
+  }
+}
+
+.advantage {
+  text-align: center;
+  max-width: 10rem;
+
+  &__icon {
+    fill: $primary-color;
+    width: 8.5rem;
+    height: 8.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__desc {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+.promo-section {
+  padding: 2rem 0 0;
+
+  @media (max-width: $sm--mw) {
+    > .row > [class*="col"]:first-child {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item {
+    height: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+
+    &--half {
+      height: calc(50% - 15px);
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.03);
+      }
+
+      .promo-section__caption {
+        transform: translateY(-3px);
+      }
+    }
+  }
+  
+  &__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    backface-visibility: hidden;
+    transition: all .3s;
+    object-fit: cover;
+  }
+
+  &__caption {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    transition: all .3s;
+    text-shadow: 1px 1px 0 #333;
+
+    @media (min-width: $md) {
+      font-size: 2rem;
+    }
+  }
+
+  &__reg {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+
+    @media (min-width: $md) {
+      left: 3.5rem;
+      top: 5rem;
+    }
+
+    &-heading {
+      color: $primary-color;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.1;
+      font-size: 2.8rem;
+
+      @media (min-width: $md) {
+        font-size: 3.8rem;
+      }
+    }
+
+    &-intro {
+      color: #666163;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 2.5rem;
+      font-size: 1.8rem;
+
+      @media (min-width: $md) {
+        margin-bottom: 3.5rem;
+        font-size: 2.3rem;
+      }
+    }
+
+    .btn {
+      font-size: 1.4rem;
+      color: #666163;
+      border-color: $primary-color;
+      text-transform: uppercase;
+
+      @media (min-width: $md) {
+        min-width: 24rem;
+        font-size: 1.4rem;
+      }
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+.departments {
+  @media (max-width: $md--mw) {
+    > .row > [class*="col"]:first-child,
+    > .row > [class*="col"]:nth-child(2) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item {
+    height: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+
+    &--half {
+      height: calc(50% - 15px);
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.03);
+      }
+    }
+  }
+  
+  &__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    backface-visibility: hidden;
+    transition: all .3s;
+    object-fit: cover;
+  }
+
+  &__caption {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 2rem;
+    color: $white;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    transition: all .3s;
+    text-transform: uppercase;
+
+    @media (min-width: 480px) {
+      font-size: 1.6rem;
+    }
+
+    @media (min-width: $md) {
+      font-size: 2.4rem;
+    }
+
+    &--dark {
+      color: $black;
+    }
+  }
+
+  &__heading {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    color: #666163;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.1;
+    transition: all .3s;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    width: 100%;
+    background: rgba(255, 255, 255, .6);
+
+    @media (min-width: 480px) {
+      font-size: 1.8rem;
+      min-width: 19rem;
+      width: auto;
+      background: $white;
+    }
+
+    @media (min-width: $md) {
+      font-size: 2.2rem;
+    }
   }
 }
